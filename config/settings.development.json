@@ -130,5 +130,34 @@
       "picture": "https://www.hawaii.edu/its/wp-content/uploads/sites/2/2019/01/LAVAlogo-300x192-300x192.png"
     }
   ],
+  "defaultRecipes": [
+    {
+      "name": "Spaghetti Carbonara",
+      "description": "Classic Italian pasta dish with eggs, cheese, and pancetta.",
+      "ingredients": [
+        { "name": "Spaghetti", "quantity": "200g", "price": 2.5 },
+        { "name": "Pancetta", "quantity": "100g", "price": 3.0 },
+        { "name": "Eggs", "quantity": "2", "price": 1.0 },
+        { "name": "Parmesan cheese", "quantity": "50g", "price": 2.0 },
+        { "name": "Black pepper", "quantity": "to taste", "price": 0.5 }
+      ],
+      "instructions": "Cook spaghetti until al dente. Meanwhile, fry pancetta until crispy. Whisk eggs and cheese together. Drain spaghetti and toss with egg mixture, pancetta, and pepper.",
+      "picture": "https://example.com/spaghetti_carbonara.jpg"
+    },
+    {
+      "name": "Chicken Stir-Fry",
+      "description": "Quick and easy stir-fry with chicken, vegetables, and soy sauce.",
+      "ingredients": [
+        { "name": "Chicken breast", "quantity": "300g", "price": 5.0 },
+        { "name": "Bell peppers", "quantity": "2", "price": 1.5 },
+        { "name": "Broccoli florets", "quantity": "1 cup", "price": 2.0 },
+        { "name": "Soy sauce", "quantity": "2 tbsp", "price": 1.0 },
+        { "name": "Garlic", "quantity": "2 cloves", "price": 0.5 },
+        { "name": "Ginger", "quantity": "1 tsp", "price": 0.5 }
+      ],
+      "instructions": "Stir-fry chicken until cooked through. Add garlic and ginger, followed by vegetables. Stir in soy sauce and cook until vegetables are tender.",
+      "picture": "https://example.com/chicken_stir_fry.jpg"
+    }
+  ],
   "loadAssetsFile":  false
 }
