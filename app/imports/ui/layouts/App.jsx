@@ -13,9 +13,10 @@ import NotAuthorized from '../pages/NotAuthorized';
 import Profiles from '../pages/Profiles';
 import Projects from '../pages/Projects';
 import Interests from '../pages/Interests';
-import Home from '../pages/Home';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
+import HomePage from '../pages/HomePage';
+import Home from '../pages/Home';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -57,7 +58,7 @@ ProtectedRoute.propTypes = {
 };
 
 ProtectedRoute.defaultProps = {
-  children: <Home />,
+  children: <HomePage />,
 };
 
 export default App;
