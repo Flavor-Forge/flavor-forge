@@ -1,6 +1,5 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
-import { Random } from 'meteor/random';
 
 class RecipesCollection {
   constructor() {
@@ -18,25 +17,26 @@ class RecipesCollection {
       'ingredients.$.price': { type: Number, min: 0 },
       instructions: { type: String },
       picture: { type: String, optional: true },
+      rating: {
+        type: Number,
+        min: 0,
+        max: 5,
+        optional: true,
+        defaultValue: 0,
+        // Custom validation function to ensure the rating value is between 0 and 5
+        custom() {
+          if (this.value < 0 || this.value > 5) {
+            return 'Rating must be between 0 and 5';
+          }
+          return undefined;
+        },
+      },
       createdAt: { type: Date },
       updatedAt: { type: Date },
     });
     this.collection.attachSchema(this.schema);
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
-  }
-
-  // Method to insert a new recipe with owner ID
-  insertRecipe(ownerId, recipeData) {
-    const createdAt = new Date();
-    const recipe = {
-      ownerId,
-      recipeId: Random.id(), // Generate a unique recipe ID
-      createdAt,
-      updatedAt: createdAt,
-      ...recipeData,
-    };
-    this.collection.insert(recipe);
   }
 }
 

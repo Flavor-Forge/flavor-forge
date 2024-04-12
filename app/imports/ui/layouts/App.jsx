@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
+// eslint-disable-next-line no-unused-vars
 import Landing from '../pages/Landing';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
@@ -16,6 +17,23 @@ import Interests from '../pages/Interests';
 import Home from '../pages/Home';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
+import RecipesPage from '../pages/MockRecipePage';
+
+const defaultRecipes = [
+  {
+    name: 'Spaghetti Carbonara',
+    description: 'Classic Italian pasta dish with eggs, cheese, and pancetta.',
+    ingredients: [
+      { name: 'Spaghetti', quantity: '200g', price: 2.5 },
+      { name: 'Pancetta', quantity: '100g', price: 3.0 },
+      { name: 'Eggs', quantity: '2', price: 1.0 },
+      { name: 'Parmesan cheese', quantity: '50g', price: 2.0 },
+      { name: 'Black pepper', quantity: 'to taste', price: 0.5 },
+    ],
+    instructions: 'Cook spaghetti until al dente. Meanwhile, fry pancetta until crispy. Whisk eggs and cheese together. Drain spaghetti and toss with egg mixture, pancetta, and pepper.',
+    picture: 'https://example.com/spaghetti_carbonara.jpg',
+  },
+];
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -23,7 +41,7 @@ const App = () => (
     <div className="d-flex flex-column min-vh-100">
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<Landing />} />
+        <Route exact path="/" element={<RecipesPage recipes={defaultRecipes} />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
