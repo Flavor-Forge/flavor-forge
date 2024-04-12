@@ -11,7 +11,7 @@ const Landing = () => (
           Welcome to Flavor Forge
         </h1>
         <h3 style={{ paddingBottom: '20px', color: 'white' }}>
-          Recepies and Vendors on a click of a button!
+          Recipes and Vendors at the click of a button!
         </h3>
       </Container>
     </div>
