@@ -14,10 +14,10 @@ const NavBar = () => {
   }), []);
   // const menuStyle = { backgroundColor: 'E2D4C7', marginBottom: '0px' };
   return (
-    <Navbar expand="lg" style={{ backgroundColor: '#E2D4C7' }}>
+    <Navbar expand="lg" style={{ backgroundColor: 'white' }}>
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="align-items-center">
-          <span style={{ fontWeight: 800, fontSize: '24px' }}><Image src="/images/logo.png" width={75} style={{ marginBottom: 3 }} /></span>
+          <span style={{ fontWeight: 800, fontSize: '24px' }}><Image src="/images/flavorforgelogo.png" width={300} style={{ marginBottom: 3 }} /></span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={ComponentIDs.basicNavbarNav} />
         <Navbar.Collapse id={ComponentIDs.basicNavbarNav}>
