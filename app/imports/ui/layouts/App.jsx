@@ -14,7 +14,6 @@ import NotAuthorized from '../pages/NotAuthorized';
 import Profiles from '../pages/Profiles';
 import Projects from '../pages/Projects';
 import Interests from '../pages/Interests';
-import Home from '../pages/Home';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
 import RecipesPage from '../pages/MockRecipePage';
@@ -75,7 +74,7 @@ ProtectedRoute.propTypes = {
 };
 
 ProtectedRoute.defaultProps = {
-  children: <Home />,
+  children: <HomePage />,
 };
 
 export default App;
