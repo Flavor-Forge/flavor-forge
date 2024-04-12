@@ -31,13 +31,35 @@ const ProfilePage = () => {
               <Row>
                 <Col>
                   <h2>Personal Recipes</h2>
-                  {/* Placeholder for personal recipe cards */}
+                  <Card>
+                    <Card.Body>
+                      <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
+                      <Image src="../images/pork-guisantes.png" width={400}/>
+                      <Card.Text>
+                        Check out this recipe from FlavorForge!
+                        <br/>
+                        Rating: 3.5
+                      </Card.Text>
+                      <Button variant="primary" className="btn btn-dark">View Recipe</Button>
+                    </Card.Body>
+                  </Card>
                 </Col>
               </Row>
               <Row>
                 <Col>
                   <h2>Favorite Recipes</h2>
-                  {/* Placeholder for favorite recipe cards */}
+                  <Card>
+                    <Card.Body>
+                      <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
+                      <Image src="../images/pork-guisantes.png" width={400}/>
+                      <Card.Text>
+                        Check out this recipe from FlavorForge!
+                        <br/>
+                        Rating: 3.5
+                      </Card.Text>
+                      <Button variant="primary" className="btn btn-dark">View Recipe</Button>
+                    </Card.Body>
+                  </Card>
                 </Col>
               </Row>
             </Col>
