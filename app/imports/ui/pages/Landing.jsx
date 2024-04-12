@@ -8,7 +8,7 @@ const Landing = () => (
     <div className="landing-green-background">
       <Container className="text-center">
         <h1 style={{ paddingTop: '20px', color: 'white', fontSize: '36pt' }}>
-          Welcome to Lovin Toaster Over
+          Welcome to Flavor Forge
         </h1>
         <h3 style={{ paddingBottom: '20px', color: 'white' }}>
           Recepies and Vendors on a click of a button!
@@ -17,7 +17,7 @@ const Landing = () => (
     </div>
     <div className="landing-white-background">
       <Container className="justify-content-center text-center">
-        <h2 style={{ color: '#376551' }}>Start by making your profile....</h2>
+        <h2 style={{ color: '#921b22' }}>Start by making your profile....</h2>
         <Row md={1} lg={2}>
           <Col xs={6}>
             <Image src="/images/home-page.png" width={500} />
@@ -30,7 +30,7 @@ const Landing = () => (
     </div>
     <div className="landing-green-background">
       <Container className="justify-content-center text-center">
-        <h2 style={{ color: 'white' }}>...then look for recopies</h2>
+        <h2 style={{ color: 'white' }}>...then look for recipes</h2>
         <Row md={1} lg={2}>
           <Col xs={6}>
             <Image src="/images/landing-recepie-1.png" width={500} />
@@ -42,7 +42,7 @@ const Landing = () => (
       </Container>
     </div>
     <div className="landing-white-background text-center">
-      <h2 style={{ color: '#376551' }}>
+      <h2 style={{ color: '#921b22' }}>
         Start creating your desired dish!
       </h2>
       <Container>
