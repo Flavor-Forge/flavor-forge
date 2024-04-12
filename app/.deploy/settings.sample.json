@@ -130,5 +130,10 @@
       "picture": "https://www.hawaii.edu/its/wp-content/uploads/sites/2/2019/01/LAVAlogo-300x192-300x192.png"
     }
   ],
-  "loadAssetsFile":  false
+  "loadAssetsFile":  false,
+
+  "monti": {
+    "appId": "iEhzcaY8jocnnF65u",
+    "appSecret": "353e3085-f6c6-4cb2-b437-4df11507b73c"
+  }
 }
