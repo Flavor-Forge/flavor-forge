@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/images/spaghetticarbonara.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/mock-home-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/mock-recipe-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/profile-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/recipe-page.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/api/recipes/Recipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/recipes/Recipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Landing.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="11029" />
+    <option name="totalTimeSeconds" value="12667" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -58,9 +58,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "jason-18-student-recipe-page",
+    "git-widget-placeholder": "M1-cleanup",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/18084/Documents/GitHub/flavor-forge/app/public/images",
+    "last_opened_file_path": "C:/Users/ccyan/Documents/flavor-forge/app/public/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,6 +72,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ccyan\Documents\flavor-forge\app\public\images" />
       <recent name="C:\Users\18084\Documents\GitHub\flavor-forge\app\public\images" />
     </key>
   </component>

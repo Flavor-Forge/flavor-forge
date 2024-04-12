@@ -12,11 +12,11 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import Profiles from '../pages/Profiles';
-import Projects from '../pages/Projects';
 import Interests from '../pages/Interests';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
 import RecipesPage from '../pages/MockRecipePage';
+import HomePage from '../pages/HomePage';
 
 const defaultRecipes = [
   {
@@ -40,14 +40,14 @@ const App = () => (
     <div className="d-flex flex-column min-vh-100">
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<RecipesPage recipes={defaultRecipes} />} />
+        <Route exact path="/" element={<Landing />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
         <Route path="/interests" element={<Interests />} />
         <Route path="/profiles" element={<Profiles />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/projects" element={<RecipesPage recipes={defaultRecipes} />} />
+        <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
         <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
         <Route path="/addproject" element={<ProtectedRoute><AddProject /></ProtectedRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
