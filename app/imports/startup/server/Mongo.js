@@ -1,12 +1,14 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
+import { Random } from 'meteor/random';
 import { Projects } from '../../api/projects/Projects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
+import { Recipes } from '../../api/recipes/Recipes';
 
 /* eslint-disable no-console */
 
@@ -73,4 +75,36 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
+}
+
+function addRecipe({ name, description, ingredients, instructions, picture }) {
+  console.log(`Defining recipe: ${name}`);
+
+  // Validate recipe data against the schema (if using SimpleSchema)
+  // You can skip this step if data is assumed to be valid
+
+  // Insert the recipe into the Recipes collection
+  const createdAt = new Date();
+  const recipe = {
+    recipeId: Random.id(), // Generate a unique recipe ID
+    name,
+    description,
+    ingredients,
+    instructions,
+    picture,
+    createdAt,
+    updatedAt: createdAt,
+  };
+
+  Recipes.collection.insert(recipe);
+
+  console.log(`Recipe "${name}" added successfully!`);
+}
+
+// Usage example:
+if (Meteor.settings.defaultRecipes) {
+  console.log('Creating default recipes');
+  Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
+} else {
+  console.log('Cannot initialize default recipes! Please provide defaultRecipes in settings.');
 }
