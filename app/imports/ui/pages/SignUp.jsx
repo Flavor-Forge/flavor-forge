@@ -40,7 +40,7 @@ const SignUp = () => {
   return (
     <Container id={PageIDs.signUpPage}>
       <Row className="justify-content-center">
-        <Col xs={9}>
+        <Col xs={10}>
           <Col className="text-center">
             <h2>Register your account</h2>
           </Col>
