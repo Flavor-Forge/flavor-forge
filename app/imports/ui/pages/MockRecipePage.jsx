@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 
 const MockRecipePage = () => {
   const recipe = {
-    ownerId: '123',
+    email: '123',
     recipeId: 'spaghetti-carbonara',
     name: 'Spaghetti Carbonara',
     description: 'Classic Italian pasta dish with eggs, cheese, and pancetta.',

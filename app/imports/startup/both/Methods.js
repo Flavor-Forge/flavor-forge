@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Random } from 'meteor/random';
 import { Projects } from '../../api/projects/Projects';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
@@ -67,4 +66,3 @@ Meteor.methods({
 });
 
 export { updateProfileMethod, addProjectMethod };
-

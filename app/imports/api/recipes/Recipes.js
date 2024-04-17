@@ -6,7 +6,7 @@ class RecipesCollection {
     this.name = 'RecipesCollection';
     this.collection = new Mongo.Collection(this.name);
     this.schema = new SimpleSchema({
-      ownerId: { type: String }, // ID of the user who owns the recipe
+      email: { type: String }, // email of the user who owns the recipe
       recipeId: { type: String, index: true, unique: true }, // Unique identifier for the recipe
       name: { type: String, index: true },
       description: { type: String, optional: true },
@@ -31,8 +31,6 @@ class RecipesCollection {
           return undefined;
         },
       },
-      createdAt: { type: Date },
-      updatedAt: { type: Date },
     });
     this.collection.attachSchema(this.schema);
     this.userPublicationName = `${this.name}.publication.user`;
