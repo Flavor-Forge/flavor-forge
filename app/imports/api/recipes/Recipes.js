@@ -31,8 +31,6 @@ class RecipesCollection {
           return undefined;
         },
       },
-      createdAt: { type: Date },
-      updatedAt: { type: Date },
     });
     this.collection.attachSchema(this.schema);
     this.userPublicationName = `${this.name}.publication.user`;

@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
+<<<<<<< Updated upstream
     <option name="totalTimeSeconds" value="12667" />
+=======
+    <option name="totalTimeSeconds" value="16962" />
+>>>>>>> Stashed changes
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -81,6 +89,13 @@
       <workItem from="1712824534845" duration="271000" />
       <workItem from="1712872763422" duration="6461000" />
       <workItem from="1712907870510" duration="2570000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1712982656019" duration="2473000" />
+      <workItem from="1713304777959" duration="2833000" />
+      <workItem from="1713311004526" duration="4470000" />
+      <workItem from="1713328015426" duration="393000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
