@@ -9,7 +9,7 @@
         "Software Engineering",
         "Climate Change"
       ],
-      "projects":[
+      "projects": [
         "RadGrad",
         "Open Power Quality"
       ],
@@ -25,7 +25,7 @@
         "HPC",
         "Distributed Computing"
       ],
-      "projects":[
+      "projects": [
         "WRENCH"
       ],
       "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Henri_Casanova1.jpg",
@@ -40,7 +40,7 @@
         "Software Engineering",
         "Renewable Energy"
       ],
-      "projects":[
+      "projects": [
         "RadGrad"
       ],
       "picture": "https://github.com/cammoore.png",
@@ -55,7 +55,7 @@
         "AI",
         "Distributed Computing"
       ],
-      "projects":[
+      "projects": [
         "Open Power Quality"
       ],
       "picture": "https://anthonyjchriste.github.io/images/me.png",
@@ -69,7 +69,7 @@
       "interests": [
         "Visualization"
       ],
-      "projects":[
+      "projects": [
         "Cyber Canoe"
       ],
       "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Jason_Leigh-2014.jpg",
@@ -83,7 +83,7 @@
       "interests": [
         "Scalable IP Networks"
       ],
-      "projects":[
+      "projects": [
         "Open Power Quality"
       ],
       "picture": "https://sergey-negrashov.github.io/images/serge.jpg",
@@ -130,10 +130,6 @@
       "picture": "https://www.hawaii.edu/its/wp-content/uploads/sites/2/2019/01/LAVAlogo-300x192-300x192.png"
     }
   ],
-
-<<<<<<< Updated upstream
-  "loadAssetsFile":  false
-=======
   "defaultRecipes": [
     {
       "ownerId": "123",
@@ -141,11 +137,31 @@
       "name": "Spaghetti Carbonara",
       "description": "Classic Italian pasta dish with eggs, cheese, and pancetta.",
       "ingredients": [
-        { "name": "Spaghetti", "quantity": "200g", "price": 2.5 },
-        { "name": "Pancetta", "quantity": "100g", "price": 3.0 },
-        { "name": "Eggs", "quantity": "2", "price": 1.0 },
-        { "name": "Parmesan cheese", "quantity": "50g", "price": 2.0 },
-        { "name": "Black pepper", "quantity": "to taste", "price": 0.5 }
+        {
+          "name": "Spaghetti",
+          "quantity": "200g",
+          "price": 2.5
+        },
+        {
+          "name": "Pancetta",
+          "quantity": "100g",
+          "price": 3.0
+        },
+        {
+          "name": "Eggs",
+          "quantity": "2",
+          "price": 1.0
+        },
+        {
+          "name": "Parmesan cheese",
+          "quantity": "50g",
+          "price": 2.0
+        },
+        {
+          "name": "Black pepper",
+          "quantity": "to taste",
+          "price": 0.5
+        }
       ],
       "instructions": "1. Cook spaghetti in boiling water until al dente.",
       "picture": "images/spaghetticarbonara.jpg",
@@ -153,5 +169,4 @@
     }
   ],
   "loadAssetsFile": false
->>>>>>> Stashed changes
 }

@@ -17,6 +17,7 @@ import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
 import RecipesPage from '../pages/MockRecipePage';
 import HomePage from '../pages/HomePage';
+import RecipeListPage from '../pages/RecipeListPage';
 
 const defaultRecipes = [
   {
@@ -46,6 +47,7 @@ const App = () => (
         <Route path="/signout" element={<SignOut />} />
         <Route path="/interests" element={<Interests />} />
         <Route path="/profiles" element={<Profiles />} />
+        <Route path="/recipelistpage" element={<RecipeListPage />} />
         <Route path="/projects" element={<RecipesPage recipes={defaultRecipes} />} />
         <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
         <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />

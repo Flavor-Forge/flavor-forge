@@ -49,8 +49,6 @@ function addProject({ name, homepage, description, interests, picture }) {
   interests.map(interest => addInterest(interest));
 }
 
-<<<<<<< Updated upstream
-=======
 function addRecipe({ ownerId, recipeId, name, description, ingredients, instructions, picture, rating }) {
   console.log(`Defining recipe: ${name}`);
   Recipes.collection.insert({ ownerId, recipeId, name, description, ingredients, instructions, picture, rating });
@@ -63,7 +61,6 @@ if (Meteor.settings.defaultRecipes) {
   console.log('Cannot initialize default recipes! Please provide defaultRecipes in settings.');
 }
 
->>>>>>> Stashed changes
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
 if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles) {
@@ -71,10 +68,7 @@ if (Meteor.users.find().count() === 0) {
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
-<<<<<<< Updated upstream
-=======
     console.log('Creating the default recipes');
->>>>>>> Stashed changes
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }
@@ -94,36 +88,4 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
-}
-
-function addRecipe({ name, description, ingredients, instructions, picture }) {
-  console.log(`Defining recipe: ${name}`);
-
-  // Validate recipe data against the schema (if using SimpleSchema)
-  // You can skip this step if data is assumed to be valid
-
-  // Insert the recipe into the Recipes collection
-  const createdAt = new Date();
-  const recipe = {
-    recipeId: Random.id(), // Generate a unique recipe ID
-    name,
-    description,
-    ingredients,
-    instructions,
-    picture,
-    createdAt,
-    updatedAt: createdAt,
-  };
-
-  Recipes.collection.insert(recipe);
-
-  console.log(`Recipe "${name}" added successfully!`);
-}
-
-// Usage example:
-if (Meteor.settings.defaultRecipes) {
-  console.log('Creating default recipes');
-  Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
-} else {
-  console.log('Cannot initialize default recipes! Please provide defaultRecipes in settings.');
 }
