@@ -56,6 +56,7 @@ if (Meteor.users.find().count() === 0) {
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
+    Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }
@@ -86,6 +87,7 @@ function addRecipe({ name, description, ingredients, instructions, picture }) {
   // Insert the recipe into the Recipes collection
   const createdAt = new Date();
   const recipe = {
+    ownerId: Random.id(),
     recipeId: Random.id(), // Generate a unique recipe ID
     name,
     description,
