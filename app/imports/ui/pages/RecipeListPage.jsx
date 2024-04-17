@@ -54,7 +54,7 @@ const recipesListPage = () => {
   const recipe = _.pluck(Recipes.collection.find().fetch(), 'recipe');
   // There is a potential race condition. We might not be ready at this point.
   // Need to ensure that getProfileData doesn't throw an error on line 18.
-  const recipeData = recipe.map(recipe => getRecipeData(email));
+  const recipeData = recipe.map(email => getRecipeData(email));
   return ready ? (
     <Container id={PageIDs.profilesPage} style={pageStyle}>
       <Row xs={1} md={2} lg={4} className="g-2">

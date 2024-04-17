@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
-import { Random } from 'meteor/random';
 import { Projects } from '../../api/projects/Projects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import { Profiles } from '../../api/profiles/Profiles';
@@ -49,13 +48,19 @@ function addProject({ name, homepage, description, interests, picture }) {
   interests.map(interest => addInterest(interest));
 }
 
+function addRecipe({ name, description, ingredients, instructions, picture }) {
+  console.log(`Defining recipe: ${name}`);
+  Recipes.collection.insert({ name, description, ingredients, instructions, picture });
+}
+
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
 if (Meteor.users.find().count() === 0) {
-  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles) {
+  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultRecipes) {
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
+    console.log('Creating the default recipes');
     Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
@@ -70,43 +75,12 @@ if (Meteor.users.find().count() === 0) {
  * For more info on assets, see https://docs.meteor.com/api/assets.html
  * User count check is to make sure we don't load the file twice, which would generate errors due to duplicate info.
  */
+
 if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   const assetsFileName = 'data.json';
   console.log(`Loading data from private/${assetsFileName}`);
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
-}
-
-function addRecipe({ name, description, ingredients, instructions, picture }) {
-  console.log(`Defining recipe: ${name}`);
-
-  // Validate recipe data against the schema (if using SimpleSchema)
-  // You can skip this step if data is assumed to be valid
-
-  // Insert the recipe into the Recipes collection
-  const createdAt = new Date();
-  const recipe = {
-    ownerId: Random.id(),
-    recipeId: Random.id(), // Generate a unique recipe ID
-    name,
-    description,
-    ingredients,
-    instructions,
-    picture,
-    createdAt,
-    updatedAt: createdAt,
-  };
-
-  Recipes.collection.insert(recipe);
-
-  console.log(`Recipe "${name}" added successfully!`);
-}
-
-// Usage example:
-if (Meteor.settings.defaultRecipes) {
-  console.log('Creating default recipes');
-  Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
-} else {
-  console.log('Cannot initialize default recipes! Please provide defaultRecipes in settings.');
+  jsonData.recipes.map(recipe => addRecipe(recipe));
 }
