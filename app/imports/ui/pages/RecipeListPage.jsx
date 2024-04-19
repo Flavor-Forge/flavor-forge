@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Card, Image, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
+import { Link } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
 import { Recipes } from '../../api/recipes/Recipes';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
@@ -17,7 +19,7 @@ const MakeCard = ({ recipe }) => (
     <Card className="h-100">
       <Card.Header>
         <Image src={recipe.picture} width={285} />
-        <Card.Title>{recipe.name}</Card.Title>
+        <Card.Title><Link to="/projects">{recipe.name}</Link></Card.Title>
       </Card.Header>
       <Card.Body>
         <Card.Text>
