@@ -2,31 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 
 const MockRecipePage = () => {
-  const recipe = {
-    email: '123',
-    recipeId: 'spaghetti-carbonara',
-    name: 'Spaghetti Carbonara',
-    description: 'Classic Italian pasta dish with eggs, cheese, and pancetta.',
-    ingredients: [
-      { name: 'Spaghetti', quantity: '200g', price: 2.5 },
-      { name: 'Pancetta', quantity: '100g', price: 3.0 },
-      { name: 'Eggs', quantity: '2', price: 1.0 },
-      { name: 'Parmesan cheese', quantity: '50g', price: 2.0 },
-      { name: 'Black pepper', quantity: 'to taste', price: 0.5 },
-    ],
-    instructions:
-        [
-          `1. Cook spaghetti in boiling water until al dente.
-          2. In a separate pan, fry pancetta until crispy.
-          3. In a bowl, whisk together eggs and grated Parmesan cheese.
-          4. Drain cooked spaghetti and transfer to the pan with crispy pancetta.
-          5. Quickly add the egg mixture to the spaghetti and pancetta, stirring continuously to coat the pasta.
-          6. Season with black pepper to taste.
-          7. Serve immediately and enjoy!`,
-        ],
-    picture: 'images/spaghetticarbonara.jpg',
-    rating: 4.3,
-  };
+
 
   return (
     <Container fluid>

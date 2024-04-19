@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/imports/api/profiles/ProfilesRecipes.js" afterDir="false" />
+    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe List Page database implemented: 5 hrs 47 min">
+      <change afterPath="$PROJECT_DIR$/app/public/images/chickenalfredo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/chocolatechipcookies.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/vegetablestirfry.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.deploy/settings.sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.deploy/settings.sample.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/api/recipes/Recipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/recipes/Recipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipeListPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipeListPage.jsx" afterDir="false" />
@@ -22,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="16696" />
+    <option name="totalTimeSeconds" value="20996" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -37,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Publications" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +61,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Publications&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;RecipeListPage&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/angeport/Documents/GitHub/flavor-forge/app/imports/ui/pages&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -114,6 +116,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HomePage first draft, started on featured recipe commponent" />
     <MESSAGE value="HomePage first draft, started on featured recipe component -- Extra credit timer: 49 minutes" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomePage first draft, started on featured recipe component -- Extra credit timer: 49 minutes" />
+    <MESSAGE value="Created Recipe List Page: 4 hrs 41 min" />
+    <MESSAGE value="Added New Recipes to default database: 5 hrs 29 min" />
+    <MESSAGE value="Recipe List Page database implemented: 5 hrs 47 min" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recipe List Page database implemented: 5 hrs 47 min" />
   </component>
 </project>

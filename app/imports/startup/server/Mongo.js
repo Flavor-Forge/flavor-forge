@@ -50,28 +50,9 @@ function addProject({ name, homepage, description, interests, picture }) {
 
 function addRecipe({ email, recipeId, name, description, ingredients, instructions, picture, rating }) {
   console.log(`Defining recipe: ${name}`);
-
-  // Validate recipe data against the schema (if using SimpleSchema)
-  // You can skip this step if data is assumed to be valid
-
-  // Insert the recipe into the Recipes collection
-  const recipe = {
-    email,
-    recipeId, // Generate a unique recipe ID
-    name,
-    description,
-    ingredients,
-    instructions,
-    picture,
-    rating,
-  };
-
-  Recipes.collection.insert(recipe);
-
-  console.log(`Recipe "${name}" added successfully!`);
+  Recipes.collection.insert({ email, recipeId, name, description, ingredients, instructions, picture, rating });
 }
 
-// Usage example:
 if (Meteor.settings.defaultRecipes) {
   console.log('Creating default recipes');
   Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
@@ -86,7 +67,6 @@ if (Meteor.users.find().count() === 0) {
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
-    Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }

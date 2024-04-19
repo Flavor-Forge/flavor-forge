@@ -47,7 +47,7 @@ const RecipesListPage = () => {
       <h1>Recipes</h1>
       <Row xs={1} md={2} lg={3} className="g-4">
         {trackedRecipes.map((recipe) => (
-          <RecipeCard key={recipe._id} recipe={recipe} />
+          <RecipeCard key={recipe.recipeId} recipe={recipe} />
         ))}
       </Row>
     </Container>
