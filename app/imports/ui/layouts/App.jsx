@@ -15,25 +15,9 @@ import Profiles from '../pages/Profiles';
 import Interests from '../pages/Interests';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
-import RecipesPage from '../pages/MockRecipePage';
+import MockRecipePage from '../pages/MockRecipePage';
 import HomePage from '../pages/HomePage';
 import RecipeListPage from '../pages/RecipeListPage';
-
-const defaultRecipes = [
-  {
-    name: 'Spaghetti Carbonara',
-    description: 'Classic Italian pasta dish with eggs, cheese, and pancetta.',
-    ingredients: [
-      { name: 'Spaghetti', quantity: '200g', price: 2.5 },
-      { name: 'Pancetta', quantity: '100g', price: 3.0 },
-      { name: 'Eggs', quantity: '2', price: 1.0 },
-      { name: 'Parmesan cheese', quantity: '50g', price: 2.0 },
-      { name: 'Black pepper', quantity: 'to taste', price: 0.5 },
-    ],
-    instructions: 'Cook spaghetti until al dente. Meanwhile, fry pancetta until crispy. Whisk eggs and cheese together. Drain spaghetti and toss with egg mixture, pancetta, and pepper.',
-    picture: 'https://example.com/spaghetti_carbonara.jpg',
-  },
-];
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -48,7 +32,7 @@ const App = () => (
         <Route path="/interests" element={<Interests />} />
         <Route path="/profiles" element={<Profiles />} />
         <Route path="/recipelistpage" element={<RecipeListPage />} />
-        <Route path="/projects" element={<RecipesPage recipes={defaultRecipes} />} />
+        <Route path="/mockrecipepage" element={<MockRecipePage />} />
         <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
         <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
         <Route path="/addproject" element={<ProtectedRoute><AddProject /></ProtectedRoute>} />

@@ -19,7 +19,7 @@ const MakeCard = ({ recipe }) => (
     <Card className="h-100">
       <Card.Header>
         <Image src={recipe.picture} width={285} />
-        <Card.Title><Link to="/projects">{recipe.name}</Link></Card.Title>
+        <Card.Title><Link to="/mockrecipepage">{recipe.name}</Link></Card.Title>
       </Card.Header>
       <Card.Body>
         <Card.Text>
