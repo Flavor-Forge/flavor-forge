@@ -3,18 +3,21 @@ import { Container, Card, Image, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import { Link } from 'react-router-dom';
 import { Recipes } from '../../api/recipes/Recipes';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const RecipeCard = ({ recipe }) => (
   <Col>
     <Card className="h-100">
-      <Card.Header>
-        <Image src={recipe.picture} width={50} />
-        <Card.Title>{recipe.name}</Card.Title>
+      <Card.Header className="text-center">
+        <Image src={recipe.picture} className="mx-auto d-block" style={{ width: '50%' }} /> {/* Centering the image */}
+        <Card.Title><Link to="/recipe/:recipeId">{recipe.name}</Link></Card.Title>
       </Card.Header>
       <Card.Body>
-        <Card.Text>{recipe.description}</Card.Text>
+        <Card.Text>
+          {recipe.description}
+        </Card.Text>
       </Card.Body>
     </Card>
   </Col>
