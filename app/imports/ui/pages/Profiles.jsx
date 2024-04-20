@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Badge, Container, Card, Image, Row, Col } from 'react-bootstrap';
+import { Badge, Container, Card, Image, Row, Col, Nav } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
@@ -10,20 +10,21 @@ import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
-import { PageIDs } from '../utilities/ids';
+import { ComponentIDs, PageIDs } from '../utilities/ids';
+import { NavLink } from 'react-router-dom';
 
 /* Returns the Profile and associated Projects and Interests associated with the passed user email. */
-function getProfileData(email) {
+/*function getProfileData(email) {
   const data = Profiles.collection.findOne({ email });
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
   const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
   const projectPictures = projects.map(project => Projects.collection.findOne({ name: project })?.picture);
   // console.log(_.extend({ }, data, { interests, projects: projectPictures }));
   return _.extend({}, data, { interests, projects: projectPictures });
-}
+}*/
 
 /* Component for layout out a Profile Card. */
-const MakeCard = ({ profile }) => (
+/* const MakeCard = ({ profile }) => (
   <Col>
     <Card className="h-100">
       <Card.Header>
@@ -44,7 +45,8 @@ const MakeCard = ({ profile }) => (
     </Card>
   </Col>
 );
-
+*/
+/*
 MakeCard.propTypes = {
   profile: PropTypes.shape({
     firstName: PropTypes.string,
@@ -55,12 +57,12 @@ MakeCard.propTypes = {
     interests: PropTypes.arrayOf(PropTypes.string),
     projects: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
-};
+}; */
 
 /* Renders the Profile Collection as a set of Cards. */
-const ProfilesPage = () => {
+/*const ProfilesPage = () => {
 
-  const { ready } = useTracker(() => {
+  /*const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
     const sub2 = Meteor.subscribe(ProfilesInterests.userPublicationName);
@@ -81,6 +83,122 @@ const ProfilesPage = () => {
       </Row>
     </Container>
   ) : <LoadingSpinner />;
+   */
+
+  /*const { ready, profiles } = useTracker(() => {
+    const { ready, currentUser, profile } = useTracker(() => {
+      const sub1 = Meteor.subscribe('userData');
+      const sub2 = Meteor.subscribe('profiles');
+
+      const currentUser = Meteor.user();
+      const profile = currentUser ? Profiles.collection.findOne({ email: currentUser.email }) : null;
+
+      return {
+        ready: sub1.ready() && sub2.ready(),
+        currentUser,
+        profile,
+      };
+    }, []);
+
+    if (!ready) {
+      return <LoadingSpinner />;
+    }
+
+    if (!currentUser) {
+      return <Redirect to="/signin" />;
+    }
+
+    if (!profile) {
+      // Handle case where profile information is not found for the current user
+      return <div>No profile found for the current user.</div>;
+    }
+
+    return (
+      <Container id={PageIDs.profilesPage} style={pageStyle}>
+        <Row>
+          <Col md={6}>
+            <div>
+              <img src={profile.picture} alt={profile.firstName} width={100} />
+              <h3>{profile.firstName} {profile.lastName}</h3>
+              <p>{profile.bio}</p>
+            </div>
+          </Col>
+          <Col md={6}>
+            <div>
+              <h2>My Recipes</h2>
+              {/* Add your My Recipes card component here */ //}
+            /*</div>
+            <div>
+              <h2>Favorite Recipes</h2>
+              {/* Add your Favorite Recipes card component here */ //}
+            /*</div>
+          </Col>
+        </Row>
+      </Container>
+    );
+  };*/
+const ProfilesPage = () => {
+  const { ready, profiles } = useTracker(() => {
+    // Ensure that minimongo is populated with all collections prior to running render().
+    const sub1 = Meteor.subscribe(Profiles.userPublicationName);
+    const sub2 = Meteor.subscribe(ProfilesInterests.userPublicationName);
+    const sub3 = Meteor.subscribe(ProfilesProjects.userPublicationName);
+    const sub4 = Meteor.subscribe(Projects.userPublicationName);
+
+    const profiles = Profiles.collection.find().fetch();
+
+    return {
+      ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready(),
+      profiles
+    };
+  }, []);
+
+  return ready ? (
+    <Container id={PageIDs.profilesPage}>
+      <h1>Profile Page</h1>
+      <Row>
+        <Col md={6}>
+          <div>
+            <img src={profile.picture} alt={profile.firstName} width={100}/>
+            <h3>{profile.firstName} {profile.lastName}</h3>
+            <p>{profile.bio}</p>
+          </div>
+        </Col>
+        <Col md={6}>
+          <div>
+            <h2>My Recipes</h2>
+            <Card>
+              <Card.Body>
+                <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
+                <Image src="../images/pork-guisantes.png" width={400}/>
+                <Card.Text>
+                  Check out this recipe from FlavorForge!
+                  <br/>
+                  Rating: 3.5
+                </Card.Text>
+                <Button variant="primary" className="btn btn-dark">View Recipe</Button>
+              </Card.Body>
+            </Card>
+          </div>
+          <div>
+            <h2>Favorite Recipes</h2>
+            <Card>
+              <Card.Body>
+                <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
+                <Image src="../images/pork-guisantes.png" width={400}/>
+                <Card.Text>
+                  Check out this recipe from FlavorForge!
+                  <br/>
+                  Rating: 3.5
+                </Card.Text>
+                <Button variant="primary" className="btn btn-dark">View Recipe</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default ProfilesPage;

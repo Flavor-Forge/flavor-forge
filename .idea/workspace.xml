@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Profile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
