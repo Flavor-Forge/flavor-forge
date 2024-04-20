@@ -52,12 +52,13 @@ function addRecipe({ email, recipeId, name, description, ingredients, instructio
   console.log(`Defining recipe: ${name}`);
   Recipes.collection.insert({ email, recipeId, name, description, ingredients, instructions, picture, rating });
 }
-
-if (Meteor.settings.defaultRecipes) {
-  console.log('Creating default recipes');
-  Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
-} else {
-  console.log('Cannot initialize default recipes! Please provide defaultRecipes in settings.');
+if (Meteor.users.find().count() === 0) {
+  if (Meteor.settings.defaultRecipes) {
+    console.log('Creating default recipes');
+    Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
+  } else {
+    console.log('Cannot initialize default recipes! Please provide defaultRecipes in settings.');
+  }
 }
 
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
