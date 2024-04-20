@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
@@ -86,9 +87,6 @@
       <workItem from="1712824534845" duration="271000" />
       <workItem from="1712872763422" duration="6461000" />
       <workItem from="1712907870510" duration="2570000" />
-      <workItem from="1712982656019" duration="2473000" />
-      <workItem from="1713304777959" duration="2833000" />
-      <workItem from="1713311004526" duration="4470000" />
     </task>
     <servers />
   </component>
