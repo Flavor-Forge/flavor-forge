@@ -154,51 +154,32 @@ const ProfilesPage = () => {
   }, []);
 
   return ready ? (
-    <Container id={PageIDs.profilesPage}>
-      <h1>Profile Page</h1>
+    <Container id={PageIDs.profilesPage} style={pageStyle}>
       <Row>
-        <Col md={6}>
-          <div>
-            <img src={profile.picture} alt={profile.firstName} width={100}/>
-            <h3>{profile.firstName} {profile.lastName}</h3>
-            <p>{profile.bio}</p>
-          </div>
-        </Col>
-        <Col md={6}>
-          <div>
-            <h2>My Recipes</h2>
-            <Card>
-              <Card.Body>
-                <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
-                <Image src="../images/pork-guisantes.png" width={400}/>
-                <Card.Text>
-                  Check out this recipe from FlavorForge!
-                  <br/>
-                  Rating: 3.5
-                </Card.Text>
-                <Button variant="primary" className="btn btn-dark">View Recipe</Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <h2>Favorite Recipes</h2>
-            <Card>
-              <Card.Body>
-                <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
-                <Image src="../images/pork-guisantes.png" width={400}/>
-                <Card.Text>
-                  Check out this recipe from FlavorForge!
-                  <br/>
-                  Rating: 3.5
-                </Card.Text>
-                <Button variant="primary" className="btn btn-dark">View Recipe</Button>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
+        {profiles.map(profile => (
+          <React.Fragment key={profile._id}>
+            <Col md={6}>
+              <div>
+                <img src={profile.picture} alt={profile.firstName} width={100} />
+                <h3>{profile.firstName} {profile.lastName}</h3>
+                <p>{profile.bio}</p>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div>
+                <h2>My Recipes</h2>
+                {/* Add your My Recipes card component here */}
+              </div>
+              <div>
+                <h2>Favorite Recipes</h2>
+                {/* Add your Favorite Recipes card component here */}
+              </div>
+            </Col>
+          </React.Fragment>
+        ))}
       </Row>
     </Container>
-  );
+  ) : <LoadingSpinner />;
 };
 
 export default ProfilesPage;
