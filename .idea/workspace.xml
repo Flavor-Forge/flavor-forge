@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe List Page database implemented: 5 hrs 47 min">
-      <change afterPath="$PROJECT_DIR$/app/public/images/chickenalfredo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/images/chocolatechipcookies.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/images/vegetablestirfry.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.deploy/settings.sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.deploy/settings.sample.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipeListPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipeListPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
-    </list>
+    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe List Page database implemented: 5 hrs 47 min" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="20996" />
+    <option name="totalTimeSeconds" value="21371" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -96,6 +83,7 @@
       <workItem from="1712982656019" duration="2473000" />
       <workItem from="1713304777959" duration="2833000" />
       <workItem from="1713311004526" duration="4470000" />
+      <workItem from="1713587711572" duration="373000" />
     </task>
     <servers />
   </component>
