@@ -182,7 +182,7 @@ MakeCard.propTypes = {
   ) : <LoadingSpinner />;
 };
 */
-const ProfilesPage = () => {
+/*const ProfilesPage = () => {
   const { ready, profiles } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
@@ -223,5 +223,49 @@ const ProfilesPage = () => {
     </Container>
   ) : <LoadingSpinner />;
 };
+*/
 
+const ProfilesPage = () => {
+  const { ready, profile } = useTracker(() => {
+    const sub1 = Meteor.subscribe(Profiles.userPublicationName);
+    const profile = Profiles.collection.findOne({ userId: Meteor.userId() });
+
+    return {
+      ready: sub1.ready(),
+      profile
+    };
+  }, []);
+
+  return ready ? (
+    <Container id={PageIDs.profilesPage}>
+      {profile ? (
+        <Row>
+          <Col md={6}>
+            <div>
+              <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={100} />
+              <h3>{profile.firstName} {profile.lastName}</h3>
+              <p>{profile.bio}</p>
+            </div>
+          </Col>
+          <Col md={6}>
+            <div>
+              <h2>My Recipes</h2>
+              {/* Add your My Recipes component here */}
+            </div>
+            <div>
+              <h2>Favorite Recipes</h2>
+              {/* Add your Favorite Recipes component here */}
+            </div>
+          </Col>
+        </Row>
+      ) : (
+        <Row>
+          <Col md={12}>
+            <p>No profile found</p>
+          </Col>
+        </Row>
+      )}
+    </Container>
+  ) : <LoadingSpinner />;
+};
 export default ProfilesPage;
