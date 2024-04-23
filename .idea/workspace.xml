@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Landing.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipeListPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipeListPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/images/mock-home-page.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/images/mock-home-page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/images/mock-recipe-page.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/images/mock-recipe-page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/images/recipe-page.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/images/recipe-page.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="28226" />
+    <option name="totalTimeSeconds" value="32460" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -53,7 +60,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "46-fixing-refresh-issue-and-image-issue-in-mock-recipe-page",
+    "git-widget-placeholder": "jason-48-revamp-landing-page",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/angeport/Documents/GitHub/flavor-forge/app/imports/ui/pages",
     "node.js.detected.package.eslint": "true",

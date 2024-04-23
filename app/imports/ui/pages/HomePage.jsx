@@ -8,7 +8,7 @@ const HomePage = () => (
     <div className="landing-green-background">
       <Container>
         <Row>
-          <Container className="text-center" >
+          <Container className="text-center">
             <h2>Welcome To Flavor Forge</h2>
             <Image src="../images/kcc-culinary.png" width={1000} className="rounded" />
           </Container>
@@ -19,7 +19,7 @@ const HomePage = () => (
               <h2>What is Flavor Forge?</h2>
             </Container>
             <Container>
-              <p>Forge is an online cookbook designed to help you meal plan on a budget! Flavor Forge is made by college students for college students. Most people in college are either not employed or working part-time. It can be difficult
+              <p>Flavor Forge is an online cookbook designed to help you meal plan on a budget! Flavor Forge is made by college students for college students. Most people in college are either not employed or working part-time. It can be difficult
                 to get the proper nutrition with a limited income and ingredients. Flavor Forge is here to help you find the ingredients you need for your recipes and the best places to buy them.
               </p>
             </Container>
