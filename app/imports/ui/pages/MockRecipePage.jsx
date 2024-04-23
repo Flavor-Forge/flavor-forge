@@ -18,8 +18,7 @@ const MockRecipePage = () => {
         } else {
           setError('Recipe not found');
         }
-      } catch (error) {
-        console.error('Error fetching recipe:', error);
+      } catch (fetchError) { // Renamed 'error' to 'fetchError' here
         setError('Error fetching recipe');
       } finally {
         setLoading(false);
@@ -33,49 +32,51 @@ const MockRecipePage = () => {
     };
   }, [recipeId]);
 
-  return (
-      <Container fluid>
-        {loading ? (
-            <p>Loading...</p>
-        ) : error ? (
-            <p>{error}</p>
-        ) : selectedRecipe ? (
-            <>
-              <h1 className="text-center mt-2">{selectedRecipe.name}</h1>
-              <h3 className="text-center mb-4">Rating: {selectedRecipe.rating}/5</h3>
-              <Row>
-                <Col md={6}>
-                  <Card className="shadow-sm">
-                    <Card.Body>
-                      <h5>Description</h5>
-                      <Card.Text>{selectedRecipe.description}</Card.Text>
-                      <h5>Ingredients</h5>
-                      <ListGroup variant="flush">
-                        {selectedRecipe.ingredients.map((ingredient, idx) => (
-                            <ListGroup.Item key={idx}>
-                              {ingredient.quantity} {ingredient.name} - ${ingredient.price.toFixed(2)}
-                            </ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                      <h5>Instructions</h5>
-                      <Card.Text className="mt-3">{selectedRecipe.instructions}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col md={6} className="d-flex justify-content-center align-items-center">
-                  <div style={{ maxWidth: '100%', maxHeight: '400px' }}>
-                    <img
-                        src={selectedRecipe.picture}
-                        alt={selectedRecipe.name}
-                        style={{ width: '100%', height: '500px', objectFit: 'cover' }}
-                    />
-                  </div>
-                </Col>
-              </Row>
-            </>
-        ) : null}
-      </Container>
-  );
+  // Conditional rendering using if-else statements
+  let content = null;
+  if (loading) {
+    content = <p>Loading...</p>;
+  } else if (error) {
+    content = <p>{error}</p>;
+  } else if (selectedRecipe) {
+    content = (
+      <>
+        <h1 className="text-center mt-2">{selectedRecipe.name}</h1>
+        <h3 className="text-center mb-4">Rating: {selectedRecipe.rating}/5</h3>
+        <Row>
+          <Col md={6}>
+            <Card className="shadow-sm">
+              <Card.Body>
+                <h5>Description</h5>
+                <Card.Text>{selectedRecipe.description}</Card.Text>
+                <h5>Ingredients</h5>
+                <ListGroup variant="flush">
+                  {selectedRecipe.ingredients.map((ingredient, idx) => (
+                    <ListGroup.Item key={idx}>
+                      {ingredient.quantity} {ingredient.name} - ${ingredient.price.toFixed(2)}
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+                <h5>Instructions</h5>
+                <Card.Text className="mt-3">{selectedRecipe.instructions}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={6} className="d-flex justify-content-center align-items-center">
+            <div style={{ maxWidth: '100%', maxHeight: '400px' }}>
+              <img
+                src={`../${selectedRecipe.picture}`}
+                alt={selectedRecipe.name}
+                style={{ width: '100%', height: '500px', objectFit: 'cover' }}
+              />
+            </div>
+          </Col>
+        </Row>
+      </>
+    );
+  }
+
+  return <Container fluid>{content}</Container>;
 };
 
 export default MockRecipePage;

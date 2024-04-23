@@ -15,19 +15,19 @@ function getRecipeData(recipeName) {
 }
 
 const MakeCard = ({ recipe }) => (
-    <Col>
-      <Card className="h-100">
-        <Card.Header>
-          <Image src={recipe.picture} width={285} />
-          <Card.Title>
-            <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
-          </Card.Title>
-        </Card.Header>
-        <Card.Body>
-          <Card.Text>{recipe.description}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+  <Col>
+    <Card className="h-100">
+      <Card.Header>
+        <Image src={recipe.picture} width={285} />
+        <Card.Title>
+          <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
+        </Card.Title>
+      </Card.Header>
+      <Card.Body>
+        <Card.Text>{recipe.description}</Card.Text>
+      </Card.Body>
+    </Card>
+  </Col>
 );
 
 MakeCard.propTypes = {
@@ -51,11 +51,11 @@ const RecipesListPage = () => {
   const recipeData = recipes.map(recipe => getRecipeData(recipe.name));
 
   return ready ? (
-      <Container id={PageIDs.recipesPage} style={pageStyle}>
-        <Row xs={1} md={2} lg={4} className="g-2">
-          {recipeData.map((recipe, index) => <MakeCard key={index} recipe={recipe} />)}
-        </Row>
-      </Container>
+    <Container id={PageIDs.recipesPage} style={pageStyle}>
+      <Row xs={1} md={2} lg={4} className="g-2">
+        {recipeData.map((recipe, index) => <MakeCard key={index} recipe={recipe} />)}
+      </Row>
+    </Container>
   ) : <LoadingSpinner />;
 };
 
