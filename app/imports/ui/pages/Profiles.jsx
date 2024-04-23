@@ -137,7 +137,7 @@ MakeCard.propTypes = {
       </Container>
     );
   };*/
-const ProfilesPage = () => {
+/*const ProfilesPage = () => {
   const { ready, profiles } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
@@ -168,11 +168,53 @@ const ProfilesPage = () => {
             <Col md={6}>
               <div>
                 <h2>My Recipes</h2>
-                {/* Add your My Recipes card component here */}
+
               </div>
               <div>
                 <h2>Favorite Recipes</h2>
-                {/* Add your Favorite Recipes card component here */}
+
+              </div>
+            </Col>
+          </React.Fragment>
+        ))}
+      </Row>
+    </Container>
+  ) : <LoadingSpinner />;
+};
+*/
+const ProfilesPage = () => {
+  const { ready, profiles } = useTracker(() => {
+    // Ensure that minimongo is populated with all collections prior to running render().
+    const sub1 = Meteor.subscribe(Profiles.userPublicationName);
+
+    const profiles = Profiles.collection.find().fetch();
+
+    return {
+      ready: sub1.ready(),
+      profiles
+    };
+  }, []);
+
+  return ready ? (
+    <Container id={PageIDs.profilesPage} style={pageStyle}>
+      <Row>
+        {profiles.map(profile => (
+          <React.Fragment key={profile._id}>
+            <Col md={6}>
+              <div>
+                <img src={profile.picture} alt={profile.firstName} width={100} />
+                <h3>{profile.firstName} {profile.lastName}</h3>
+                <p>{profile.bio}</p>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div>
+                <h2>My Recipes</h2>
+
+              </div>
+              <div>
+                <h2>Favorite Recipes</h2>
+
               </div>
             </Col>
           </React.Fragment>
