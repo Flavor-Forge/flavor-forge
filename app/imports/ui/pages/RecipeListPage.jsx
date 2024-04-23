@@ -18,7 +18,7 @@ const MakeCard = ({ recipe }) => (
   <Col>
     <Card className="h-100">
       <Card.Header>
-        <Image src={recipe.picture} width={285} />
+        <Image src={recipe.picture} width={230} />
         <Card.Title>
           <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
         </Card.Title>
