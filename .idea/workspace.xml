@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
+    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min">
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/signup.page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/signup.page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/tests.testcafe.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/tests.testcafe.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="37992" />
+    <option name="totalTimeSeconds" value="38102" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
