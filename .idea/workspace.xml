@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min">
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/signup.page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/signup.page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/tests/tests.testcafe.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/tests.testcafe.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="38102" />
+    <option name="totalTimeSeconds" value="38498" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -39,7 +37,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7

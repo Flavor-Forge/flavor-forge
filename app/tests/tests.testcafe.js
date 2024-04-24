@@ -9,6 +9,7 @@ import { signupPage } from './signup.page';
 // import { addProjectPage } from './addproject.page';
 // import { filterPage } from './filter.page';
 import { navBar } from './navbar.component';
+import { recipesListPage } from './recipeslist.page';
 
 /* global fixture:false, test:false */
 
@@ -57,11 +58,11 @@ test('Test that signin and signout work', async (testController) => {
 //  await interestsPage.hasDefaultInterests(testController);
 // });
 
-/* test('Test that recipe list page displays', async (testController) => {
+test('Test that recipe list page displays', async (testController) => {
   await navBar.gotoRecipesListPage(testController);
-  await projectsPage.isDisplayed(testController);
-  await projectsPage.hasDefaultProjects(testController);
-}); */
+  await recipesListPage.isDisplayed(testController);
+  await recipesListPage.hasDefaultRecipes(testController);
+});
 
 /* test('Test that home page display and profile modification works', async (testController) => {
   await navBar.ensureLogout(testController);
