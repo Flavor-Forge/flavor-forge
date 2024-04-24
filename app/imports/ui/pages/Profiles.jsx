@@ -4,7 +4,7 @@ import { Container, Row, Col} from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Profiles } from '../../api/profiles/Profiles';
 import LoadingSpinner from '../components/LoadingSpinner';
-import {  PageIDs } from '../utilities/ids';
+import { PageIDs } from '../utilities/ids';
 
 const ProfilesPage = () => {
   const { ready, profile } = useTracker(() => {

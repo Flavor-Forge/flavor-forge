@@ -77,7 +77,8 @@
         "Cyber Canoe"
       ],
       "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Jason_Leigh-2014.jpg",
-      "email": "leighj@hawaii.edu"
+      "email": "leighj@hawaii.edu",
+      "role": "admin"
     },
     {
       "firstName": "Serge",
