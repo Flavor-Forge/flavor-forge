@@ -15,7 +15,7 @@ import { Projects } from '../../api/projects/Projects';
 import { updateProfileMethod } from '../../startup/both/Methods';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
-import { ComponentIDs, PageIDs } from '../utilities/ids';
+import { ComponentIDs } from '../utilities/ids';
 
 /* Create a schema to specify the structure of the data to appear in the form. */
 const makeSchema = (allInterests, allProjects) => new SimpleSchema({
@@ -68,7 +68,7 @@ const Home = () => {
   const profile = Profiles.collection.findOne({ email });
   const model = _.extend({}, profile, { interests, projects });
   return ready ? (
-    <Container id={PageIDs.homePage} className="justify-content-center" style={pageStyle}>
+    <Container className="justify-content-center" style={pageStyle}>
       <Col>
         <Col className="justify-content-center text-center"><h2>Your Profile</h2></Col>
         <AutoForm model={model} schema={bridge} onSubmit={data => submit(data)}>
