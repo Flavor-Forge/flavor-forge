@@ -27,33 +27,29 @@ const ProfilesPage = () => {
 
   return ready ? (
     <Container id={PageIDs.profilesPage}>
-      {profile ? (
-        <Row>
-          <Col md={5}>
+      <Row>
+        {profile && (
+          <React.Fragment>
+            <Col md={6}>
               <div>
-                <img src={profile.picture} alt={profile.firstName} width={200} />
+                <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={200} />
                 <h3>{profile.firstName} {profile.lastName}</h3>
                 <p2>{profile.bio}</p2>
               </div>
             </Col>
-            <Col md={5}>
+            <Col md={6}>
               <div>
-                <h3>My Recipes</h3>
-
+                <h2>My Recipes</h2>
+                
               </div>
               <div>
-                <h3>Favorite Recipes</h3>
+                <h2>Favorite Recipes</h2>
 
               </div>
             </Col>
-        </Row>
-      ) : (
-        <Row>
-          <Col md={12}>
-            <p>No profile found</p>
-          </Col>
-        </Row>
-      )}
+          </React.Fragment>
+        )}
+      </Row>
     </Container>
   ) : <LoadingSpinner />;
 };
