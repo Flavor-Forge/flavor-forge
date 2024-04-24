@@ -28,11 +28,16 @@ const ProfilesPage = () => {
   return ready ? (
     <Container id={PageIDs.profilesPage}>
       <Row>
+        <Col md={12} className="text-center"> 
+          <h1>Profile Page</h1>
+        </Col>
+      </Row>
+      <Row>
         {profile && (
           <React.Fragment>
             <Col md={6}>
               <div>
-                <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={200} />
+                <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={200}/>
                 <h3>{profile.firstName} {profile.lastName}</h3>
                 <p2>{profile.bio}</p2>
               </div>
@@ -40,7 +45,7 @@ const ProfilesPage = () => {
             <Col md={6}>
               <div>
                 <h2>My Recipes</h2>
-                
+
               </div>
               <div>
                 <h2>Favorite Recipes</h2>
