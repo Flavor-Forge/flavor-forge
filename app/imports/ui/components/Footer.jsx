@@ -3,9 +3,9 @@ import { Col, Container } from 'react-bootstrap';
 
 /* The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 const Footer = () => (
-  <footer className="footer mt-auto py-3" style={{ backgroundColor: 'maroon' }}>
+  <footer className="footer mt-auto py-3" style={{ backgroundColor: 'white' }}>
     <Container>
-      <Col className="text-center" style={{ color: 'white' }}>
+      <Col className="text-center" style={{ color: 'black' }}>
         The Lovin Toaster Oven Project
         {' '}
         <br />
@@ -15,7 +15,7 @@ const Footer = () => (
         {' '}
         <br />
         <a
-          style={{ color: 'white', textDecoration: 'none' }}
+          style={{ color: 'blue', textDecoration: 'none' }}
           href="https://flavor-forge.github.io/"
           onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
           onMouseLeave={(e) => e.target.style.textDecoration = 'none'}
