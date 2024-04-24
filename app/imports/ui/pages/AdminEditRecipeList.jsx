@@ -1,41 +1,60 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import React from 'react';
+import swal from 'sweetalert';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { useTracker } from 'meteor/react-meteor-data';
+import LoadingSpinner from '../components/LoadingSpinner';
+import { Recipes } from '../../api/recipe/Recipes';
+// You will need to create or have a schema for Recipes
+import RecipeSchema from '../../api/recipe/RecipesSchema';
+
+const bridge = new SimpleSchema2Bridge(RecipeSchema);
 
 const AdminEditRecipeList = () => {
-  const [recipes, setRecipes] = useState([]);
+  // useTracker connects Meteor data to React components.
+  const { recipes, ready } = useTracker(() => {
+    // Subscribe to recipes publication
+    const subscription = Meteor.subscribe(Recipes.adminPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription.ready();
+    // Get the recipes
+    const allRecipes = Recipes.collection.find({}).fetch();
+    return {
+      recipes: allRecipes,
+      ready: rdy,
+    };
+  });
 
-  useEffect(() => {
-    // TODO: Fetch the recipes from the database and set them in state
-  }, []);
-
-  const handleEdit = (recipeId) => {
-    // TODO: Implement the logic to edit a recipe
-    console.log('Editing recipe with id:', recipeId);
+  // Handler for submitting updates to a recipe
+  const submit = (data, recipeId) => {
+    // Here you would include all the fields you expect to update
+    const { title, ingredients, method } = data;
+    Recipes.collection.update(recipeId, { $set: { title, ingredients, method } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Recipe updated successfully', 'success')));
   };
 
-  const handleDelete = (recipeId) => {
-    // TODO: Implement the logic to delete a recipe
-    console.log('Deleting recipe with id:', recipeId);
-  };
-
-  return (
-      <div>
-        <h2>Admin Edit Recipe List</h2>
-        <div className="recipe-list">
-          {recipes.map((recipe) => (
-              <Card key={recipe._id} style={{ width: '18rem', marginBottom: '10px' }}>
-                <Card.Body>
-                  {/* The Card.Title and Card.Text will depend on what details you want to show for each recipe */}
-                  <Card.Title>{recipe.name}</Card.Title>
-                  {/* More recipe details here */}
-                  <Button variant="primary" onClick={() => handleEdit(recipe._id)}>Edit</Button>
-                  <Button variant="danger" onClick={() => handleDelete(recipe._id)}>Delete</Button>
-                </Card.Body>
-              </Card>
+  return ready ? (
+      <Container className="py-3">
+        <Row className="justify-content-center">
+          {recipes.map(recipe => (
+              <Col xs={12} md={6} lg={4} key={recipe._id}>
+                <Card className="mb-3">
+                  <Card.Body>
+                    <AutoForm schema={bridge} onSubmit={data => submit(data, recipe._id)} model={recipe}>
+                      <TextField name="title" />
+                      <LongTextField name="ingredients" />
+                      <LongTextField name="method" />
+                      <SubmitField value="Update Recipe" />
+                      <Button variant="danger" onClick={() => {/* Add delete logic here */}}>Delete</Button>
+                      <ErrorsField />
+                    </AutoForm>
+                  </Card.Body>
+                </Card>
+              </Col>
           ))}
-        </div>
-      </div>
-  );
+        </Row>
+      </Container>
+  ) : <LoadingSpinner />;
 };
 
 export default AdminEditRecipeList;
