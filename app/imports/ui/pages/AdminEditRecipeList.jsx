@@ -2,59 +2,81 @@ import React from 'react';
 import swal from 'sweetalert';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { AutoForm, ErrorsField, SubmitField, TextField, LongTextField } from 'uniforms-bootstrap5';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Recipes } from '../../api/recipe/Recipes';
-// You will need to create or have a schema for Recipes
+// Assume RecipeSchema is your schema from the Recipes collection
 import RecipeSchema from '../../api/recipe/RecipesSchema';
 
 const bridge = new SimpleSchema2Bridge(RecipeSchema);
 
 const AdminEditRecipeList = () => {
-  // useTracker connects Meteor data to React components.
   const { recipes, ready } = useTracker(() => {
-    // Subscribe to recipes publication
-    const subscription = Meteor.subscribe(Recipes.adminPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the recipes
-    const allRecipes = Recipes.collection.find({}).fetch();
+    const subscription = Meteor.subscribe('Recipes.admin');
     return {
-      recipes: allRecipes,
-      ready: rdy,
+      recipes: Recipes.find({}).fetch(),
+      ready: subscription.ready(),
     };
-  });
+  }, []);
 
-  // Handler for submitting updates to a recipe
-  const submit = (data, recipeId) => {
-    // Here you would include all the fields you expect to update
-    const { title, ingredients, method } = data;
-    Recipes.collection.update(recipeId, { $set: { title, ingredients, method } }, (error) => (error ?
-        swal('Error', error.message, 'error') :
-        swal('Success', 'Recipe updated successfully', 'success')));
+  const submit = (recipeId, data) => {
+    // Here, 'data' contains the updated recipe fields
+    Recipes.update(recipeId, { $set: data }, (error) => {
+      if (error) {
+        swal('Error', error.message, 'error');
+      } else {
+        swal('Success', 'Recipe updated successfully', 'success');
+      }
+    });
   };
 
-  return ready ? (
+  const remove = (recipeId) => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this recipe!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        Recipes.remove(recipeId);
+        swal("Poof! Your recipe has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your recipe is safe!");
+      }
+    });
+  };
+
+  return (
       <Container className="py-3">
         <Row className="justify-content-center">
-          {recipes.map(recipe => (
-              <Col xs={12} md={6} lg={4} key={recipe._id}>
-                <Card className="mb-3">
-                  <Card.Body>
-                    <AutoForm schema={bridge} onSubmit={data => submit(data, recipe._id)} model={recipe}>
-                      <TextField name="title" />
-                      <LongTextField name="ingredients" />
-                      <LongTextField name="method" />
-                      <SubmitField value="Update Recipe" />
-                      <Button variant="danger" onClick={() => {/* Add delete logic here */}}>Delete</Button>
-                      <ErrorsField />
-                    </AutoForm>
-                  </Card.Body>
-                </Card>
-              </Col>
-          ))}
+          {ready ? (
+              recipes.map((recipe) => (
+                  <Col xs={12} md={6} lg={4} key={recipe._id}>
+                    <Card className="mb-3">
+                      <Card.Body>
+                        <AutoForm schema={bridge} model={recipe} onSubmit={(data) => submit(recipe._id, data)}>
+                          <TextField name="title" />
+                          <LongTextField name="description" />
+                          <LongTextField name="ingredients" />
+                          {/* Add other fields as necessary */}
+                          <SubmitField value="Update" />
+                          <Button variant="danger" onClick={() => remove(recipe._id)}>Delete</Button>
+                          <ErrorsField />
+                        </AutoForm>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+              ))
+          ) : (
+              <LoadingSpinner />
+          )}
         </Row>
       </Container>
-  ) : <LoadingSpinner />;
+  );
 };
 
 export default AdminEditRecipeList;
