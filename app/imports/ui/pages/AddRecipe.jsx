@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
+import { HTTP } from 'meteor/http';
 import { Recipes } from '../../api/recipes/Recipes';
 
 const generateRecipeId = () => {
@@ -51,10 +52,33 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 const AddRecipe = () => {
 
   // On submit, insert the data.
-  const submit = (data, formRef) => {
-    const { name, description, ingredients, instructions, picture, rating } = data;
+  // Function to handle file upload
+  const uploadFile = (file, callback) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    HTTP.post('/upload', {
+      content: formData,
+    }, (error, response) => {
+      if (error) {
+        console.error('File upload error:', error);
+        callback(error, null);
+      } else if (response.statusCode === 200) {
+        callback(null, response.data.url);
+      } else {
+        console.error('File upload failed. Status code:', response.statusCode);
+        callback(new Error('File upload failed'), null);
+      }
+    });
+  };
+
+  const submit = async (data, formRef) => {
+    const { name, description, ingredients, instructions, rating } = data;
     const email = Meteor.user().emails[0].address; // Get the email of the logged-in user
     const recipeId = generateRecipeId(); // Generate a unique recipeId (you can define this function)
+
+    const picture = await uploadFile(data.picture); // Assuming you have a function to handle file upload
+
     Recipes.collection.insert(
       { email, recipeId, name, description, ingredients, instructions, picture, rating },
       (error) => {
@@ -83,7 +107,8 @@ const AddRecipe = () => {
                 <TextField name="ingredients.0.quantity" label="Quantity" />
                 <NumField name="ingredients.0.price" label="Price" decimal />
                 <TextField name="instructions" />
-                <TextField name="picture" />
+                {/* Replace TextField with file input field */}
+                <input type="file" name="picture" accept="image/png, image/jpeg, image/jpg" />
                 <NumField name="rating" decimal />
                 <SubmitField value="Submit" />
                 <ErrorsField />

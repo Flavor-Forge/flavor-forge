@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.meteor/packages" beforeDir="false" afterPath="$PROJECT_DIR$/app/.meteor/packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.meteor/versions" beforeDir="false" afterPath="$PROJECT_DIR$/app/.meteor/versions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/AddProject.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/AddProject.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/AddRecipe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/AddRecipe.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="30629" />
+    <option name="totalTimeSeconds" value="32727" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -89,6 +89,7 @@
       <workItem from="1713690405148" duration="1344000" />
       <workItem from="1713725273469" duration="2357000" />
       <workItem from="1713856755427" duration="1103000" />
+      <workItem from="1713920936283" duration="2095000" />
     </task>
     <servers />
   </component>
