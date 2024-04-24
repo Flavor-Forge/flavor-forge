@@ -7,13 +7,13 @@ const HomePage = () => (
   <div id={PageIDs.homePage}>
     <div className="landing-green-background">
       <Container>
-        <Row>
+        <Row className="mb-5">
           <Container className="text-center">
             <h2>Welcome To Flavor Forge</h2>
             <Image src="../images/kcc-culinary.png" width={1000} className="rounded" />
           </Container>
         </Row>
-        <Row>
+        <Row className="mb-5">
           <Col>
             <Container className="text-center">
               <h2>What is Flavor Forge?</h2>
@@ -27,7 +27,7 @@ const HomePage = () => (
           <Col>
             <Container className="text-center">
               <h2>Featured Recipe</h2>
-              <Card>
+              <Card className="mb-5">
                 <Card.Body>
                   <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
                   <Image src="../images/pork-guisantes.png" width={400} />
