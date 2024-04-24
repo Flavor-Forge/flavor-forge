@@ -43,6 +43,7 @@ export const PageIDs = {
   notFoundPage: 'notFoundPage',
   profilesPage: 'profilesPage',
   projectsPage: 'projectsPage',
+  recipesListPage: 'recipesListPage',
   signInPage: 'signInPage',
   signOutPage: 'signOutPage',
   signUpPage: 'signUpPage',

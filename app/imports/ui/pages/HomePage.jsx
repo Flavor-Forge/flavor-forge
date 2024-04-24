@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Col, Row, Image, Card, Button } from 'react-bootstrap';
+import { Container, Col, Row, Image } from 'react-bootstrap';
 import { PageIDs } from '../utilities/ids';
+import FeaturedRecipe from '../components/FeaturedRecipe';
 
 /* Renders the Home Page: what appears after the user logs in. */
 const HomePage = () => (
@@ -25,21 +26,7 @@ const HomePage = () => (
             </Container>
           </Col>
           <Col>
-            <Container className="text-center">
-              <h2>Featured Recipe</h2>
-              <Card className="mb-5">
-                <Card.Body>
-                  <Card.Title className="text-center">Pork or Chicken Guisantes</Card.Title>
-                  <Image src="../images/pork-guisantes.png" width={400} />
-                  <Card.Text>
-                    Check out this recipe from FlavorForge!
-                    <br />
-                    Rating: 3.5
-                  </Card.Text>
-                  <Button variant="primary" className="btn btn-dark">View Recipe</Button>
-                </Card.Body>
-              </Card>
-            </Container>
+            <FeaturedRecipe />
           </Col>
         </Row>
       </Container>
