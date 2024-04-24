@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/imports/ui/pages/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Profile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,20 +30,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#22-Student-Profile",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lol76/OneDrive/Dokumenty/GitHub/flavor-forge/app/imports/ui/pages",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#22-Student-Profile&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lol76/OneDrive/Dokumenty/GitHub/flavor-forge/app/imports/ui/pages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lol76\OneDrive\Dokumenty\GitHub\flavor-forge\app\imports\ui\pages" />
