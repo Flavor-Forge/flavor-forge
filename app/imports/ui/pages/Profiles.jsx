@@ -29,22 +29,22 @@ const ProfilesPage = () => {
         {profile && (
           <React.Fragment>
             <Col md={6}>
-              <div>
+              <div class="m-3">
                 <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={200}/>
               </div>
-              <div>
+              <div class="pt-4">
                 <h2>{profile.firstName} {profile.lastName}</h2>
               </div>
-              <div class={}>
+              <div class="pt-4">
                 <p3>{profile.bio}</p3>
               </div>
             </Col>
             <Col md={6}>
-              <div>
+              <div class="pt-2">
                 <h2>My Recipes</h2>
 
               </div>
-              <div>
+              <div class="pt-4">
                 <h2>Favorite Recipes</h2>
 
               </div>
