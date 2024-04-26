@@ -30,13 +30,13 @@ const ProfilesPage = () => {
           <React.Fragment>
             <Col md={6}>
               <div class="m-3">
-                <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={200}/>
+                <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={300}/>
               </div>
-              <div class="pt-4">
+              <div class="pt-4 m-5">
                 <h2>{profile.firstName} {profile.lastName}</h2>
               </div>
               <div class="pt-4">
-                <p3>{profile.bio}</p3>
+                <p>{profile.bio}</p>
               </div>
             </Col>
             <Col md={6}>
