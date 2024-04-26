@@ -21,7 +21,7 @@ const ProfilesPage = () => {
   return ready ? (
     <Container id={PageIDs.profilesPage}>
       <Row>
-        <Col md={12} className="text-center">
+        <Col md={12} className="text-center text-danger">
           <h1>Profile Page</h1>
         </Col>
       </Row>
@@ -31,8 +31,12 @@ const ProfilesPage = () => {
             <Col md={6}>
               <div>
                 <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={200}/>
-                <h3>{profile.firstName} {profile.lastName}</h3>
-                <p2>{profile.bio}</p2>
+              </div>
+              <div>
+                <h2>{profile.firstName} {profile.lastName}</h2>
+              </div>
+              <div class={}>
+                <p3>{profile.bio}</p3>
               </div>
             </Col>
             <Col md={6}>
