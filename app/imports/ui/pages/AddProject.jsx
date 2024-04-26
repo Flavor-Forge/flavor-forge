@@ -1,7 +1,8 @@
+// AddRecipe.jsx
+
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, NumField, SubmitField, TextField } from 'uniforms-bootstrap5';
-import { FileField } from 'uniforms-bootstrap5'; // Ensure FileField is imported separately
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -50,12 +51,33 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 /* Renders the AddRecipe page for adding a recipe. */
 const AddRecipe = () => {
+  // Function to handle file upload
+  const uploadFile = (file) => new Promise((resolve, reject) => {
+    // Simulating file upload logic with setTimeout
+    setTimeout(() => {
+      // Check if file is valid
+      if (!file) {
+        reject(new Error('No file provided'));
+        return;
+      }
+
+      // Simulate successful file upload
+      const uploadedUrl = `https://example.com/uploads/${file.name}`;
+      resolve(uploadedUrl);
+    }, 1000); // Simulate 1 second delay for file upload process
+  });
 
   // On submit, insert the data.
-  const submit = (data, formRef) => {
-    const { name, description, ingredients, instructions, picture, rating } = data;
+  const submit = async (data, formRef) => {
+    const { name, description, ingredients, instructions, rating, pictureFile } = data;
     const email = Meteor.user().emails[0].address; // Get the email of the logged-in user
     const recipeId = generateRecipeId(); // Generate a unique recipeId (you can define this function)
+
+    let picture = null;
+    if (pictureFile) {
+      picture = uploadFile(pictureFile); // Upload the picture file and get the URL
+    }
+
     Recipes.collection.insert(
       { email, recipeId, name, description, ingredients, instructions, picture, rating },
       (error) => {
@@ -84,7 +106,7 @@ const AddRecipe = () => {
                 <TextField name="ingredients.0.quantity" label="Quantity" />
                 <NumField name="ingredients.0.price" label="Price" decimal />
                 <TextField name="instructions" />
-                <FileField name="picture" />
+                <input type="file" name="pictureFile" accept="image/png, image/jpeg, image/jpg" />
                 <NumField name="rating" decimal />
                 <SubmitField value="Submit" />
                 <ErrorsField />
