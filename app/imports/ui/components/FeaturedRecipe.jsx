@@ -1,23 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Meteor } from 'meteor/meteor';
 import { Container, Card, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Recipes } from '../api/recipes'; // Assuming you have a collection called Recipes
+import { Recipes } from '../../api/recipes/Recipes';
 
 const FeaturedRecipe = () => {
   const [randomRecipe, setRandomRecipe] = useState(null);
 
-  // Fetch recipes with rating 3.5 and above
+  // Subscribe to 'recipes' publication and fetch recipes with rating >= 3.5
   const recipes = useTracker(() => {
-    return Recipes.find({ rating: { $gte: 3.5 } }).fetch();
+    const subscription = Meteor.subscribe(Recipes.userPublicationName);
+    if (subscription.ready()) {
+      const fetchedRecipes = Recipes.collection.find({ rating: { $gte: 3.5 } }).fetch();
+      console.log(fetchedRecipes);
+      return fetchedRecipes;
+    }
+    return [];
   });
 
-  useEffect(() => {
+  const handleShowRandomRecipe = () => {
+    // Select a random recipe from the fetched recipes
     if (recipes.length > 0) {
       const randomIndex = Math.floor(Math.random() * recipes.length);
       const selectedRecipe = recipes[randomIndex];
       setRandomRecipe(selectedRecipe);
     }
-  }, [recipes]);
+  };
 
   return (
     <Container>
@@ -31,7 +39,7 @@ const FeaturedRecipe = () => {
               <br />
               Rating: {randomRecipe.rating}
             </Card.Text>
-            <Button variant="primary">View Recipe</Button>
+            <Button variant="primary" onClick={handleShowRandomRecipe}>View Recipe</Button>
           </Card.Body>
         </Card>
       )}
