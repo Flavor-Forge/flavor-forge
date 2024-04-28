@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Card, Button } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
+import { Link } from 'react-router-dom';
 import { Recipes } from '../../api/recipes/Recipes';
 
 const FeaturedRecipe = () => {
@@ -18,30 +19,32 @@ const FeaturedRecipe = () => {
     return [];
   });
 
-  const handleShowRandomRecipe = () => {
-    // Select a random recipe from the fetched recipes
-    if (recipes.length > 0) {
+  useEffect(() => {
+    if (recipes.length > 0 && !randomRecipe) {
       const randomIndex = Math.floor(Math.random() * recipes.length);
-      const selectedRecipe = recipes[randomIndex];
+      const selectedRecipe = Recipes[randomIndex];
       setRandomRecipe(selectedRecipe);
     }
-  };
+
+    return (randomRecipe);
+  }, []);
 
   return (
     <Container>
       <h1>Random Recipe</h1>
       {randomRecipe && (
-        <Card>
-          <Card.Body>
-            <Card.Title>{randomRecipe.title}</Card.Title>
-            <Card.Text>
-              {randomRecipe.description}
-              <br />
-              Rating: {randomRecipe.rating}
-            </Card.Text>
-            <Button variant="primary" onClick={handleShowRandomRecipe}>View Recipe</Button>
-          </Card.Body>
-        </Card>
+        <Link to={`/recipe/${randomRecipe._id}`}>
+          <Card>
+            <Card.Body>
+              <Card.Title>{randomRecipe.name}</Card.Title>
+              <Card.Text>
+                {randomRecipe.description}
+                <br />
+                Rating: {randomRecipe.rating}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Link>
       )}
     </Container>
   );
