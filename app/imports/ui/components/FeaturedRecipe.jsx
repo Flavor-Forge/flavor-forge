@@ -13,7 +13,6 @@ const FeaturedRecipe = () => {
     const subscription = Meteor.subscribe(Recipes.userPublicationName);
     if (subscription.ready()) {
       const fetchedRecipes = Recipes.collection.find({ rating: { $gte: 3.5 } }).fetch();
-      console.log(fetchedRecipes);
       return fetchedRecipes;
     }
     return [];
@@ -24,7 +23,6 @@ const FeaturedRecipe = () => {
     if (recipes.length > 0 && !randomRecipe) {
       const randomIndex = Math.floor(Math.random() * recipes.length);
       const selectedRecipe = recipes[randomIndex];
-      console.log('Selected Recipe:', selectedRecipe);
       setRandomRecipe(selectedRecipe);
     }
   }, [recipes]); // This effect runs only once when 'recipes' changes
