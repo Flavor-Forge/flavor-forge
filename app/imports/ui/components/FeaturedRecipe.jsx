@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Card } from 'react-bootstrap';
+import { Container, Card, Image } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
 import { Recipes } from '../../api/recipes/Recipes';
@@ -28,14 +28,16 @@ const FeaturedRecipe = () => {
   }, [recipes]); // This effect runs only once when 'recipes' changes
 
   return (
-    <Container>
+    <Container className="text-center">
       <h1>Random Recipe</h1>
       {randomRecipe ? (
         <Link to={`/recipe/${randomRecipe._id}`}>
-          <Card>
+          <Card className="mx-auto">
             <Card.Body>
-              <Card.Title>{randomRecipe.name}</Card.Title>
+              <Card.Title className="mx-auto">{randomRecipe.name}</Card.Title>
               <Card.Text>
+                <Image src={randomRecipe.picture} width={400} className="rounded" />
+                <br />
                 {randomRecipe.description}
                 <br />
                 Rating: {randomRecipe.rating}
