@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import { HTTP } from 'meteor/http';
+import axios from 'axios'; // Import Axios for HTTP requests
 import { Recipes } from '../../api/recipes/Recipes';
 
 const generateRecipeId = () => {
@@ -19,7 +19,6 @@ const generateRecipeId = () => {
   return result;
 };
 
-// Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   name: String,
   description: { type: String, optional: true },
@@ -48,48 +47,57 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddRecipe page for adding a recipe. */
 const AddRecipe = () => {
+  const uploadFile = async (file) => {
+    try {
+      // Proxy endpoint for uploading images
+      const endpoint = '/api/v1_1/image/upload'; // Assuming your proxy endpoint is '/api'
 
-  // On submit, insert the data.
-  // Function to handle file upload
-  const uploadFile = (file, callback) => {
-    const formData = new FormData();
-    formData.append('file', file);
+      // FormData object to send file data
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET);
 
-    HTTP.post('/upload', {
-      content: formData,
-    }, (error, response) => {
-      if (error) {
-        console.error('File upload error:', error);
-        callback(error, null);
-      } else if (response.statusCode === 200) {
-        callback(null, response.data.url);
-      } else {
-        console.error('File upload failed. Status code:', response.statusCode);
-        callback(new Error('File upload failed'), null);
-      }
-    });
+      // Send POST request to the proxy endpoint
+      const response = await axios.post(endpoint, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        withCredentials: true, // Ensure cookies are sent with the request
+      });
+
+      // Return secure URL of the uploaded image
+      return response.data.secure_url;
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      throw new Error('Failed to upload picture');
+    }
   };
 
   const submit = async (data, formRef) => {
     const { name, description, ingredients, instructions, rating } = data;
-    const email = Meteor.user().emails[0].address; // Get the email of the logged-in user
-    const recipeId = generateRecipeId(); // Generate a unique recipeId (you can define this function)
+    const email = Meteor.user().emails[0].address;
+    const recipeId = generateRecipeId();
 
-    const picture = await uploadFile(data.picture); // Assuming you have a function to handle file upload
+    try {
+      const pictureUrl = await uploadFile(data.picture);
 
-    Recipes.collection.insert(
-      { email, recipeId, name, description, ingredients, instructions, picture, rating },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Recipe added successfully', 'success');
-          formRef.reset();
-        }
-      },
-    );
+      await Recipes.collection.insert({
+        email,
+        recipeId,
+        name,
+        description,
+        ingredients,
+        instructions,
+        picture: pictureUrl,
+        rating,
+      });
+
+      swal('Success', 'Recipe added successfully', 'success');
+      formRef.reset();
+    } catch (error) {
+      swal('Error', error.message, 'error');
+    }
   };
 
   let fRef = null;
@@ -107,7 +115,6 @@ const AddRecipe = () => {
                 <TextField name="ingredients.0.quantity" label="Quantity" />
                 <NumField name="ingredients.0.price" label="Price" decimal />
                 <TextField name="instructions" />
-                {/* Replace TextField with file input field */}
                 <input type="file" name="picture" accept="image/png, image/jpeg, image/jpg" />
                 <NumField name="rating" decimal />
                 <SubmitField value="Submit" />
