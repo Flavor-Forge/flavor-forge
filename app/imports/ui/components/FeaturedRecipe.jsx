@@ -19,20 +19,20 @@ const FeaturedRecipe = () => {
     return [];
   });
 
+  // Use a separate state to store the initial random recipe
   useEffect(() => {
     if (recipes.length > 0 && !randomRecipe) {
       const randomIndex = Math.floor(Math.random() * recipes.length);
-      const selectedRecipe = Recipes[randomIndex];
+      const selectedRecipe = recipes[randomIndex];
+      console.log('Selected Recipe:', selectedRecipe);
       setRandomRecipe(selectedRecipe);
     }
-
-    return (randomRecipe);
-  }, []);
+  }, [recipes]); // This effect runs only once when 'recipes' changes
 
   return (
     <Container>
       <h1>Random Recipe</h1>
-      {randomRecipe && (
+      {randomRecipe ? (
         <Link to={`/recipe/${randomRecipe._id}`}>
           <Card>
             <Card.Body>
@@ -45,6 +45,8 @@ const FeaturedRecipe = () => {
             </Card.Body>
           </Card>
         </Link>
+      ) : (
+        <p>No random recipe available.</p>
       )}
     </Container>
   );
