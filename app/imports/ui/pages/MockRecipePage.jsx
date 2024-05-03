@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Recipes } from '../../api/recipes/Recipes';
 
 const MockRecipePage = () => {
+  // Get the ID from the URL field.
   const { recipeId } = useParams();
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [loading, setLoading] = useState(true);

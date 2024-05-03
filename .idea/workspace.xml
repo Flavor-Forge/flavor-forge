@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min">
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/FeaturedRecipe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/FeaturedRecipe.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/imports/api/ratings/Ratings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/imports/api/users/Users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/components/Rating.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/utilities/updateRating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="5839" />
+    <option name="totalTimeSeconds" value="19898" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,8 +56,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;59-finish-featured-recipe-links-and-image-issues&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;57-implement-the-recipe-rating-system&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ccyan/Documents/flavor-forge/app/imports/ui/pages&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -61,6 +70,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ccyan\Documents\flavor-forge\app\imports\ui\pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\tests" />
       <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\public\images" />
@@ -106,5 +116,17 @@
     <MESSAGE value="Recipe List Page database implemented: 5 hrs 47 min" />
     <MESSAGE value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
     <option name="LAST_COMMIT_MESSAGE" value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx</url>
+          <line>55</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
