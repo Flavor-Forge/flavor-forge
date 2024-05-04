@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min">
-      <change afterPath="$PROJECT_DIR$/app/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/AddRecipe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/AddRecipe.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="43647" />
+    <option name="totalTimeSeconds" value="43937" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -75,6 +67,13 @@
       <recent name="C:\Users\18084\Documents\GitHub\flavor-forge\app\public\images" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -95,6 +94,7 @@
       <workItem from="1713920936283" duration="2095000" />
       <workItem from="1713923549325" duration="1478000" />
       <workItem from="1714158989136" duration="11632000" />
+      <workItem from="1714811371644" duration="1023000" />
     </task>
     <servers />
   </component>
