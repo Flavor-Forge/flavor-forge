@@ -44,6 +44,7 @@ export const PageIDs = {
   profilesPage: 'profilesPage',
   projectsPage: 'projectsPage',
   recipesListPage: 'recipesListPage',
+  recipePage: 'recipePage',
   signInPage: 'signInPage',
   signOutPage: 'signOutPage',
   signUpPage: 'signUpPage',
