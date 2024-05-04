@@ -76,7 +76,6 @@ const RecipesListPage = () => {
   };
 
   return ready ? (
-<<<<<<< Updated upstream
     <Container id={PageIDs.recipesPage} style={pageStyle}>
       <Row className="mb-3">
         <Col xs={12} md={6}>
@@ -92,14 +91,10 @@ const RecipesListPage = () => {
           <Button variant="primary" onClick={handleSortReverseAlphabetically}>Sort Reverse Alphabetically</Button>
         </Col>
       </Row>
-=======
-    <Container id={PageIDs.recipesListPage} style={pageStyle}>
->>>>>>> Stashed changes
       <Row xs={1} md={2} lg={4} className="g-2">
         {recipeData.map((recipe, index) => <MakeCard key={index} recipe={recipe} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
 };
-
 export default RecipesListPage;
