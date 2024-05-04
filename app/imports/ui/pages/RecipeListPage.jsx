@@ -97,5 +97,4 @@ const RecipesListPage = () => {
     </Container>
   ) : <LoadingSpinner />;
 };
-
 export default RecipesListPage;
