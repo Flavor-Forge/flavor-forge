@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min">
-      <change afterPath="$PROJECT_DIR$/app/imports/api/ratings/Ratings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/imports/api/users/Users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/imports/ui/components/Rating.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/imports/ui/utilities/updateRating.js" afterDir="false" />
+    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Fixed Issue with recipePage not loading on refresh">
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MockRecipePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +17,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="19898" />
+    <option name="totalTimeSeconds" value="22871" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSX File" />
         <option value="JavaScript File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -115,18 +111,7 @@
     <MESSAGE value="Added New Recipes to default database: 5 hrs 29 min" />
     <MESSAGE value="Recipe List Page database implemented: 5 hrs 47 min" />
     <MESSAGE value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
-    <option name="LAST_COMMIT_MESSAGE" value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx</url>
-          <line>55</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed Issue with recipePage not loading on refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Issue with recipePage not loading on refresh" />
   </component>
 </project>

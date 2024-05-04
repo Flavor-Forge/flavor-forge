@@ -65,4 +65,18 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod };
+const updateRatingMethod = 'Recipes.updateRating';
+
+Meteor.methods({
+  'recipes.updateRating'(recipeId, newRating) {
+    check(recipeId, String);
+    check(newRating, Number);
+    const recipeRatings = Ratings.find().fetch();
+    const specificRatings = recipeRatings.filter(rating => rating.recipeId === recipeId).map(rating => recipe.rating).reduce((partSum, a => partSum + a, rating));
+    const averageRating = specificRatings/(recipeRatings.length + 1);
+
+    Recipes.update(recipeId, { $set: {rating: averageRating }})
+  }
+})
+
+export { updateProfileMethod, addProjectMethod, updateRatingMethod };
