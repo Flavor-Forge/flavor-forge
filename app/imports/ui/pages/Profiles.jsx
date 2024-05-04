@@ -39,18 +39,18 @@ MakeCard.propTypes = {
   }).isRequired,
 };
 const ProfilesPage = () => {
-  const { ready, profile } = useTracker(() => {
+  const { ready, profile: userProfile } = useTracker(() => {
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
     const email = Meteor.user().emails[0].address;
     const profile = Profiles.collection.findOne({ email });
 
     return {
       ready: sub1.ready(),
-      profile,
+      profile: profile,
     };
   }, []);
 
-  const userRecipes = profile ? profile.projects.map(project => getRecipeData(project, profile.email)).filter(recipe => recipe) : [];
+  const userRecipes = userProfile ? userProfile.projects.map(project => getRecipeData(project, userProfile.email)).filter(recipe => recipe) : [];
 
   return ready ? (
     <Container id={PageIDs.profilesPage}>
@@ -60,17 +60,17 @@ const ProfilesPage = () => {
         </Col>
       </Row>
       <Row>
-        {profile && (
-          <React.Fragment>
+        {userProfile && (
+          <>
             <Col md={6}>
               <div className="m-3">
-                <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={300}/>
+                <img src={userProfile.picture} alt={`${userProfile.firstName} ${userProfile.lastName}`} width={300} />
               </div>
               <div className="pt-4 m-5">
-                <h2>{profile.firstName} {profile.lastName}</h2>
+                <h2>{userProfile.firstName} {userProfile.lastName}</h2>
               </div>
               <div className="pt-4">
-                <p>{profile.bio}</p>
+                <p>{userProfile.bio}</p>
               </div>
             </Col>
             <Col md={6}>
@@ -91,7 +91,7 @@ const ProfilesPage = () => {
 
               </div>
             </Col>
-          </React.Fragment>
+          </>
         )}
       </Row>
     </Container>
