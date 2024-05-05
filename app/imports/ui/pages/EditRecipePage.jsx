@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Alert } from 'react-bootstrap';
 
 const EditRecipePage = () => {
-  const { recipeId } = useParams(); // Retrieve the recipe ID from the URL parameters
+  const { recipeId } = useParams();
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState({
     name: '',
@@ -19,13 +19,15 @@ const EditRecipePage = () => {
       setIsLoading(true);
       try {
         const response = await fetch(`/api/recipes/${recipeId}`);
-        const data = await response.json();
         if (!response.ok) {
-          throw new Error(data.message || 'Failed to fetch recipe');
+          const text = await response.text(); // Get text to see what went wrong
+          throw new Error(`HTTP error ${response.status}: ${text}`);
         }
+        const data = await response.json();
         setRecipe(data);
       } catch (err) {
-        setError(err.message);
+        console.error('Failed to fetch recipe details:', err);
+        setError(`Failed to fetch recipe details: ${err.message}`);
       } finally {
         setIsLoading(false);
       }
@@ -34,14 +36,11 @@ const EditRecipePage = () => {
     fetchRecipe();
   }, [recipeId]);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setRecipe(prev => ({ ...prev, [name]: value }));
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
+    setError('');
+
     try {
       const response = await fetch(`/api/recipes/${recipeId}`, {
         method: 'PUT',
@@ -50,74 +49,70 @@ const EditRecipePage = () => {
         },
         body: JSON.stringify(recipe),
       });
-      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error(data.message || 'Failed to update the recipe');
+        const text = await response.text();
+        throw new Error(`HTTP error ${response.status}: ${text}`);
       }
-      alert('Recipe updated successfully!');
-      navigate(`/recipe/${recipeId}`); // Redirect to the view page of the updated recipe
+
+      // eslint-disable-next-line no-unused-vars
+      const result = await response.json();
+      alert('Recipe updated successfully');
+      navigate(`/recipes/${recipeId}`); // Redirect or update UI upon success
     } catch (err) {
-      setError(err.message);
+      console.error('Failed to update recipe:', err);
+      setError(`Failed to update recipe: ${err.message}`);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setRecipe(prevRecipe => ({ ...prevRecipe, [name]: value }));
+  };
+
   return (
     <Container>
-      <h1>Edit Recipe</h1>
       {error && <Alert variant="danger">{error}</Alert>}
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formRecipeName">
+        <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter recipe name"
             name="name"
             value={recipe.name}
             onChange={handleChange}
             required
           />
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formRecipeDescription">
+        <Form.Group className="mb-3">
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
-            rows={3}
-            placeholder="Enter recipe description"
             name="description"
             value={recipe.description}
             onChange={handleChange}
-            required
           />
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formRecipeIngredients">
+        <Form.Group className="mb-3">
           <Form.Label>Ingredients</Form.Label>
           <Form.Control
-            type="text"
-            placeholder="Enter ingredients"
+            as="textarea"
             name="ingredients"
             value={recipe.ingredients}
             onChange={handleChange}
-            required
           />
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formRecipeInstructions">
+        <Form.Group className="mb-3">
           <Form.Label>Instructions</Form.Label>
           <Form.Control
             as="textarea"
-            rows={3}
-            placeholder="Enter cooking instructions"
             name="instructions"
             value={recipe.instructions}
             onChange={handleChange}
-            required
           />
         </Form.Group>
-
         <Button variant="primary" type="submit" disabled={isLoading}>
           Update Recipe
         </Button>
