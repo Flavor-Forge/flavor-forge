@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Button, Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Recipes } from '../../api/recipes/Recipes';
 import { PageIDs } from '../utilities/ids';
 import { pageStyle } from './pageStyles';
 
 const RecipePage = () => {
   const { recipeId } = useParams();
+  const navigate = useNavigate();
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,7 +21,7 @@ const RecipePage = () => {
         } else {
           setError('Recipe not found');
         }
-      } catch (fetchError) { // Renamed 'error' to 'fetchError' here
+      } catch (fetchError) {
         setError('Error fetching recipe');
       } finally {
         setLoading(false);
@@ -34,7 +35,10 @@ const RecipePage = () => {
     };
   }, [recipeId]);
 
-  // Conditional rendering using if-else statements
+  const handleEdit = () => {
+    navigate(`/edit-recipe/${recipeId}`);
+  };
+
   let content = null;
   if (loading) {
     content = <p>Loading...</p>;
@@ -44,6 +48,7 @@ const RecipePage = () => {
     content = (
       <Container id={PageIDs.recipePage} style={pageStyle}>
         <h1 className="text-center mt-2">{selectedRecipe.name}</h1>
+        <Button variant="primary" onClick={handleEdit} style={{ margin: '10px 0' }}>Edit Recipe</Button>
         <h3 className="text-center mb-4">Rating: {selectedRecipe.rating}/5</h3>
         <Row>
           <Col md={6}>
@@ -69,7 +74,7 @@ const RecipePage = () => {
               <img
                 src={`../${selectedRecipe.picture}`}
                 alt={selectedRecipe.name}
-                style={{ width: '100%', height: '500px', objectFit: 'cover' }}
+                style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
               />
             </div>
           </Col>

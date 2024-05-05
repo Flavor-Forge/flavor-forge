@@ -22,6 +22,7 @@ import RecipePage from '../pages/RecipePage';
 import AddRecipe from '../pages/AddRecipe';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RecipeListPageAdmin from '../pages/RecipeListPageAdmin';
+import EditRecipePage from '../pages/EditRecipePage';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/recipelistpage" element={<RecipeListPage />} />
           <Route path="/recipelistpageadmin" element={<AdminProtectedRoute ready={ready}><RecipeListPageAdmin /></AdminProtectedRoute>} />
           <Route path="/recipe/:recipeId" element={<RecipePage />} />
+          <Route path="/edit-recipe/:recipeId" element={<ProtectedRoute><EditRecipePage /></ProtectedRoute>} />
           <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
           <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
           <Route path="/addrecipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
