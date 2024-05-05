@@ -63,7 +63,7 @@ const RecipePageMockup = () => {
           </Col>
         </Row>
         <Row>
-          <StarRating />
+          { rec && rec._id && <StarRating recipeId={rec._id} /> }
         </Row>
       </Container>
     </>

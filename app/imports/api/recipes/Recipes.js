@@ -8,6 +8,7 @@ class RecipesCollection {
     this.schema = new SimpleSchema({
       email: { type: String }, // email of the user who owns the recipe
       recipeId: { type: String, index: true, unique: true }, // Unique identifier for the recipe
+      _id: String,
       name: { type: String, index: true },
       description: { type: String, optional: true },
       ingredients: { type: Array },

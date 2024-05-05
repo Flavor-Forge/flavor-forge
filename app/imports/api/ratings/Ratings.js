@@ -10,7 +10,6 @@ class RatingsCollection {
     // Define the structure of each document in the collection
     this.schema = new SimpleSchema({
       value: Number,
-      owner: String,
       recipeId: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
