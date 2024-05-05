@@ -9,8 +9,8 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { PageIDs } from '../utilities/ids';
 import { Recipes } from '../../api/recipes/Recipes';
 
-function getRecipeData(recipeName, email) {
-  const recipe = Recipes.collection.findOne({ name: recipeName, email });
+function getRecipeData(recipeName) {
+  const recipe = Recipes.collection.findOne({ name: recipeName });
   return recipe;
 }
 
@@ -32,7 +32,7 @@ const MakeCard = ({ recipe }) => (
 
 MakeCard.propTypes = {
   recipe: PropTypes.shape({
-    _id: PropTypes.string.isRequired, // Assuming _id is the unique identifier for the recipe
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
@@ -41,8 +41,8 @@ MakeCard.propTypes = {
 const ProfilesPage = () => {
   const { ready, profile: userProfile } = useTracker(() => {
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
-    const email = Meteor.user().emails[0].address;
-    const profile = Profiles.collection.findOne({ email });
+    const user = Meteor.user();
+    const profile = user ? Profiles.collection.findOne({ email: user.emails[0].address }) : null;
 
     return {
       ready: sub1.ready(),
@@ -50,7 +50,8 @@ const ProfilesPage = () => {
     };
   }, []);
 
-  const userRecipes = userProfile ? userProfile.projects.map(project => getRecipeData(project, userProfile.email)).filter(recipe => recipe) : [];
+  const userRecipeId = userProfile && userProfile.recipeId;
+  const userRecipe = userRecipeId ? getRecipeData(userRecipeId) : null;
 
   return ready ? (
     <Container id={PageIDs.profilesPage}>
@@ -76,11 +77,9 @@ const ProfilesPage = () => {
             <Col md={6}>
               <div className="pt-2">
                 <h2>My Recipes</h2>
-                {userRecipes.length > 0 ? (
+                {userRecipe ? (
                   <Row>
-                    {userRecipes.map(recipe => (
-                      <MakeCard key={recipe._id} recipe={recipe} />
-                    ))}
+                    <MakeCard recipe={userRecipe} />
                   </Row>
                 ) : (
                   <p>No recipes found.</p>
