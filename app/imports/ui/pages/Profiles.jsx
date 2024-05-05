@@ -39,19 +39,19 @@ MakeCard.propTypes = {
   }).isRequired,
 };
 const ProfilesPage = () => {
-  const { ready, profile: userProfile } = useTracker(() => {
+  const { ready, profile: userProfile, userRecipe } = useTracker(() => {
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
     const user = Meteor.user();
     const profile = user ? Profiles.collection.findOne({ email: user.emails[0].address }) : null;
+    const userRecipeId = profile && profile.recipeId;
+    const recipe = userRecipeId ? getRecipeData(userRecipeId) : null;
 
     return {
       ready: sub1.ready(),
       profile: profile,
+      userRecipe: recipe,
     };
   }, []);
-
-  const userRecipeId = userProfile && userProfile.recipeId;
-  const userRecipe = userRecipeId ? getRecipeData(userRecipeId) : null;
 
   return ready ? (
     <Container id={PageIDs.profilesPage}>
