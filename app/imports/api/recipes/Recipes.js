@@ -1,4 +1,3 @@
-// collections.js (or any server-side file)
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Meteor } from 'meteor/meteor';
@@ -19,32 +18,47 @@ class RecipesCollection {
       'ingredients.$.price': { type: Number, min: 0 },
       instructions: { type: String },
       picture: { type: String, optional: true },
-      rating: {
-        type: Number,
-        min: 0,
-        max: 5,
-        optional: true,
-        defaultValue: 0,
-        // Custom validation function to ensure the rating value is between 0 and 5
-        custom() {
-          if (this.value < 0 || this.value > 5) {
-            return 'Rating must be between 0 and 5';
-          }
-          return undefined;
-        },
-      },
+      rating: { type: Number, min: 0, max: 5, optional: true, defaultValue: 0 },
     });
     this.collection.attachSchema(this.schema);
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
+
+  updateRecipe(recipeId, updatedRecipe) {
+    return this.collection.update({ recipeId }, { $set: updatedRecipe });
+  }
 }
 
 export const Recipes = new RecipesCollection();
 
+// Allow and deny rules for security
 Recipes.collection.allow({
   insert(userId) {
-    // Allow insertion if the user is logged in
     return !!userId;
+  },
+  update(userId, doc) {
+    // allow update if user is logged in and is the recipe owner
+    return doc.email === Meteor.user()?.email;
+  },
+});
+
+// Meteor methods for recipe manipulation
+Meteor.methods({
+  // eslint-disable-next-line meteor/audit-argument-checks
+  'recipes.update'(recipeId, updatedRecipe) {
+    new SimpleSchema({
+      recipeId: { type: String },
+      name: { type: String },
+      description: { type: String, optional: true },
+      ingredients: { type: Array, optional: true },
+      'ingredients.$': { type: Object },
+      'ingredients.$.name': { type: String },
+      'ingredients.$.quantity': { type: String },
+      'ingredients.$.price': { type: Number, min: 0 },
+      instructions: { type: String },
+    }).validate({ recipeId, ...updatedRecipe });
+
+    return Recipes.updateRecipe(recipeId, updatedRecipe);
   },
 });
