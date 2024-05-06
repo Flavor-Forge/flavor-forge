@@ -8,31 +8,47 @@ import { Ratings } from '../../api/ratings/Ratings';
 
 const StarRating = ({ recipeId }) => {
   const [rating, setRating] = useState(0); // State to hold the selected rating
-  const { recipe } = useTracker(() => Recipes.collection.find({ recipeId: recipeId }).fetch());
-  const { ratings } = useTracker(() => Ratings.collection.find().fetch());
+  const { recipe, ratings } = useTracker(() => {
+    const recipeSubs = Meteor.subscribe(Recipes.userPublicationName);
+    const ratingsSubs = Meteor.subscribe(Ratings.userPublicationName);
+    const rdy = recipeSubs.ready() && ratingsSubs.ready();
+    const rec = Recipes.collection.find({ _id: recipeId }).fetch();
+    const rat = Ratings.collection.find({ recipeId: recipeId }).fetch();
+    console.log(rat);
+    return {
+      recipe: rec,
+      ratings: rat,
+      ready: rdy,
+    };
+  }, []);
 
   const handleRatingChange = (newRating) => {
-    Meteor.call('Ratings.addRating', newRating, recipeId);
-    const recipeRatings = ratings ? ratings.filter(specificRating => specificRating.recipeId === recipeId) : [];
-    const ratingArray = recipeRatings.map(ratingsById => ratingsById.rating);
-    const ratingSum = ratingArray.reduce((partSum, a) => partSum + a, rating);
-    const averageRating = ratingSum / (recipeRatings.length + 1);
-    Meteor.call('Recipes.updateRating', recipeId, averageRating, (error) => {
-      if (error) {
-        console.log('Error updating rating:', error);
-      } else {
-        console.log('Rating updated successfully');
-      }
-    });
+    console.log(newRating);
+    Meteor.call('Ratings.addRating', { value: newRating, recipeId: recipeId });
   };
   useEffect(() => {
     if (recipe) {
-      console.log(recipe.recipeId);
+      console.log(recipeId);
     }
     if (recipe && recipe.rating) {
       setRating(recipe.rating);
     }
   }, [recipe]);
+
+  useEffect(() => {
+    if (ratings && ratings.length > 0) {
+      const ratingSum = ratings.reduce((sum, a) => sum + a, 0);
+      const averageRating = ratingSum / ratings.length;
+      console.log(averageRating);
+      Meteor.call('Recipes.updateRating', { _id: recipeId, rating: averageRating }, (error) => {
+        if (error) {
+          console.log('Error updating ratings', error.reason);
+        } else {
+          console.log('Rating uploaded successfully');
+        }
+      });
+    }
+  }, [ratings]);
 
   return (
     <div>

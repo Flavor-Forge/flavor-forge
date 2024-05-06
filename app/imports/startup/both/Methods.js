@@ -71,20 +71,26 @@ Meteor.methods({
 const updateRecipeRatingMethod = 'Recipes.updateRating';
 
 Meteor.methods({
-  'Recipes.updateRating'(recipeId, newRating) {
-    check(recipeId, String);
-    check(newRating, Number);
-    Recipes.collection.update(recipeId, { $set: { rating: newRating } });
+  'Recipes.updateRating'(ratingData) {
+    check(ratingData, {
+      recipeId: String,
+      rating: Number,
+    });
+    Recipes.collection.update({ recipeId: ratingData.recipeId }, { $set: { rating: ratingData.value } });
   },
 });
 
 const addRatingMethod = 'Ratings.addRating';
 
 Meteor.methods({
-  'Ratings.addRating'(newRating, recipeId) {
-    check(newRating, Number);
-    check(recipeId, String);
-    Ratings.collection.insert({ newRating, recipeId });
+  'Ratings.addRating'(ratingData) {
+    check(ratingData, Object);
+    check(ratingData.value, Number);
+    check(ratingData.recipeId, String);
+    Ratings.collection.insert({
+      value: ratingData.value,
+      recipeId: ratingData.recipeId,
+    });
   },
 });
 

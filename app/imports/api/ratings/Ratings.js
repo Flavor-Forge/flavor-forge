@@ -9,7 +9,7 @@ class RatingsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection
     this.schema = new SimpleSchema({
-      value: Number,
+      value: { type: Number, required: true },
       recipeId: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
