@@ -75,7 +75,8 @@ Meteor.methods({
    check(ratingData, Object);
    check(ratingData.rating, Number);
    check(ratingData.recipeId, String);
-   Recipes.collection.update({ recipeId: ratingData.recipeId }, { $set: { rating: ratingData.rating } });
+   Recipes.collection.update({ _id: ratingData.recipeId }, { $set: { rating: ratingData.rating } });
+   console.log('Rating updated', ratingData);
   },
 });
 

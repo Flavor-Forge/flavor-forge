@@ -8,6 +8,7 @@ import { Ratings } from '../../api/ratings/Ratings';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StarRating from '../components/StarRating';
 
+
 const RecipePageMockup = () => {
   // Get the ID from the URL field.
   const { _id } = useParams();

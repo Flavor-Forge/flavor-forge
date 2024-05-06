@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Attempted Implementation of Ratings">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/flavor-forge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flavor-forge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="46757" />
+    <option name="totalTimeSeconds" value="48819" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -131,7 +127,7 @@
       <workItem from="1712872763422" duration="6461000" />
       <workItem from="1712907870510" duration="2570000" />
       <workItem from="1713687811699" duration="1977000" />
-      <workItem from="1714963587875" duration="9432000" />
+      <workItem from="1714963587875" duration="13278000" />
     </task>
     <servers />
   </component>
