@@ -12,7 +12,7 @@ const RecipePageMockup = () => {
   // Get the ID from the URL field.
   const { _id } = useParams();
   // const recId = _id;
-  const { /* userInfo, */ rec, ready } = useTracker(() => {
+  const { /* userInfo, */ rec, rev, ready } = useTracker(() => {
     const subscriptionRecipe = Meteor.subscribe(Recipes.userPublicationName);
     const subscriptionRating = Meteor.subscribe(Ratings.userPublicationName);
     const rdy = subscriptionRecipe.ready() && subscriptionRating.ready();
@@ -20,7 +20,7 @@ const RecipePageMockup = () => {
     // const user = Meteor.user();
     // const userInf = Users.collection.findOne({ email: user.username });
     // const userRdy = subscriptionUser.ready();
-    const rating = Ratings.collection.find().fetch();
+    const rating = Ratings.collection.find({ recipeId: _id }).fetch();
     const recipe = Recipes.collection.findOne(_id);
     return {
       rec: recipe,

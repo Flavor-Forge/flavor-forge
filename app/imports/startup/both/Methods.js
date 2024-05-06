@@ -72,11 +72,10 @@ const updateRecipeRatingMethod = 'Recipes.updateRating';
 
 Meteor.methods({
   'Recipes.updateRating'(ratingData) {
-    check(ratingData, {
-      recipeId: String,
-      rating: Number,
-    });
-    Recipes.collection.update({ recipeId: ratingData.recipeId }, { $set: { rating: ratingData.value } });
+   check(ratingData, Object);
+   check(ratingData.rating, Number);
+   check(ratingData.recipeId, String);
+   Recipes.collection.update({ recipeId: ratingData.recipeId }, { $set: { rating: ratingData.rating } });
   },
 });
 

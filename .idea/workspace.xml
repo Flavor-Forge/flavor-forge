@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Attempted Implementation of Ratings">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flavor-forge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flavor-forge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/api/ratings/Ratings.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/ratings/Ratings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +19,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="40531" />
+    <option name="totalTimeSeconds" value="46757" />
+    <option name="gitIntegration" value="true" />
+    <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,22 +52,36 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;57-implement-the-recipe-rating-system&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ccyan/Documents/flavor-forge/app/imports/ui/pages&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HbShouldOpenHtmlAsHb": "enabled",
+    "Meteor.Unnamed.executor": "Debug",
+    "Node.js.StarRating.jsx.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "57-implement-the-recipe-rating-system",
+    "js.meteor.library.was.enabled": "true",
+    "js.meteor.project": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ccyan/Documents/flavor-forge/app/imports/ui/pages",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ],
+    "js.meteor.library.cached": [
+      "/Users/danport/Documents/GitHub/flavor-forge/app/.meteor"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\imports\ui\pages" />
@@ -72,10 +91,36 @@
       <recent name="C:\Users\18084\Documents\GitHub\flavor-forge\app\public\images" />
     </key>
   </component>
+  <component name="RunManager" selected="Node.js.StarRating.jsx">
+    <configuration name="StarRating.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" working-dir="$PROJECT_DIR$/app/imports/ui/components">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="meteor-app-runner" factoryName="Meteor" nameIsGenerated="true" workingDirectory="$PROJECT_DIR$/app">
+      <option name="exePath" value="$USER_HOME$/.meteor/meteor" />
+      <option name="startBrowserSettings">
+        <browser url="http://localhost:3000" />
+      </option>
+      <meteor-runner-state>
+        <startBrowserSettings>
+          <browser url="http://localhost:3000" />
+        </startBrowserSettings>
+      </meteor-runner-state>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Meteor.Unnamed" />
+      <item itemvalue="Node.js.StarRating.jsx" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.StarRating.jsx" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b67f13cc-291c-42cf-a6e3-3d7a94c2d21a" name="Changes" comment="" />
+      <changelist id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Attempted Implementation of Ratings" />
       <created>1712273180946</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -86,6 +131,7 @@
       <workItem from="1712872763422" duration="6461000" />
       <workItem from="1712907870510" duration="2570000" />
       <workItem from="1713687811699" duration="1977000" />
+      <workItem from="1714963587875" duration="9432000" />
     </task>
     <servers />
   </component>
