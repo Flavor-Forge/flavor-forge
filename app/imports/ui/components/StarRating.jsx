@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import StarRatings from 'react-star-ratings';
@@ -32,35 +32,11 @@ const StarRating = ({ recipeId }) => {
       Meteor.call('Recipes.updateRating', { recipeId: recipeId, rating: averageRating });
     }
   };
-  /* useEffect(() => {
-    if (recipe) {
-      console.log(recipeId);
-    }
-    if (recipe && recipe.rating) {
-      setRating(recipe.rating);
-    }
-  }, [recipe]);
-
-  useEffect(() => {
-    if (ratings && ratings.length > 0) {
-      const ratingSum = ratings.reduce((sum, a) => sum + a, 0);
-      const averageRating = ratingSum / ratings.length;
-      console.log(averageRating);
-      Meteor.call('Recipes.updateRating', { _id: recipeId, rating: averageRating }, (error) => {
-        if (error) {
-          console.log('Error updating ratings', error.reason);
-        } else {
-          console.log('Rating uploaded successfully');
-        }
-      });
-    }
-  }, [ratings]); */
 
   return (
     <div>
       <h2>Rate This Recipe:</h2>
       <StarRatings
-        rating={rating} // Current rating value
         starRatedColor="orange" // Color of filled stars
         changeRating={handleRatingChange} // Callback function to handle rating changes
         numberOfStars={5} // Total number of stars to display

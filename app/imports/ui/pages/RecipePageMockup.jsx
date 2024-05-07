@@ -31,7 +31,7 @@ const RecipePageMockup = () => {
   return ready ? (
     <>
       <h1 className="text-center mt-2">{rec.name}</h1>
-      <h3 className="text-center mb-4">Rating: {rec.rating}/5</h3>
+      <h3 className="text-center mb-4">Rating: {rec.rating.toFixed(1)}/5</h3>
       <Container>
         <Row>
           <Col md={6}>

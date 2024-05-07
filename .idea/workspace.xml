@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating.">
+    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Now correctly updates ratings and averages sum of the ratings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Rating.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/utilities/updateRating.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/RecipePageMockup.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="41853" />
+    <option name="totalTimeSeconds" value="42560" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -114,6 +112,7 @@
     <MESSAGE value="Fixed Issue with recipePage not loading on refresh" />
     <MESSAGE value="Attempted Implementation of Ratings" />
     <MESSAGE value="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating." />
-    <option name="LAST_COMMIT_MESSAGE" value="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating." />
+    <MESSAGE value="Now correctly updates ratings and averages sum of the ratings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now correctly updates ratings and averages sum of the ratings" />
   </component>
 </project>
