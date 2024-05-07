@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Attempted Implementation of Ratings">
+    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/api/ratings/Ratings.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/ratings/Ratings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Rating.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/StarRating.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/utilities/updateRating.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="40531" />
+    <option name="totalTimeSeconds" value="41853" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -112,6 +113,7 @@
     <MESSAGE value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
     <MESSAGE value="Fixed Issue with recipePage not loading on refresh" />
     <MESSAGE value="Attempted Implementation of Ratings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempted Implementation of Ratings" />
+    <MESSAGE value="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating." />
+    <option name="LAST_COMMIT_MESSAGE" value="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating." />
   </component>
 </project>

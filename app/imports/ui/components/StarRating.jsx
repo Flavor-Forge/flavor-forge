@@ -7,8 +7,8 @@ import { Recipes } from '../../api/recipes/Recipes';
 import { Ratings } from '../../api/ratings/Ratings';
 
 const StarRating = ({ recipeId }) => {
-  const [rating, setRating] = useState(0); // State to hold the selected rating
-  const { recipe, ratings } = useTracker(() => {
+  const [rating] = useState(0); // State to hold the selected rating
+  const { ratings } = useTracker(() => {
     const recipeSubs = Meteor.subscribe(Recipes.userPublicationName);
     const ratingsSubs = Meteor.subscribe(Ratings.userPublicationName);
     const rdy = recipeSubs.ready() && ratingsSubs.ready();
@@ -23,10 +23,16 @@ const StarRating = ({ recipeId }) => {
   }, []);
 
   const handleRatingChange = (newRating) => {
-    console.log(newRating);
+    console.log(newRating, ratings, '***');
     Meteor.call('Ratings.addRating', { value: newRating, recipeId: recipeId });
+    if (ratings && ratings.length > 0) {
+      const ratingSum = ratings.reduce((acc, curr) => acc + curr.value, 0);
+      const averageRating = ratingSum / ratings.length;
+      console.log(averageRating, 'updated rating');
+      Meteor.call('Recipes.updateRating', { recipeId: recipeId, rating: averageRating });
+    }
   };
-  useEffect(() => {
+  /* useEffect(() => {
     if (recipe) {
       console.log(recipeId);
     }
@@ -48,7 +54,7 @@ const StarRating = ({ recipeId }) => {
         }
       });
     }
-  }, [ratings]);
+  }, [ratings]); */
 
   return (
     <div>
