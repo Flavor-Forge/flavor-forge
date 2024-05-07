@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSX File" />
         <option value="JavaScript File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -62,6 +62,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ccyan\Documents\flavor-forge\app\imports\ui\pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\tests" />
       <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\public\images" />
@@ -106,6 +107,10 @@
     <MESSAGE value="Added New Recipes to default database: 5 hrs 29 min" />
     <MESSAGE value="Recipe List Page database implemented: 5 hrs 47 min" />
     <MESSAGE value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
-    <option name="LAST_COMMIT_MESSAGE" value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
+    <MESSAGE value="Fixed Issue with recipePage not loading on refresh" />
+    <MESSAGE value="Attempted Implementation of Ratings" />
+    <MESSAGE value="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating." />
+    <MESSAGE value="Now correctly updates ratings and averages sum of the ratings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now correctly updates ratings and averages sum of the ratings" />
   </component>
 </project>

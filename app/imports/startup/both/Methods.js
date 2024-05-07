@@ -1,9 +1,12 @@
 import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
 import { Projects } from '../../api/projects/Projects';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
+import { Recipes } from '../../api/recipes/Recipes';
+import { Ratings } from '../../api/ratings/Ratings';
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -65,4 +68,30 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod };
+const updateRecipeRatingMethod = 'Recipes.updateRating';
+
+Meteor.methods({
+  'Recipes.updateRating'(ratingData) {
+    check(ratingData, Object);
+    check(ratingData.rating, Number);
+    check(ratingData.recipeId, String);
+    Recipes.collection.update({ _id: ratingData.recipeId }, { $set: { rating: ratingData.rating } });
+    console.log('Rating Data updated', ratingData);
+  },
+});
+
+const addRatingMethod = 'Ratings.addRating';
+
+Meteor.methods({
+  'Ratings.addRating'(ratingData) {
+    check(ratingData, Object);
+    check(ratingData.value, Number);
+    check(ratingData.recipeId, String);
+    Ratings.collection.insert({
+      value: ratingData.value,
+      recipeId: ratingData.recipeId,
+    });
+  },
+});
+
+export { updateProfileMethod, addProjectMethod, updateRecipeRatingMethod, addRatingMethod };
