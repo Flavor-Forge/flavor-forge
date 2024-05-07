@@ -18,7 +18,6 @@ const MakeCard = ({ recipe }) => (
   <Col>
     <Card className="h-100">
       <Card.Header>
-        <Image src={recipe.picture} width={200} />
         <div style={{ height: '250px', overflow: 'hidden' }}> {/* Added a fixed height wrapper */}
           <Image src={recipe.picture} fluid />
         </div>
