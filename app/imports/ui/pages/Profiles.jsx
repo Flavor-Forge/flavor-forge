@@ -9,16 +9,11 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { PageIDs } from '../utilities/ids';
 import { Recipes } from '../../api/recipes/Recipes';
 
-function getRecipeData(recipeName) {
-  const recipe = Recipes.collection.findOne({ name: recipeName });
-  return recipe;
-}
-
 const MakeCard = ({ recipe }) => (
   <Col>
     <Card className="h-100">
       <Card.Header>
-        <Image src={recipe.picture} width={285} />
+        <Image src={recipe.picture} width={200} />
         <Card.Title>
           <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
         </Card.Title>
@@ -43,11 +38,11 @@ const ProfilesPage = () => {
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
     const user = Meteor.user();
     const profile = user ? Profiles.collection.findOne({ email: user.emails[0].address }) : null;
-    const userRecipeId = profile && profile.recipeId;
-    const recipe = userRecipeId ? getRecipeData(userRecipeId) : null;
+    const sub2 = Meteor.subscribe(Recipes.userPublicationName);
+    const recipe = user ? Recipes.collection.find({ email: user.emails[0].address }).fetch() : [];
 
     return {
-      ready: sub1.ready(),
+      ready: sub1.ready() && sub2.ready(), // Ensure both subscriptions are ready
       profile: profile,
       userRecipe: recipe,
     };
@@ -77,9 +72,11 @@ const ProfilesPage = () => {
             <Col md={6}>
               <div className="pt-2">
                 <h2>My Recipes</h2>
-                {userRecipe ? (
-                  <Row>
-                    <MakeCard recipe={userRecipe} />
+                {userRecipe && userRecipe.length > 0 ? (
+                  <Row xs={1} md={2} className="g-2">
+                    {userRecipe.map(recipe => (
+                      <MakeCard key={recipe._id} recipe={recipe} />
+                    ))}
                   </Row>
                 ) : (
                   <p>No recipes found.</p>
