@@ -1,18 +1,9 @@
 {
   "defaultAccounts": [
-    {
-      "email": "admin@foo.com",
-      "password": "changeme",
-      "role": "admin"
-    },
-    {
-      "email": "john@foo.com",
-      "password": "foo"
-    },
-    {
-
-    }
-  ],
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
+    { "email": "john@foo.com", "password": "foo" }
+  ]
+,
   "defaultProfiles": [
     {
       "firstName": "Philip",

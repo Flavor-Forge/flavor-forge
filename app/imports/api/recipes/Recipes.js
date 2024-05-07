@@ -1,5 +1,7 @@
+// collections.js (or any server-side file)
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import { Meteor } from 'meteor/meteor';
 
 class RecipesCollection {
   constructor() {
@@ -40,3 +42,10 @@ class RecipesCollection {
 }
 
 export const Recipes = new RecipesCollection();
+
+Recipes.collection.allow({
+  insert(userId) {
+    // Allow insertion if the user is logged in
+    return !!userId;
+  },
+});

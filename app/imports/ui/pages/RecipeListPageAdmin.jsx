@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Card, Image, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Card, Image, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
@@ -14,21 +14,41 @@ function getRecipeData(recipeName) {
   return recipe;
 }
 
-const MakeCard = ({ recipe }) => (
-  <Col>
-    <Card className="h-100">
-      <Card.Header>
-        <Image src={recipe.picture} width={200} />
-        <Card.Title>
-          <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
-        </Card.Title>
-      </Card.Header>
-      <Card.Body>
-        <Card.Text>{recipe.description}</Card.Text>
-      </Card.Body>
-    </Card>
-  </Col>
-);
+const MakeCard = ({ recipe, onDelete }) => {
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
+  const handleDelete = () => {
+    onDelete(recipe._id);
+    setShowConfirmModal(false);
+  };
+
+  return (
+    <Col>
+      <Card className="h-100">
+        <Card.Header>
+          <Image src={recipe.picture} width={200} />
+          <Card.Title>
+            <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
+          </Card.Title>
+        </Card.Header>
+        <Card.Body>
+          <Card.Text>{recipe.description}</Card.Text>
+          <Button variant="danger" className="delete-btn" onClick={() => setShowConfirmModal(true)}>Delete</Button>
+        </Card.Body>
+        <Modal show={showConfirmModal} onHide={() => setShowConfirmModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Confirm Deletion</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Are you sure you want to delete this recipe?</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setShowConfirmModal(false)}>Cancel</Button>
+            <Button variant="danger" onClick={handleDelete}>Delete</Button>
+          </Modal.Footer>
+        </Modal>
+      </Card>
+    </Col>
+  );
+};
 
 MakeCard.propTypes = {
   recipe: PropTypes.shape({
@@ -37,11 +57,13 @@ MakeCard.propTypes = {
     description: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
   }).isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
-const RecipesListPage = () => {
+const RecipeListPageAdmin = () => {
   const [filterValue, setFilterValue] = useState('');
   const [sortOrder, setSortOrder] = useState(1); // 1 for ascending, -1 for descending
+  const [deleteConfirmation, setDeleteConfirmation] = useState('');
 
   const handleChange = (e) => {
     setFilterValue(e.target.value);
@@ -75,6 +97,23 @@ const RecipesListPage = () => {
     setSortOrder(-1); // Set to descending order
   };
 
+  const handleDelete = (recipeId) => {
+    console.log('Deleting recipe with ID:', recipeId);
+    Meteor.call('recipes.remove', recipeId, (error) => {
+      if (error) {
+        console.log('Error deleting recipe:', error.reason);
+        // Show error message if deletion fails
+        setDeleteConfirmation('Error deleting recipe');
+      } else {
+        console.log('Recipe deleted successfully');
+        // Show deletion confirmation message
+        setDeleteConfirmation('Recipe deleted successfully');
+        // Refresh the page
+        window.location.reload();
+      }
+    });
+  };
+
   return ready ? (
     <Container id={PageIDs.recipesPage} style={pageStyle}>
       <Row className="mb-3">
@@ -91,10 +130,11 @@ const RecipesListPage = () => {
           <Button variant="primary" onClick={handleSortReverseAlphabetically}>Sort Reverse Alphabetically</Button>
         </Col>
       </Row>
+      {deleteConfirmation && <p>{deleteConfirmation}</p>}
       <Row xs={1} md={2} lg={4} className="g-2">
-        {recipeData.map((recipe, index) => <MakeCard key={index} recipe={recipe} />)}
+        {recipeData.map((recipe, index) => <MakeCard key={index} recipe={recipe} onDelete={handleDelete} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
 };
-export default RecipesListPage;
+export default RecipeListPageAdmin;

@@ -4,6 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { Roles } from 'meteor/alanning:roles';
 import { ComponentIDs } from '../utilities/ids';
 
 const NavBar = () => {
@@ -27,9 +28,12 @@ const NavBar = () => {
             ) : ''}
             <Nav.Link as={NavLink} id={ComponentIDs.profilesMenuItem} to="/profiles" key="profiles">Profile</Nav.Link>
             <Nav.Link as={NavLink} id={ComponentIDs.recipelistMenuItem} to="/recipelistpage" key="recipelist">Recipe List</Nav.Link>
+            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+              <Nav.Link as={NavLink} id={ComponentIDs.recipelistMenuItemAdmin} to="/recipelistpageadmin" key="recipelistpageadmin">Recipe List Admin</Nav.Link>
+            ) : ''}
             <Nav.Link as={NavLink} id={ComponentIDs.interestsMenuItem} to="/interests" key="interests">Ingredients</Nav.Link>
             {currentUser ? (
-              [<Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Recipe</Nav.Link>,
+              [<Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addrecipe" key="addP">Add Recipe</Nav.Link>,
                 <Nav.Link as={NavLink} id={ComponentIDs.filterMenuItem} to="/filter" key="filter" />]
             ) : ''}
           </Nav>
