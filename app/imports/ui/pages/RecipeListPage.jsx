@@ -19,6 +19,9 @@ const MakeCard = ({ recipe }) => (
     <Card className="h-100">
       <Card.Header>
         <Image src={recipe.picture} width={200} />
+        <div style={{ height: '250px', overflow: 'hidden' }}> {/* Added a fixed height wrapper */}
+          <Image src={recipe.picture} fluid />
+        </div>
         <Card.Title>
           <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
         </Card.Title>
