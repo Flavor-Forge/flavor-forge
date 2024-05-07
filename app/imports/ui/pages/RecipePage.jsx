@@ -3,8 +3,7 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { Recipes } from '../../api/recipes/Recipes';
 
-const MockRecipePage = () => {
-  // Get the ID from the URL field.
+const RecipePage = () => {
   const { recipeId } = useParams();
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -19,7 +18,7 @@ const MockRecipePage = () => {
         } else {
           setError('Recipe not found');
         }
-      } catch (fetchError) { // Renamed 'error' to 'fetchError' here
+      } catch (fetchError) {
         setError('Error fetching recipe');
       } finally {
         setLoading(false);
@@ -33,17 +32,20 @@ const MockRecipePage = () => {
     };
   }, [recipeId]);
 
-  // Conditional rendering using if-else statements
   let content = null;
   if (loading) {
     content = <p>Loading...</p>;
   } else if (error) {
     content = <p>{error}</p>;
   } else if (selectedRecipe) {
+    let ratingComponent = null;
+    if (selectedRecipe && 'rating' in selectedRecipe) {
+      ratingComponent = <h3 className="text-center mb-4">Rating: {selectedRecipe.rating}/5</h3>;
+    }
     content = (
       <>
         <h1 className="text-center mt-2">{selectedRecipe.name}</h1>
-        <h3 className="text-center mb-4">Rating: {selectedRecipe.rating}/5</h3>
+        {ratingComponent}
         <Container>
           <Row>
             <Col md={6}>
@@ -82,4 +84,4 @@ const MockRecipePage = () => {
   return <Container fluid>{content}</Container>;
 };
 
-export default MockRecipePage;
+export default RecipePage;

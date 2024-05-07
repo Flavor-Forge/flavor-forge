@@ -22,15 +22,7 @@ class RecipesCollection {
         type: Number,
         min: 0,
         max: 5,
-        optional: true,
-        defaultValue: 0,
-        // Custom validation function to ensure the rating value is between 0 and 5
-        custom() {
-          if (this.value < 0 || this.value > 5) {
-            return 'Rating must be between 0 and 5';
-          }
-          return undefined;
-        },
+        optional: true, // Make rating optional
       },
     });
     this.collection.attachSchema(this.schema);
