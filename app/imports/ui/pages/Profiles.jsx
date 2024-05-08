@@ -9,16 +9,11 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { PageIDs } from '../utilities/ids';
 import { Recipes } from '../../api/recipes/Recipes';
 
-function getRecipeData(recipeName, email) {
-  const recipe = Recipes.collection.findOne({ name: recipeName, email });
-  return recipe;
-}
-
 const MakeCard = ({ recipe }) => (
   <Col>
     <Card className="h-100">
       <Card.Header>
-        <Image src={recipe.picture} width={285} />
+        <Image src={recipe.picture} width={200} />
         <Card.Title>
           <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
         </Card.Title>
@@ -32,25 +27,26 @@ const MakeCard = ({ recipe }) => (
 
 MakeCard.propTypes = {
   recipe: PropTypes.shape({
-    _id: PropTypes.string.isRequired, // Assuming _id is the unique identifier for the recipe
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
   }).isRequired,
 };
 const ProfilesPage = () => {
-  const { ready, profile } = useTracker(() => {
+  const { ready, profile: userProfile, userRecipe } = useTracker(() => {
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
-    const email = Meteor.user().emails[0].address;
-    const profile = Profiles.collection.findOne({ email });
+    const user = Meteor.user();
+    const profile = user ? Profiles.collection.findOne({ email: user.emails[0].address }) : null;
+    const sub2 = Meteor.subscribe(Recipes.userPublicationName);
+    const recipe = user ? Recipes.collection.find({ email: user.emails[0].address }).fetch() : [];
 
     return {
-      ready: sub1.ready(),
-      profile,
+      ready: sub1.ready() && sub2.ready(), // Ensure both subscriptions are ready
+      profile: profile,
+      userRecipe: recipe,
     };
   }, []);
-
-  const userRecipes = profile ? profile.projects.map(project => getRecipeData(project, profile.email)).filter(recipe => recipe) : [];
 
   return ready ? (
     <Container id={PageIDs.profilesPage}>
@@ -60,25 +56,25 @@ const ProfilesPage = () => {
         </Col>
       </Row>
       <Row>
-        {profile && (
-          <React.Fragment>
+        {userProfile && (
+          <>
             <Col md={6}>
               <div className="m-3">
-                <img src={profile.picture} alt={`${profile.firstName} ${profile.lastName}`} width={300}/>
+                <img src={userProfile.picture} alt={`${userProfile.firstName} ${userProfile.lastName}`} width={300} />
               </div>
               <div className="pt-4 m-5">
-                <h2>{profile.firstName} {profile.lastName}</h2>
+                <h2>{userProfile.firstName} {userProfile.lastName}</h2>
               </div>
               <div className="pt-4">
-                <p>{profile.bio}</p>
+                <p>{userProfile.bio}</p>
               </div>
             </Col>
             <Col md={6}>
               <div className="pt-2">
                 <h2>My Recipes</h2>
-                {userRecipes.length > 0 ? (
-                  <Row>
-                    {userRecipes.map(recipe => (
+                {userRecipe && userRecipe.length > 0 ? (
+                  <Row xs={1} md={2} className="g-2">
+                    {userRecipe.map(recipe => (
                       <MakeCard key={recipe._id} recipe={recipe} />
                     ))}
                   </Row>
@@ -91,7 +87,7 @@ const ProfilesPage = () => {
 
               </div>
             </Col>
-          </React.Fragment>
+          </>
         )}
       </Row>
     </Container>
