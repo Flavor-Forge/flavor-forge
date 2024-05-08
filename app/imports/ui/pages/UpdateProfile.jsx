@@ -44,14 +44,13 @@ const UpdateProfile = () => {
       email: Meteor.user()?.username,
     };
   }, []);
-  // Create the form schema for uniforms. Need to determine all interests and projects for muliselect list.
   const formSchema = makeSchema();
   const bridge = new SimpleSchema2Bridge(formSchema);
   // Now create the model with all the user information.
   const profile = Profiles.collection.findOne({ email });
   const model = _.extend({}, profile);
   return ready ? (
-    <Container id={PageIDs.homePage} className="justify-content-center" style={pageStyle}>
+    <Container id={PageIDs.updateProfilePage} className="justify-content-center" style={pageStyle}>
       <Col>
         <Col className="justify-content-center text-center"><h2>Your Profile</h2></Col>
         <AutoForm model={model} schema={bridge} onSubmit={data => submit(data)}>
