@@ -35,7 +35,7 @@ const addProfileMethod = 'Profiles.add';
 
 Meteor.methods({
   'Profiles.add'({ email }) {
-    Profiles.collection.insert({ email });
+    Profiles.collection.insert({ email: email });
   },
 });
 
