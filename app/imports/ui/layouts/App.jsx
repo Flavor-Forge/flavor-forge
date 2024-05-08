@@ -16,11 +16,13 @@ import Interests from '../pages/Interests';
 import Filter from '../pages/Filter';
 import AddRecipe from '../pages/AddRecipe';
 import HomePage from '../pages/HomePage';
+import EditRecipePage from '../pages/EditRecipePage';
 import RecipeListPage from '../pages/RecipeListPage';
 import UpdateProfile from '../pages/UpdateProfile';
 import RecipePageMockup from '../pages/RecipePageMockup';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
+
 const App = () => (
   <Router>
     <div className="d-flex flex-column min-vh-100">
