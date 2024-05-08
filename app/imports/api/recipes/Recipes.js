@@ -1,3 +1,4 @@
+// collections.js (or any server-side file)
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
@@ -8,6 +9,7 @@ class RecipesCollection {
     this.schema = new SimpleSchema({
       email: { type: String }, // email of the user who owns the recipe
       recipeId: { type: String, index: true, unique: true }, // Unique identifier for the recipe
+      _id: String,
       name: { type: String, index: true },
       description: { type: String, optional: true },
       ingredients: { type: Array },
@@ -39,3 +41,10 @@ class RecipesCollection {
 }
 
 export const Recipes = new RecipesCollection();
+
+Recipes.collection.allow({
+  insert(userId) {
+    // Allow insertion if the user is logged in
+    return !!userId;
+  },
+});

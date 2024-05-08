@@ -23,7 +23,7 @@ const SignUp = () => {
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
     const { email, password } = doc;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    Accounts.createUser({ email: email, username: email, password: password }, (err) => {
       if (err) {
         setError(err.reason);
       } else {

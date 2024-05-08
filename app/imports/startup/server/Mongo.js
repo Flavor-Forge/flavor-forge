@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
+import { check } from 'meteor/check';
 import { Projects } from '../../api/projects/Projects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import { Profiles } from '../../api/profiles/Profiles';
@@ -12,13 +13,17 @@ import { Recipes } from '../../api/recipes/Recipes';
 /* eslint-disable no-console */
 
 /** Define a user in the Meteor accounts package. This enables login. Username is the email address. */
-function createUser(email, role) {
-  const userID = Accounts.createUser({ username: email, email, password: 'foo' });
+const createUser = (email, password, role) => {
+  console.log(`  Creating user ${email}.`);
+  const userID = Accounts.createUser({
+    email: email, // Use email as username
+    password: password,
+  });
   if (role === 'admin') {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'admin');
   }
-}
+};
 
 /** Define an interest.  Has no effect if interest already exists. */
 function addInterest(interest) {
@@ -63,11 +68,13 @@ if (Meteor.users.find().count() === 0) {
 
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
 if (Meteor.users.find().count() === 0) {
-  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles) {
+  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultAccounts) {
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
+    console.log('Creating the default user(s)');
+    Meteor.settings.defaultAccounts.forEach(({ email, password, role }) => createUser(email, password, role));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }
@@ -88,3 +95,32 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
 }
+
+Meteor.methods({
+  'recipes.remove'(recipeId) {
+    // Check if the user is logged in
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized', 'You are not authorized to delete this recipe.');
+    }
+
+    // Check if the recipeId is a string
+    check(recipeId, String);
+
+    // Check if the recipe exists
+    const recipe = Recipes.collection.findOne(recipeId);
+    if (!recipe) {
+      throw new Meteor.Error('not-found', 'Recipe not found.');
+    }
+
+    // Get the current user's role
+    const userRole = Roles.getRolesForUser(this.userId)[0]; // Assuming a user has only one role
+
+    // Check if the current user is an admin
+    if (userRole !== 'admin') {
+      throw new Meteor.Error('not-authorized', 'You are not authorized to delete this recipe.');
+    }
+
+    // Remove the recipe
+    Recipes.collection.remove(recipeId);
+  },
+});

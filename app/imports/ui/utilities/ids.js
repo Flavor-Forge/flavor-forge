@@ -32,6 +32,7 @@ export const ComponentIDs = {
   signUpFormSubmit: 'signUpFormSubmit',
   recipelistMenuItem: 'recipelistMenuItem',
   updateProfileMenuItem: 'updateProfileMenuItem',
+  recipelistMenuItemAdmin: 'recipelistMenuItemAdmin',
 };
 
 export const PageIDs = {
@@ -45,6 +46,8 @@ export const PageIDs = {
   profilesPage: 'profilesPage',
   projectsPage: 'projectsPage',
   recipesListPage: 'recipesListPage',
+  recipeListPageAdmin: 'recipeListPageAdmin',
+  recipePage: 'recipePage',
   signInPage: 'signInPage',
   signOutPage: 'signOutPage',
   signUpPage: 'signUpPage',

@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="5839" />
+    <option name="totalTimeSeconds" value="10564" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,6 +22,9 @@
         <option value="JSX File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -61,6 +64,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ccyan\Documents\flavor-forge\app\imports\ui\pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\tests" />
       <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\public\images" />
@@ -104,7 +108,12 @@
     <MESSAGE value="Created Recipe List Page: 4 hrs 41 min" />
     <MESSAGE value="Added New Recipes to default database: 5 hrs 29 min" />
     <MESSAGE value="Recipe List Page database implemented: 5 hrs 47 min" />
+    <MESSAGE value="Fixed Issue with recipePage not loading on refresh" />
+    <MESSAGE value="Attempted Implementation of Ratings" />
+    <MESSAGE value="Currently Adds new rating to the Ratings collection but does not update Recipe collection with the properly calculated averageRating." />
+    <MESSAGE value="Now correctly updates ratings and averages sum of the ratings" />
     <MESSAGE value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
-    <option name="LAST_COMMIT_MESSAGE" value="Recipe Cards are now linked to the proper recipe pages, but with a couple issues. The images are not showing on the recipe page and the page says &quot;Recipe not found&quot; after refreshing: 6 hrs 59 min" />
+    <MESSAGE value="Test Run of possible solution to errors on insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Run of possible solution to errors on insert" />
   </component>
 </project>
