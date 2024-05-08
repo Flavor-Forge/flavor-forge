@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Projects } from '../../api/projects/Projects';
 import { Profiles } from '../../api/profiles/Profiles';
-import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 
@@ -37,12 +36,12 @@ const updateProfileMethod = 'Profiles.update';
  * updated situation specified by the user.
  */
 Meteor.methods({
-  'Profiles.update'({ email, firstName, lastName, bio, title, picture, interests, projects }) {
-    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, title, picture } });
-    ProfilesInterests.collection.remove({ profile: email });
-    ProfilesProjects.collection.remove({ profile: email });
-    interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
-    projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
+  'Profiles.update'({ email, firstName, lastName, bio, picture }) {
+    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, picture } });
+    // ProfilesInterests.collection.remove({ profile: email });
+    // ProfilesProjects.collection.remove({ profile: email });
+    // interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
+    // projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
   },
 });
 
