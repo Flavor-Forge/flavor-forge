@@ -32,6 +32,14 @@ import { Ratings } from '../../api/ratings/Ratings';
  * back if any of the intermediate updates failed. Left as an exercise to the reader.
  */
 
+const addProfileMethod = 'Profiles.add';
+
+Meteor.methods({
+  'Profiles.add'({ email }) {
+    Profiles.collection.insert({ email });
+  },
+});
+
 const updateProfileMethod = 'Profiles.update';
 
 /**
@@ -94,4 +102,4 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod, updateRecipeRatingMethod, addRatingMethod };
+export { updateProfileMethod, addProjectMethod, updateRecipeRatingMethod, addRatingMethod, addProfileMethod };
