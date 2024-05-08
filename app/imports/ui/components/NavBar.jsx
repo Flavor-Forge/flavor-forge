@@ -33,7 +33,7 @@ const NavBar = () => {
             ) : ''}
             <Nav.Link as={NavLink} id={ComponentIDs.interestsMenuItem} to="/interests" key="interests">Ingredients</Nav.Link>
             {currentUser ? (
-              [<Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Recipe</Nav.Link>,
+              [<Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addRecipe" key="addP">Add Recipe</Nav.Link>,
                 <Nav.Link as={NavLink} id={ComponentIDs.updateProfileMenuItem} to="/updateProfile" key="uP">Update Profile</Nav.Link>,
                 <Nav.Link as={NavLink} id={ComponentIDs.filterMenuItem} to="/filter" key="filter" />]
             ) : ''}
