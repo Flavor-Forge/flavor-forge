@@ -169,7 +169,7 @@
         }
       ],
       "instructions": "1. Cook spaghetti in boiling water until al dente. 2. In a separate pan, fry pancetta until crispy. 3. In a bowl, whisk together eggs and grated Parmesan cheese. 4. Drain cooked spaghetti and transfer to the pan with crispy pancetta. 5. Quickly add the egg mixture to the spaghetti and pancetta, stirring continuously to coat the pasta. 6. Season with black pepper to taste. 7. Serve immediately and enjoy!",
-      "picture": "./images/spaghetticarbonara.jpg",
+      "picture": "../images/spaghetticarbonara.jpg",
       "rating": 4.3,
       "loadAssetsFile": false
     },
@@ -216,7 +216,7 @@
         }
       ],
       "instructions": "1. Cook fettuccine pasta according to package instructions. 2. In a skillet, cook diced chicken breasts until golden brown. 3. Add minced garlic to the skillet and sauté until fragrant. 4. Pour in heavy cream and bring to a simmer. 5. Stir in grated Parmesan cheese until the sauce is smooth and creamy. 6. Season with salt and black pepper to taste. 7. Toss cooked pasta in the Alfredo sauce until well coated. 8. Serve hot and garnish with additional Parmesan cheese if desired.",
-      "picture": "images/chickenalfredo.png",
+      "picture": "../images/chickenalfredo.png",
       "rating": 4.7,
       "loadAssetsFile": false
     },
@@ -288,7 +288,7 @@
         }
       ],
       "instructions": "1. Heat cooking oil in a large skillet or wok over medium-high heat. 2. Add minced garlic and ginger to the skillet and cook until fragrant. 3. Add broccoli florets, sliced bell peppers, julienned carrots, snow peas, and sliced mushrooms to the skillet. 4. Stir-fry the vegetables until they are tender-crisp. 5. In a small bowl, whisk together soy sauce and sesame oil. 6. Pour the sauce over the vegetables and toss to coat evenly. 7. Season with salt and black pepper to taste. 8. Serve hot as a delicious and nutritious meal!",
-      "picture": "images/vegetablestirfry.png",
+      "picture": "../images/vegetablestirfry.png",
       "rating": 4.5,
       "loadAssetsFile": false
     },
@@ -350,7 +350,7 @@
         }
       ],
       "instructions": "1. Preheat oven to 375°F (190°C) and line baking sheets with parchment paper. 2. In a medium bowl, whisk together flour, baking soda, and salt. 3. In a large mixing bowl, cream together softened butter, granulated sugar, brown sugar, and vanilla extract until light and fluffy. 4. Beat in eggs one at a time until well combined. 5. Gradually add the flour mixture to the wet ingredients, mixing until just combined. 6. Stir in chocolate chips and chopped nuts if using. 7. Drop spoonfuls of cookie dough onto prepared baking sheets, leaving space between each cookie. 8. Bake in preheated oven for 8-10 minutes or until edges are golden brown. 9. Allow cookies to cool on the baking sheets for a few minutes before transferring to wire racks to cool completely. 10. Enjoy these delicious homemade chocolate chip cookies with a glass of milk!",
-      "picture": "images/chocolatechipcookies.png",
+      "picture": "../images/chocolatechipcookies.png",
       "rating": 4.8,
       "loadAssetsFile": false
     }

@@ -11,11 +11,14 @@ const EditRecipePage = () => {
     description: '',
     ingredients: [{ name: '', quantity: '', price: '' }],
     instructions: '',
+    picture: '',
+    rating: 0,
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // eslint-disable-next-line no-shadow
     Meteor.call('recipes.findOne', recipeId, (error, response) => {
       if (error) {
         setError('Failed to fetch recipe data.');
@@ -44,11 +47,12 @@ const EditRecipePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // eslint-disable-next-line no-shadow
     Meteor.call('recipes.update', recipeId, recipe, (error) => {
       if (error) {
         setError('Error updating recipe.');
       } else {
-        navigate('/recipe-list'); // Ensure this is the correct path to your recipe list
+        navigate('/recipelistpage'); // Ensure this is the correct path to your recipe list
       }
     });
   };
@@ -102,6 +106,36 @@ const EditRecipePage = () => {
             />
           </div>
         ))}
+        <Form.Group className="mb-3">
+          <Form.Label>Instructions</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={5}
+            name="instructions"
+            value={recipe.instructions || ''}
+            onChange={handleChange}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Picture (URL address)</Form.Label>
+          <Form.Control
+            type="text"
+            name="picture"
+            value={recipe.picture || ''}
+            onChange={handleChange}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Rating</Form.Label>
+          <Form.Control
+            type="number"
+            min="0"
+            max="5"
+            name="rating"
+            value={recipe.rating || ''}
+            onChange={handleChange}
+          />
+        </Form.Group>
         <Button variant="primary" type="submit">
           Submit Changes
         </Button>

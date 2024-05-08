@@ -72,7 +72,7 @@ const RecipePage = () => {
           <Col md={6} className="d-flex justify-content-center align-items-center">
             <div style={{ maxWidth: '100%', maxHeight: '400px' }}>
               <img
-                src={`../${selectedRecipe.picture}`}
+                src={`${selectedRecipe.picture}`}
                 alt={selectedRecipe.name}
                 style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
               />
