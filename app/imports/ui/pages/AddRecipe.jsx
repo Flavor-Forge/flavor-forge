@@ -7,7 +7,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Recipes } from '../../api/recipes/Recipes';
 
-/* const generateRecipeId = () => {
+const generateRecipeId = () => {
   // Generate a random alphanumeric string
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const length = 10; // Adjust the length as needed
@@ -16,7 +16,7 @@ import { Recipes } from '../../api/recipes/Recipes';
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return result;
-}; */
+};
 
 const formSchema = new SimpleSchema({
   name: String,
@@ -47,7 +47,7 @@ const formSchema = new SimpleSchema({
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 const AddRecipe = () => {
-  /* const submit = async (data, formRef) => {
+  const submit = async (data, formRef) => {
     const { name, description, ingredients, instructions, rating, picture } = data;
     const email = Meteor.user().emails[0].address;
     const recipeId = generateRecipeId();
@@ -57,7 +57,6 @@ const AddRecipe = () => {
       await Recipes.collection.insert({
         email,
         recipeId,
-        _id,
         name,
         description,
         ingredients,
@@ -71,21 +70,6 @@ const AddRecipe = () => {
     } catch (error) {
       swal('Error', error.message, 'error');
     }
-  }; */
-  const submit = (data, formRef) => {
-    const { name, description, ingredients, instructions, rating, picture } = data;
-    const owner = Meteor.user().username;
-    Recipes.collection.insert(
-      { name, description, ingredients, instructions, rating, picture, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      },
-    );
   };
 
   let fRef = null;

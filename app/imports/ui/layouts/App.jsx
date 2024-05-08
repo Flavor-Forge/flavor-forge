@@ -22,6 +22,8 @@ import RecipePage from '../pages/RecipePage';
 import AddRecipe from '../pages/AddRecipe';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RecipeListPageAdmin from '../pages/RecipeListPageAdmin';
+import UpdateProfile from '../pages/UpdateProfile';
+import EditRecipePage from '../pages/EditRecipePage';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -41,10 +43,12 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/interests" element={<Interests />} />
+          <Route path="/updateProfile" element={<UpdateProfile />} />
+          <Route path="/EditRecipePage/:recipeId" element={<EditRecipePage />} />
           <Route path="/profiles" element={<ProtectedRoute><Profiles /></ProtectedRoute>} />
           <Route path="/recipelistpage" element={<RecipeListPage />} />
           <Route path="/recipelistpageadmin" element={<AdminProtectedRoute ready={ready}><RecipeListPageAdmin /></AdminProtectedRoute>} />
-          <Route path="/recipe/:recipeId" element={<RecipePage />} />
+          <Route path="/recipe/:_id" element={<RecipePage />} />
           <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
           <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
           <Route path="/addrecipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
