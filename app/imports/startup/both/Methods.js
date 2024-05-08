@@ -4,6 +4,7 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
+import { Recipes } from '../../api/recipes/Recipes';
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -64,5 +65,35 @@ Meteor.methods({
     }
   },
 });
+
+Meteor.methods({
+  'Recipes.updateEdit'({ recipeId, name, description, ingredients, instructions }) {
+    check(recipeId, String);
+    check(name, String);
+    check(description, String);
+    check(ingredients, [Object]); // Validate that ingredients is an array of objects
+    check(instructions, String);
+
+    // Update the recipe document
+    Recipes.collection.update(
+      { _id: recipeId },
+      {
+        $set: {
+          name: name,
+          description: description,
+          ingredients: ingredients,
+          instructions: instructions,
+        },
+      },
+      (error) => {
+        if (error) {
+          throw new Meteor.Error('update-failed', 'Failed to update the recipe.');
+        }
+      },
+    );
+  },
+});
+
+export const updateRecipeEditMethod = 'Recipes.updateEdit';
 
 export { updateProfileMethod, addProjectMethod };
