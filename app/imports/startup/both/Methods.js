@@ -1,11 +1,10 @@
 import { Meteor } from 'meteor/meteor';
-import { check } from 'meteor/check';
 import { Projects } from '../../api/projects/Projects';
 import { Profiles } from '../../api/profiles/Profiles';
+import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import { Recipes } from '../../api/recipes/Recipes';
-import { Ratings } from '../../api/ratings/Ratings';
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -31,14 +30,6 @@ import { Ratings } from '../../api/ratings/Ratings';
  * back if any of the intermediate updates failed. Left as an exercise to the reader.
  */
 
-const addProfileMethod = 'Profiles.add';
-
-Meteor.methods({
-  'Profiles.add'({ email }) {
-    Profiles.collection.insert({ email });
-  },
-});
-
 const updateProfileMethod = 'Profiles.update';
 
 /**
@@ -47,12 +38,12 @@ const updateProfileMethod = 'Profiles.update';
  * updated situation specified by the user.
  */
 Meteor.methods({
-  'Profiles.update'({ email, firstName, lastName, bio, picture }) {
-    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, picture } });
-    // ProfilesInterests.collection.remove({ profile: email });
-    // ProfilesProjects.collection.remove({ profile: email });
-    // interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
-    // projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
+  'Profiles.update'({ email, firstName, lastName, bio, title, picture, interests, projects }) {
+    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, title, picture } });
+    ProfilesInterests.collection.remove({ profile: email });
+    ProfilesProjects.collection.remove({ profile: email });
+    interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
+    projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
   },
 });
 
@@ -75,30 +66,34 @@ Meteor.methods({
   },
 });
 
-const updateRecipeRatingMethod = 'Recipes.updateRating';
-
 Meteor.methods({
-  'Recipes.updateRating'(ratingData) {
-    check(ratingData, Object);
-    check(ratingData.rating, Number);
-    check(ratingData.recipeId, String);
-    Recipes.collection.update({ _id: ratingData.recipeId }, { $set: { rating: ratingData.rating } });
-    console.log('Rating Data updated', ratingData);
+  'Recipes.updateEdit'({ recipeId, name, description, ingredients, instructions }) {
+    check(recipeId, String);
+    check(name, String);
+    check(description, String);
+    check(ingredients, [Object]); // Validate that ingredients is an array of objects
+    check(instructions, String);
+
+    // Update the recipe document
+    Recipes.collection.update(
+      { _id: recipeId },
+      {
+        $set: {
+          name: name,
+          description: description,
+          ingredients: ingredients,
+          instructions: instructions,
+        },
+      },
+      (error) => {
+        if (error) {
+          throw new Meteor.Error('update-failed', 'Failed to update the recipe.');
+        }
+      },
+    );
   },
 });
 
-const addRatingMethod = 'Ratings.addRating';
+export const updateRecipeEditMethod = 'Recipes.updateEdit';
 
-Meteor.methods({
-  'Ratings.addRating'(ratingData) {
-    check(ratingData, Object);
-    check(ratingData.value, Number);
-    check(ratingData.recipeId, String);
-    Ratings.collection.insert({
-      value: ratingData.value,
-      recipeId: ratingData.recipeId,
-    });
-  },
-});
-
-export { updateProfileMethod, addProjectMethod, updateRecipeRatingMethod, addRatingMethod, addProfileMethod };
+export { updateProfileMethod, addProjectMethod };
