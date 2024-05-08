@@ -31,6 +31,7 @@ export const ComponentIDs = {
   signUpFormPassword: 'signUpFormPassword',
   signUpFormSubmit: 'signUpFormSubmit',
   recipelistMenuItem: 'recipelistMenuItem',
+  updateProfileMenuItem: 'updateProfileMenuItem',
   recipelistMenuItemAdmin: 'recipelistMenuItemAdmin',
 };
 
@@ -50,4 +51,5 @@ export const PageIDs = {
   signInPage: 'signInPage',
   signOutPage: 'signOutPage',
   signUpPage: 'signUpPage',
+  updateProfilePage: 'updateProfilePage',
 };

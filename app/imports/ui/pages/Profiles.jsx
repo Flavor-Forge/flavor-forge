@@ -56,7 +56,7 @@ const ProfilesPage = () => {
         </Col>
       </Row>
       <Row>
-        {userProfile && (
+        {userProfile ? (
           <>
             <Col md={6}>
               <div className="m-3">
@@ -73,7 +73,7 @@ const ProfilesPage = () => {
               <div className="pt-2">
                 <h2>My Recipes</h2>
                 {userRecipe && userRecipe.length > 0 ? (
-                  <Row xs={1} md={2} className="g-2">
+                  <Row>
                     {userRecipe.map(recipe => (
                       <MakeCard key={recipe._id} recipe={recipe} />
                     ))}
@@ -84,10 +84,13 @@ const ProfilesPage = () => {
               </div>
               <div className="pt-4">
                 <h2>Favorite Recipes</h2>
-
               </div>
             </Col>
           </>
+        ) : (
+          <Col md={12}>
+            <p className="text-center">No profile found, please update your profile.</p>
+          </Col>
         )}
       </Row>
     </Container>
