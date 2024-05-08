@@ -37,13 +37,12 @@ const StarRating = ({ recipeId }) => {
     <div>
       <h2>Rate This Recipe:</h2>
       <StarRatings
-        rating={newRating}
+        rating={rating}
         starRatedColor="orange" // Color of filled stars
         changeRating={handleRatingChange} // Callback function to handle rating changes
         numberOfStars={5} // Total number of stars to display
         name="rating" // Name for the rating input (useful for forms)
       />
-      <p>Selected Rating: {rating}</p>
     </div>
   );
 };
