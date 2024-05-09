@@ -14,7 +14,6 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import Profiles from '../pages/Profiles';
-import Interests from '../pages/Interests';
 import Filter from '../pages/Filter';
 import HomePage from '../pages/HomePage';
 import RecipeListPage from '../pages/RecipeListPage';
@@ -42,7 +41,6 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/interests" element={<Interests />} />
           <Route path="/updateProfile" element={<UpdateProfile />} />
           <Route path="/EditRecipePage/:recipeId" element={<EditRecipePage />} />
           <Route path="/profiles" element={<ProtectedRoute><Profiles /></ProtectedRoute>} />
