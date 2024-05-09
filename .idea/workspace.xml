@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="FINAL DRAFT">
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Home.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Interests.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Projects.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="16794" />
+    <option name="totalTimeSeconds" value="16915" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,7 +94,7 @@
       <workItem from="1713687811699" duration="1977000" />
       <workItem from="1715156822297" duration="115000" />
       <workItem from="1715157259856" duration="1202000" />
-      <workItem from="1715229372228" duration="2003000" />
+      <workItem from="1715229372228" duration="2124000" />
     </task>
     <servers />
   </component>

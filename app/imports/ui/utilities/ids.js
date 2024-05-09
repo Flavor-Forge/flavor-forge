@@ -1,17 +1,7 @@
 export const ComponentIDs = {
-  addProjectMenuItem: 'addProjectMenuItem',
-  addProjectFormName: 'addProjectFormName',
-  addProjectFormPicture: 'addProjectFormPicture',
-  addProjectFormHomePage: 'addProjectFormHomePage',
-  addProjectFormDescription: 'addProjectFormDescription',
-  addProjectFormInterests: 'addProjectFormInterests',
-  addProjectFormParticipants: 'addProjectFormParticipants',
-  addProjectFormSubmit: 'addProjectFormSubmit',
   basicNavbarNav: 'basicNavbarNav',
   currentUserDropdown: 'currentUserDropdown',
   currentUserDropdownSignOut: 'currentUserDropdownSignOut',
-  filterFormInterests: 'filterFormInterests',
-  filterFormSubmit: 'filterFormSubmit',
   filterMenuItem: 'filterMenuItem',
   homeFormFirstName: 'homeFormFirstName',
   homeFormLastName: 'homeFormLastName',
@@ -36,10 +26,8 @@ export const ComponentIDs = {
 };
 
 export const PageIDs = {
-  addProjectPage: 'addProjectPage',
   filterPage: 'filterPage',
   homePage: 'homePage',
-  interestsPage: 'interestsPage',
   landingPage: 'landingPage',
   notAuthorizedPage: 'notAuthorizedPage',
   notFoundPage: 'notFoundPage',
