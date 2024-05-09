@@ -10,16 +10,15 @@ import { PageIDs } from '../utilities/ids';
 import { Recipes } from '../../api/recipes/Recipes';
 
 const MakeCard = ({ recipe }) => (
-  <Col>
-    <Card className="h-100">
-      <Card.Header>
-        <Image src={recipe.picture} width={200} />
-        <Card.Title>
-          <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
-        </Card.Title>
-      </Card.Header>
+  <Col sm={6} md={4} lg={3} className="mb-3">
+    <Card>
+      <Card.Img variant="top" src={recipe.picture} />
       <Card.Body>
+        <Card.Title>{recipe.name}</Card.Title>
         <Card.Text>{recipe.description}</Card.Text>
+        <Link to={`/recipe/${recipe._id}`} className="btn btn-primary">
+          View Recipe
+        </Link>
       </Card.Body>
     </Card>
   </Col>
