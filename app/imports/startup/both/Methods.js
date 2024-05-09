@@ -28,6 +28,36 @@ import { Ratings } from '../../api/ratings/Ratings';
  * back if any of the intermediate updates failed. Left as an exercise to the reader.
  */
 
+Meteor.methods({
+  'Recipes.updateEdit'({ recipeId, name, description, ingredients, instructions }) {
+    check(recipeId, String);
+    check(name, String);
+    check(description, String);
+    check(ingredients, [Object]); // Validate that ingredients is an array of objects
+    check(instructions, String);
+
+    // Update the recipe document
+    Recipes.collection.update(
+      { _id: recipeId },
+      {
+        $set: {
+          name: name,
+          description: description,
+          ingredients: ingredients,
+          instructions: instructions,
+        },
+      },
+      (error) => {
+        if (error) {
+          throw new Meteor.Error('update-failed', 'Failed to update the recipe.');
+        }
+      },
+    );
+  },
+});
+
+export const updateRecipeEditMethod = 'Recipes.updateEdit';
+
 const addProfileMethod = 'Profiles.add';
 
 Meteor.methods({

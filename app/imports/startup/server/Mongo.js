@@ -74,31 +74,30 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   jsonData.profiles.map(profile => addProfile(profile));
 }
 
+// Meteor methods for recipe management
 Meteor.methods({
-  'recipes.remove'(recipeId) {
-    // Check if the user is logged in
-    if (!this.userId) {
-      throw new Meteor.Error('not-authorized', 'You are not authorized to delete this recipe.');
-    }
-
-    // Check if the recipeId is a string
+  'recipes.findOne': function (recipeId) {
     check(recipeId, String);
-
-    // Check if the recipe exists
-    const recipe = Recipes.collection.findOne(recipeId);
+    const recipe = Recipes.collection.findOne({ _id: recipeId });
+    if (!recipe) {
+      throw new Meteor.Error('not-found', 'Recipe not found');
+    }
+    return recipe;
+  },
+  'recipes.update': function (recipeId, updatedRecipe) {
+    check(recipeId, String);
+    check(updatedRecipe, Object); // Further checks can be added based on recipe schema
+    return Recipes.collection.update({ _id: recipeId }, { $set: updatedRecipe });
+  },
+  'recipes.remove': function (recipeId) {
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized', 'You must be logged in to perform this action.');
+    }
+    check(recipeId, String);
+    const recipe = Recipes.collection.findOne({ _id: recipeId });
     if (!recipe) {
       throw new Meteor.Error('not-found', 'Recipe not found.');
     }
-
-    // Get the current user's role
-    const userRole = Roles.getRolesForUser(this.userId)[0]; // Assuming a user has only one role
-
-    // Check if the current user is an admin
-    if (userRole !== 'admin') {
-      throw new Meteor.Error('not-authorized', 'You are not authorized to delete this recipe.');
-    }
-
-    // Remove the recipe
-    Recipes.collection.remove(recipeId);
+    return Recipes.collection.remove({ _id: recipeId });
   },
 });
