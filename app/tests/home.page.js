@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import { ComponentIDs, PageIDs } from '../imports/ui/utilities/ids';
+import { PageIDs } from '../imports/ui/utilities/ids';
 
 class HomePage {
   constructor() {

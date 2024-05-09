@@ -3,7 +3,6 @@ import { signInPage } from './signin.page';
 import { signOutPage } from './signout.page';
 import { signupPage } from './signup.page';
 import { recipesListPage } from './recipeslist.page';
-import { recipePage } from './recipe.page'
 import { navBar } from './navbar.component';
 
 /* global fixture:false, test:false */
