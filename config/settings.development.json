@@ -353,6 +353,261 @@
       "picture": "../images/chocolatechipcookies.png",
       "rating": 4.8,
       "loadAssetsFile": false
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "lemon-bars",
+      "name": "Lemon Bars",
+      "description": "Delicious lemon bars with a buttery crust and tangy lemon filling.",
+      "ingredients": [
+        { "name": "All-purpose flour", "quantity": "1 1/2 cups", "price": 1.0 },
+        { "name": "Powdered sugar", "quantity": "2/3 cup", "price": 0.5 },
+        { "name": "Butter, softened", "quantity": "3/4 cup", "price": 2.0 },
+        { "name": "Eggs", "quantity": "6", "price": 1.5 },
+        { "name": "Sugar", "quantity": "1 3/4 cups", "price": 1.0 },
+        { "name": "All-purpose flour", "quantity": "6 tablespoons", "price": 0.5 },
+        { "name": "Lemon juice", "quantity": "1 cup", "price": 2.0 },
+        { "name": "Yellow food coloring", "quantity": "3 drops", "price": 0.2 },
+        { "name": "Powdered sugar for decoration", "quantity": "1/4 cup", "price": 0.5 }
+      ],
+      "instructions": "1. Heat oven to 350°F. Grease a 9x13 inch baking pan.\n2. In a medium bowl combine flour, powdered sugar, and softened butter. Pat dough into prepared pan and bake for 15 minutes or until slightly golden brown. Set crust aside and leave oven on.\n3. In a medium bowl whisk together eggs, sugar, flour, lemon juice, and food coloring until frothy. Pour lemon mixture over hot crust.\n4. Return to heated oven for an additional 20 minutes, or until light golden brown.\n5. Cool on a wire rack. Dust with powdered sugar.\n6. Cut into squares. Serves 16.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/tart_lemon_bars.jpg",
+      "rating": 4.5
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "pork-chicken-afritada",
+      "name": "Pork or Chicken Afritada",
+      "description": "A flavorful Filipino stew made with tender pork or chicken, garbanzo beans, peas, and bell pepper.",
+      "ingredients": [
+        { "name": "Vegetable oil", "quantity": "1 tablespoon", "price": 0.5 },
+        { "name": "Lean pork or boneless skinless chicken", "quantity": "1 1/2 pounds", "price": 5.0 },
+        { "name": "Garlic, minced", "quantity": "2 cloves", "price": 0.3 },
+        { "name": "Water", "quantity": "1/2 cup", "price": 0.2 },
+        { "name": "Tomato sauce", "quantity": "8 ounces", "price": 1.0 },
+        { "name": "Vinegar", "quantity": "1 teaspoon", "price": 0.3 },
+        { "name": "Cinnamon sticks", "quantity": "2 sticks", "price": 0.5 },
+        { "name": "Bay leaf", "quantity": "1", "price": 0.2 },
+        { "name": "Salt", "quantity": "1 teaspoon", "price": 0.2 },
+        { "name": "Pepper", "quantity": "1/4 teaspoon", "price": 0.1 },
+        { "name": "Garbanzo beans, drained", "quantity": "15 ounces", "price": 1.0 },
+        { "name": "Frozen peas", "quantity": "10 ounces", "price": 1.0 },
+        { "name": "Red bell pepper, sliced or sliced pimientos", "quantity": "1 red bell pepper or 1/2 cup sliced pimientos", "price": 0.8 }
+      ],
+      "instructions": "1. In a large skillet, heat oil over medium heat.\n2. Saute pork or chicken and garlic until brown. Drain excess fat.\n3. Add water and cook, uncovered, on medium-high heat until liquid is reduced.\n4. Add tomato sauce, vinegar, cinnamon sticks, bay leaf, salt, and pepper.\n5. Stirring occasionally, cover and simmer for 20 minutes.\n6. Add garbanzo beans, peas, and bell pepper; cover and cook for 5 more minutes.\n7. If using pimientos, add just before serving.\n8. Discard cinnamon sticks and bay leaf. Serves 6.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/pork_or_chicken_guisantes.jpg",
+      "rating": 4.0
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "mochi",
+      "name": "Mochi",
+      "description": "Delicious and chewy Japanese rice cakes made with mochiko and coconut milk.",
+      "ingredients": [
+        { "name": "Non-stick cooking spray", "quantity": "As needed", "price": 0.5 },
+        { "name": "Mochiko (sweet rice flour)", "quantity": "1-pound box (16 ounces)", "price": 2.0 },
+        { "name": "Sugar", "quantity": "1 1/2 cups to 2 cups", "price": 1.0 },
+        { "name": "Baking powder", "quantity": "1 teaspoon", "price": 0.2 },
+        { "name": "Coconut milk", "quantity": "1 (15-ounce) can", "price": 1.5 },
+        { "name": "Water", "quantity": "1 cup", "price": 0.3 },
+        { "name": "Vanilla extract", "quantity": "1 teaspoon", "price": 0.5 },
+        { "name": "Red food coloring", "quantity": "4-6 drops", "price": 0.3 },
+        { "name": "Potato starch", "quantity": "1/2 cup", "price": 0.5 }
+      ],
+      "instructions": "1. Heat oven to 350°F.\n2. Spray non-stick cooking spray in a 9x13-inch glass baking dish.\n3. In a mixing bowl, sift mochiko, sugar, and baking powder; set aside.\n4. In a separate large bowl, whisk coconut milk and water. Add vanilla and mix well.\n5. Using a hand mixer, slowly add dry ingredients to wet ingredients, and mix until well blended.\n6. Add food coloring to the batter and mix well until desired color is achieved.\n7. Pour mixture into baking dish. Cover pan with foil, sealing it completely.\n8. Bake for 1 hour. The edges may appear slightly hard and over-baked, while the center will appear moist.\n9. Remove foil and cool completely.\n10. Dust a clean flat surface with potato starch. Cut edges away from pan.\n11. Turn baking dish of mochi out onto surface. Use a metal spatula, if necessary, to scrape the mochi out of the dish.\n12. Cut mochi into small bite-sized cubes using a plastic knife. Roll mochi in potato starch, and dust off excess before serving.\n13. Keeps for 1 day in an airtight container in a cool location. Store in refrigerator for 3-5 days; microwave for 10 seconds to soften. Makes 80 bite-size mochi.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/chichi_dango.jpg",
+      "rating": 4.2
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "ti-leaf-pudding",
+      "name": "Ti Leaf Pudding",
+      "description": "A traditional Hawaiian dessert made with mochiko and brown sugar, steamed in ti leaves.",
+      "ingredients": [
+        { "name": "Ti leaves", "quantity": "6", "price": 0.0 },
+        { "name": "Brown brick sugar", "quantity": "1 pound", "price": 2.0 },
+        { "name": "Raw sugar", "quantity": "1/2 cup", "price": 0.5 },
+        { "name": "Hot water", "quantity": "2 1/2 cups", "price": 0.0 },
+        { "name": "Mochiko (glutinous rice flour)", "quantity": "1 pound, sifted", "price": 2.0 },
+        { "name": "Vegetable oil", "quantity": "1/4 cup", "price": 0.3 },
+        { "name": "Dried red date", "quantity": "1", "price": 0.1 },
+        { "name": "Toasted sesame seeds", "quantity": "2 teaspoons", "price": 0.2 }
+      ],
+      "instructions": "1. Oil ti leaves and sides of a 7 1/2 x 3-inch round pan. Line pan with leaves.\n2. Dissolve brick sugar and raw sugar in hot water; cool.\n3. Gradually add mochiko, stirring to make a thin batter; stir in salad oil.\n4. Pour into prepared pan and steam for 4 hours or cook in a pressure cooker for 2-1/2 hours.\n5. Garnish the center of the pudding with a dried red date and sprinkle the top with sesame seeds.\n6. Makes 24 servings.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/gau.jpg",
+      "rating": 4.5
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "eggnog-bread-pudding",
+      "name": "Eggnog Bread Pudding",
+      "description": "A delicious holiday dessert made with eggnog, bread cubes, and warming spices.",
+      "ingredients": [
+        { "name": "Thick white bread slices", "quantity": "16-18 slices, quartered cubes", "price": 0.0 },
+        { "name": "Butter (for spreading in bread pans)", "quantity": "1/2 cup, softened", "price": 0.5 },
+        { "name": "Butter", "quantity": "1 cup", "price": 1.0 },
+        { "name": "Sugar", "quantity": "1 1/2 cups", "price": 0.5 },
+        { "name": "Eggs", "quantity": "4, beaten", "price": 1.0 },
+        { "name": "Eggnog", "quantity": "24 ounces", "price": 2.0 },
+        { "name": "Vanilla", "quantity": "1 teaspoon", "price": 0.3 },
+        { "name": "Salt", "quantity": "Dash", "price": 0.0 },
+        { "name": "Cinnamon", "quantity": "1 teaspoon", "price": 0.3 }
+      ],
+      "instructions": "1. Prepare bread by cutting it into quartered cubes and set aside.\n2. Butter the bottom and sides of four small loaf pans (approximately 8”x4”x3”).\n3. In a large pot, melt butter on medium-low heat, then add sugar until fully dissolved.\n4. In a separate bowl, mix eggs, eggnog, vanilla, and salt.\n5. Add one ladle of the warm milk mixture to the eggs, stirring constantly to prevent scrambling.\n6. Add the egg mixture to the warm milk mixture, stirring constantly.\n7. Turn off the heat and remove the pot from the heating element.\n8. Add cinnamon and mix thoroughly.\n9. Add bread cubes and mix until all pieces are drenched.\n10. Immediately place the bread mixture into the buttered pans.\n11. Cook in a preheated 350°F oven for 30-35 minutes. If a crispy top is desired, broil for 3-5 minutes.\n12. Bread is best if it is a couple of days old.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/eggnog_bread_pudding.jpg",
+      "rating": 4.8
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "shepherds-pie",
+      "name": "Shepherd's Pie",
+      "description": "A classic comfort food dish featuring seasoned ground beef, mixed vegetables, creamy mashed potatoes, and melted cheese.",
+      "ingredients": [
+        { "name": "Olive oil", "quantity": "2 tablespoons", "price": 0.5 },
+        { "name": "Yellow onion, chopped", "quantity": "1 cup", "price": 0.5 },
+        { "name": "Lean ground beef", "quantity": "1 lb.", "price": 5.0 },
+        { "name": "Worcestershire sauce", "quantity": "1 tablespoon", "price": 0.5 },
+        { "name": "Salt", "quantity": "1/2 teaspoon", "price": 0.2 },
+        { "name": "Ground black pepper", "quantity": "1/2 teaspoon", "price": 0.2 },
+        { "name": "Garlic cloves, minced", "quantity": "2", "price": 0.5 },
+        { "name": "Tomato paste", "quantity": "2 tablespoons", "price": 0.5 },
+        { "name": "Water", "quantity": "1/2 cup", "price": 0.0 },
+        { "name": "Frozen vegetable medley", "quantity": "1 cup", "price": 1.0 },
+        { "name": "Russet potatoes, peeled and cut into 1-inch cubes", "quantity": "2 large", "price": 1.0 },
+        { "name": "Unsalted butter", "quantity": "6 tablespoons", "price": 1.0 },
+        { "name": "Low-fat milk", "quantity": "1/3 cup", "price": 0.5 },
+        { "name": "Shredded mixed cheese", "quantity": "1 cup", "price": 2.0 }
+      ],
+      "instructions": "1. In a large non-stick skillet over medium-high heat, heat olive oil for 1-2 minutes.\n2. Add chopped onions and minced garlic. Cook for approximately 5 minutes, stirring occasionally.\n3. Add lean ground beef and break it apart with a wooden spoon.\n4. Add Worcestershire sauce, salt, and pepper. Cook until the meat is browned.\n5. Add tomato paste and water, stirring well to ensure there are no clumps of tomato paste.\n6. Add frozen vegetable medley. Cook all ingredients thoroughly, then reduce heat to low and stir occasionally.\n7. Preheat oven to 400°F.\n8. Place potatoes in a large pot and submerge them with water. Bring water to a boil, then reduce to a simmer and cook for approximately 10-15 minutes until potatoes are fork-tender.\n9. Drain potatoes in a colander, then return them to the hot pot and let them rest for 1 minute.\n10. Mash potatoes, then add butter, low-fat milk, salt, and pepper. Mix ingredients together well.\n11. In a 9-by-9-inch baking dish, spread the meat mixture evenly.\n12. Spoon the mashed potatoes on top of the meat into an even layer.\n13. Sprinkle shredded cheese over the potatoes.\n14. Bake uncovered for 25 minutes or until the cheese is golden.\n15. Cool for 10-15 minutes before serving.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/classic_comforting_shepherds_pie.jpg",
+      "rating": 4.9
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "roasted-butternut-squash-pasta",
+      "name": "Roasted Butternut Squash Pasta",
+      "description": "A delicious pasta dish featuring creamy roasted butternut squash sauce, shallots, garlic, and sage, served with rigatoni pasta.",
+      "ingredients": [
+        { "name": "Butternut squash, halved vertically, seeded", "quantity": "1/2 small", "price": 1.5 },
+        { "name": "Extra virgin olive oil", "quantity": "3 teaspoons", "price": 0.5 },
+        { "name": "Salt", "quantity": "1 1/2 teaspoons", "price": 0.2 },
+        { "name": "Pepper", "quantity": "1 1/2 teaspoons", "price": 0.2 },
+        { "name": "Shallots, chopped", "quantity": "1/2 cup", "price": 1.0 },
+        { "name": "Garlic cloves, unpeeled", "quantity": "3", "price": 0.5 },
+        { "name": "Water", "quantity": "3/4 cup", "price": 0.0 },
+        { "name": "Raw cashews", "quantity": "1/2 cup", "price": 2.0 },
+        { "name": "Balsamic vinegar", "quantity": "1 tablespoon", "price": 0.5 },
+        { "name": "Fresh sage leaves", "quantity": "10", "price": 1.0 },
+        { "name": "Rotini pasta", "quantity": "12 ounces", "price": 1.5 },
+        { "name": "Fresh thyme for garnish, chopped", "quantity": "1 teaspoon", "price": 0.5 }
+      ],
+      "instructions": "1. Heat oven to 425°F.\n2. Line baking sheet with parchment paper.\n3. Drizzle squash with 1/2 teaspoon olive oil, sprinkle with 1/2 teaspoon each of salt and pepper, place cut side down on baking sheet.\n4. Wrap shallots and garlic cloves in foil, drizzle with 1/2 teaspoon olive oil, salt, and pepper. Wrap closed and place on the same baking sheet.\n5. Place baking sheet in oven and bake for 30 minutes.\n6. Remove pan from oven.\n7. Scoop 1 cup of squash and transfer to a blender.\n8. Add shallots, peeled garlic, water, cashews, 2 tablespoons olive oil, vinegar, sage, 3/4 teaspoon salt, and 1/2 teaspoon black pepper.\n9. Blend until creamy.\n10. Cook rigatoni pasta according to directions on package in a pot of salted boiling water.\n11. Reserve 1 cup of hot pasta water before draining.\n12. Return rigatoni to pot, stir in sauce from blender, add 1/2 cup of the pasta water to loosen sauce and coat noodles.\n13. Season with fresh thyme and serve.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/butternut_squash_pasta.jpg",
+      "rating": 4.7
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "homemade-apple-butter",
+      "name": "Homemade Apple Butter",
+      "description": "A delicious and versatile apple butter made with thinly sliced tart apples, brown sugar, cinnamon, and vanilla extract.",
+      "ingredients": [
+        { "name": "Red delicious apples, peeled, seeded, and thinly sliced", "quantity": "6 medium", "price": 2.5 },
+        { "name": "Salt", "quantity": "1/2 teaspoon", "price": 0.2 },
+        { "name": "Brown sugar", "quantity": "1/4 cup", "price": 0.5 },
+        { "name": "Granulated sugar", "quantity": "1/4 cup", "price": 0.3 },
+        { "name": "Ground cinnamon", "quantity": "1/2 tablespoon", "price": 0.3 },
+        { "name": "Vanilla extract", "quantity": "1 tablespoon", "price": 0.5 }
+      ],
+      "instructions": "1. In a large pot, combine all ingredients.\n2. Mix ingredients well.\n3. Cover and cook on medium heat for 20 minutes; stir occasionally.\n4. Bring to boil, reduce heat to medium-low and cook another 15-20 minutes or until apples are soft enough to mash with a fork.\n5. Puree mixture with an immersion blender until desired texture. Avoid over blending to prevent mixture from becoming watery.\n6. Enjoy on toast or over ice cream.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/creamy_apple_butter.jpg",
+      "rating": 4.5
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "slow-cooker-pork-chops",
+      "name": "Slow Cooker Pork Chops",
+      "description": "Tender and flavorful bone-in pork chops cooked to perfection in a savory cream of chicken soup mixture.",
+      "ingredients": [
+        { "name": "Sweet onion, roughly chopped", "quantity": "1 large", "price": 1.0 },
+        { "name": "Flour", "quantity": "1/2 cup", "price": 0.3 },
+        { "name": "Onion soup mix", "quantity": "1 package", "price": 1.0 },
+        { "name": "Salt", "quantity": "1 teaspoon", "price": 0.2 },
+        { "name": "Garlic powder", "quantity": "1/2 teaspoon", "price": 0.2 },
+        { "name": "Italian seasoning", "quantity": "1/2 teaspoon", "price": 0.3 },
+        { "name": "Olive oil", "quantity": "3 tablespoons", "price": 0.5 },
+        { "name": "Bone-in pork chops, 1-inch thick", "quantity": "4", "price": 8.0 },
+        { "name": "Cream of chicken soup", "quantity": "2 (10.5 oz) cans", "price": 2.0 }
+      ],
+      "instructions": "1. Roughly chop onion and place at the bottom of slow cooker.\n2. Combine flour, soup mix, salt, garlic powder and Italian seasoning in a large bowl.\n3. Evenly coat each side of pork chops with flour mixture.\n4. In a large skillet, heat oil on medium heat. Place pork chops in skillet, browning each side for 2-3 minutes.\n5. Place browned pork chops in slow cooker; top with cream of chicken soup.\n6. Cook on high for 3-4 hours, or low for 4-5 hours.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/slow_cooker_pork_chop.jpg",
+      "rating": 4.7
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "Cowboy-Caviar",
+      "name": "Cowboy Caviar",
+      "description": "A refreshing and flavorful salsa made with sweet corn, black beans, tomatoes, avocado, and a zesty dressing.",
+      "ingredients": [
+        { "name": "Whole kernel corn, drained", "quantity": "1 (15-ounce) can", "price": 1.0 },
+        { "name": "Black beans, rinsed and drained", "quantity": "1 (15-ounce) can", "price": 1.0 },
+        { "name": "Sliced black olives, drained", "quantity": "1 (2.25-ounce) can", "price": 1.0 },
+        { "name": "Tomatoes, chopped", "quantity": "1 cup", "price": 0.5 },
+        { "name": "Firm ripe avocado, chopped", "quantity": "1", "price": 1.0 },
+        { "name": "Red onions, diced", "quantity": "1/2 cup", "price": 0.5 },
+        { "name": "Cilantro, chopped", "quantity": "2/3 cup", "price": 0.5 },
+        { "name": "Green onions, chopped", "quantity": "2/3 cup", "price": 0.5 },
+        { "name": "Garlic, minced", "quantity": "1 clove", "price": 0.2 },
+        { "name": "Red wine vinegar", "quantity": "5 tablespoons", "price": 0.5 },
+        { "name": "Tabasco", "quantity": "2 teaspoons", "price": 0.3 },
+        { "name": "Salad oil", "quantity": "1 1/2 teaspoons", "price": 0.3 },
+        { "name": "Black pepper", "quantity": "1/8 teaspoon", "price": 0.1 },
+        { "name": "Salt to taste", "quantity": "to taste", "price": 0.1 }
+      ],
+      "instructions": "1. Add all ingredients in a large bowl, gently mix together.\n2. Chill in refrigerator for at least 2 hours.\n3. Serve with tortilla chips.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/cowboy_caviar.jpg",
+      "rating": 4.8
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "Slow Cooker Pork Stew",
+      "name": "Slow Cooker Pork Stew",
+      "description": "A hearty and flavorful pork stew cooked in a slow cooker with potatoes, onions, carrots, celery, and a savory seasoning mix.",
+      "ingredients": [
+        { "name": "Pork butt", "quantity": "3 pounds", "price": 10.0 },
+        { "name": "Garlic salt, to taste", "quantity": "to taste", "price": 0.5 },
+        { "name": "Black pepper, to taste", "quantity": "to taste", "price": 0.5 },
+        { "name": "Yellow potatoes, quartered", "quantity": "2 cups", "price": 1.0 },
+        { "name": "Sweet onion, quartered", "quantity": "1 medium", "price": 0.5 },
+        { "name": "Stewed tomatoes", "quantity": "1 (14.5 ounce) can", "price": 1.0 },
+        { "name": "NOH brand Vinha D’alhos seasoning mix", "quantity": "1 (1⅛ ounce) packet", "price": 2.0 },
+        { "name": "Water", "quantity": "1/2 cup", "price": 0.2 },
+        { "name": "Carrots, large chop", "quantity": "2 medium", "price": 0.5 },
+        { "name": "Celery, large chop", "quantity": "3 sticks", "price": 0.7 },
+        { "name": "Brown sugar", "quantity": "2 tablespoons", "price": 0.3 },
+        { "name": "Corn starch", "quantity": "1 tablespoon", "price": 0.2 }
+      ],
+      "instructions": "1. Lightly season pork butt with garlic salt and black pepper. Set aside.\n2. Place potatoes and onions in slow cooker.\n3. Place pork butt on top.\n4. Sprinkle NOH seasoning packet over everything.\n5. Add water.\n6. Cook on low for 8 hours, or high for 4 hours.\n7. Halfway through cooking time, add chopped carrots and celery.\n8. Mix cornstarch with water to create slurry, add to slow cooker to thicken gravy.\n9. Add brown sugar.\n10. Let stew cook for remaining time.\n11. Stir before serving.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/slow_cooker_pork_stew.jpg",
+      "rating": 4.7
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "warm-rice-pudding",
+      "name": "Warm Rice Pudding",
+      "description": "A comforting and creamy rice pudding made with cooked rice, milk, sugar, and warm spices.",
+      "ingredients": [
+        { "name": "Cooked rice", "quantity": "1 1/2 cups", "price": 1.0 },
+        { "name": "Milk, divided", "quantity": "2 cups", "price": 1.5 },
+        { "name": "Salt", "quantity": "1/4 teaspoon", "price": 0.1 },
+        { "name": "Egg, beaten", "quantity": "1", "price": 0.3 },
+        { "name": "Sugar", "quantity": "1/3 cup", "price": 0.3 },
+        { "name": "Butter (optional)", "quantity": "1 tablespoon", "price": 0.5 },
+        { "name": "Vanilla extract", "quantity": "1/2 teaspoon", "price": 0.3 },
+        { "name": "Cinnamon or nutmeg", "quantity": "to taste", "price": 0.2 }
+      ],
+      "instructions": "1. In a medium saucepan, stirring constantly, cook rice with 1½ cups milk on stove at medium-high temperature (avoid boiling).\n2. Cook for 20 minutes until rice is extremely soft and creamy.\n3. Pour the rest of the milk on top of the mixture and pour the beaten egg on top of the cold milk.\n4. Stir immediately.\n5. Add sugar and stir until it dissolves.\n6. Stir in butter and vanilla.\n7. Place in serving bowls and lightly dust tops with cinnamon or nutmeg.\n8. Eat immediately.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/warm_rice_pudding.jpg",
+      "rating": 4.5
     }
   ]
 }
