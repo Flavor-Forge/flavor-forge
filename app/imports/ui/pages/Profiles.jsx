@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import { Container, Row, Col, Card, Image } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Profiles } from '../../api/profiles/Profiles';
 import LoadingSpinner from '../components/LoadingSpinner';
