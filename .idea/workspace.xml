@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="FINAL DRAFT">
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/utilities/ids.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/interests/Interests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/profiles/ProfilesInterests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/profiles/ProfilesProjects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/projects/Projects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/projects/ProjectsInterests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/both/Methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Filter.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/interests.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="16915" />
+    <option name="totalTimeSeconds" value="19800" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,7 +106,7 @@
       <workItem from="1713687811699" duration="1977000" />
       <workItem from="1715156822297" duration="115000" />
       <workItem from="1715157259856" duration="1202000" />
-      <workItem from="1715229372228" duration="2124000" />
+      <workItem from="1715229372228" duration="5041000" />
     </task>
     <servers />
   </component>

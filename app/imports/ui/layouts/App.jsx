@@ -14,7 +14,6 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import Profiles from '../pages/Profiles';
-import Filter from '../pages/Filter';
 import HomePage from '../pages/HomePage';
 import RecipeListPage from '../pages/RecipeListPage';
 import RecipePage from '../pages/RecipePage';
@@ -42,13 +41,12 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/updateProfile" element={<UpdateProfile />} />
-          <Route path="/EditRecipePage/:recipeId" element={<EditRecipePage />} />
+          <Route path="/EditRecipePage/:recipeId" element={<ProtectedRoute><EditRecipePage /></ProtectedRoute>} />
           <Route path="/profiles" element={<ProtectedRoute><Profiles /></ProtectedRoute>} />
           <Route path="/recipelistpage" element={<RecipeListPage />} />
           <Route path="/recipelistpageadmin" element={<AdminProtectedRoute ready={ready}><RecipeListPageAdmin /></AdminProtectedRoute>} />
           <Route path="/recipe/:_id" element={<RecipePage />} />
           <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
-          <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
           <Route path="/addrecipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />

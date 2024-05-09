@@ -1,9 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import { Projects } from '../../api/projects/Projects';
 import { Profiles } from '../../api/profiles/Profiles';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
-import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import { Recipes } from '../../api/recipes/Recipes';
 import { Ratings } from '../../api/ratings/Ratings';
 
@@ -60,22 +57,6 @@ Meteor.methods({
 const addProjectMethod = 'Projects.add';
 
 /** Creates a new project in the Projects collection, and also updates ProfilesProjects and ProjectsInterests. */
-Meteor.methods({
-  'Projects.add'({ name, description, picture, interests, participants, homepage }) {
-    Projects.collection.insert({ name, description, picture, homepage });
-    ProfilesProjects.collection.remove({ project: name });
-    ProjectsInterests.collection.remove({ project: name });
-    if (interests) {
-      interests.map((interest) => ProjectsInterests.collection.insert({ project: name, interest }));
-    } else {
-      throw new Meteor.Error('At least one interest is required.');
-    }
-    if (participants) {
-      participants.map((participant) => ProfilesProjects.collection.insert({ project: name, profile: participant }));
-    }
-  },
-});
-
 const updateRecipeRatingMethod = 'Recipes.updateRating';
 
 Meteor.methods({

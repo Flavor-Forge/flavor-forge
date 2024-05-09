@@ -2,12 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
 import { check } from 'meteor/check';
-import { Projects } from '../../api/projects/Projects';
-import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import { Profiles } from '../../api/profiles/Profiles';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
-import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import { Interests } from '../../api/interests/Interests';
 import { Recipes } from '../../api/recipes/Recipes';
 
 /* eslint-disable no-console */
@@ -25,11 +20,6 @@ const createUser = (email, password, role) => {
   }
 };
 
-/** Define an interest.  Has no effect if interest already exists. */
-function addInterest(interest) {
-  Interests.collection.update({ name: interest }, { $set: { name: interest } }, { upsert: true });
-}
-
 /** Defines a new user and associated profile. Error if user already exists. */
 function addProfile({ firstName, lastName, bio, picture, email, role }) {
   console.log(`Defining profile ${email}`);
@@ -42,15 +32,6 @@ function addProfile({ firstName, lastName, bio, picture, email, role }) {
   // projects.map(project => ProfilesProjects.collection.insert({ profile: email, project }));
   // Make sure interests are defined in the Interests collection if they weren't already.
   // interests.map(interest => addInterest(interest));
-}
-
-/** Define a new project. Error if project already exists.  */
-function addProject({ name, homepage, description, interests, picture }) {
-  console.log(`Defining project ${name}`);
-  Projects.collection.insert({ name, homepage, description, picture });
-  interests.map(interest => ProjectsInterests.collection.insert({ project: name, interest }));
-  // Make sure interests are defined in the Interests collection if they weren't already.
-  interests.map(interest => addInterest(interest));
 }
 
 function addRecipe({ email, recipeId, name, description, ingredients, instructions, picture, rating }) {
@@ -71,8 +52,6 @@ if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultAccounts) {
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
-    console.log('Creating the default projects');
-    Meteor.settings.defaultProjects.map(project => addProject(project));
     console.log('Creating the default user(s)');
     Meteor.settings.defaultAccounts.forEach(({ email, password, role }) => createUser(email, password, role));
   } else {
@@ -93,7 +72,6 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   console.log(`Loading data from private/${assetsFileName}`);
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
   jsonData.profiles.map(profile => addProfile(profile));
-  jsonData.projects.map(project => addProject(project));
 }
 
 Meteor.methods({
