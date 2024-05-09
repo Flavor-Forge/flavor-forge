@@ -32,6 +32,32 @@ import { Ratings } from '../../api/ratings/Ratings';
  * back if any of the intermediate updates failed. Left as an exercise to the reader.
  */
 
+const addIngredientMethod = 'Recipes.addIngredient';
+const removeIngredientMethod = 'Recipes.removeIngredient';
+
+Meteor.methods({
+  'Recipes.addIngredient'(recipeId, ingredient) {
+    check(recipeId, String);
+    check(ingredient, Object);
+    const recipe = Recipes.collection.findOne({ _id: recipeId });
+    if (!recipe) {
+      throw new Meteor.Error('recipe-not-found', 'Recipe not found');
+    }
+    Recipes.collection.update({ _id: recipeId }, { $push: { ingredients: ingredient } });
+  },
+
+  'Recipes.removeIngredient'(recipeId, ingredientId) {
+    check(recipeId, String);
+    check(ingredientId, String);
+    Recipes.collection.update(
+      { _id: recipeId },
+      { $pull: { ingredients: { _id: ingredientId } } },
+    );
+  },
+});
+
+export { addIngredientMethod, removeIngredientMethod };
+
 const updateProfileMethod = 'Profiles.update';
 
 /**

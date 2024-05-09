@@ -1,7 +1,9 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "foo" }
+    { "email": "john@foo.com", "password": "foo" , "role":  "user" },
+    { "email": "johnson@hawaii.edu", "password": "foo", "role":  "user" },
+    { "email": "cmoore@hawaii.edu", "password": "foo", "role":  "user" }
   ]
 ,
   "defaultProfiles": [
@@ -221,7 +223,7 @@
       "loadAssetsFile": false
     },
     {
-      "email": "cmoore@hawaii.edu",
+      "email": "john@foo.com",
       "recipeId": "vegetable-stir-fry",
       "name": "Vegetable Stir-Fry",
       "description": "A colorful and nutritious stir-fry featuring an assortment of fresh vegetables.",
@@ -293,7 +295,7 @@
       "loadAssetsFile": false
     },
     {
-      "email": "cmoore@hawaii.edu",
+      "email": "john@foo.com",
       "recipeId": "chocolate-chip-cookies",
       "name": "Chocolate Chip Cookies",
       "description": "Classic homemade cookies packed with chocolate chips.",

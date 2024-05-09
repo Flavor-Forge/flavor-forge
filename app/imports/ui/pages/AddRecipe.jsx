@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import { AutoForm, ErrorsField, NumField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
@@ -28,41 +28,39 @@ const formSchema = new SimpleSchema({
   'ingredients.$.price': { type: Number, min: 0 },
   instructions: { type: String },
   picture: { type: String, optional: true },
-  rating: {
-    type: Number,
-    min: 0,
-    max: 5,
-    optional: true,
-    defaultValue: 0,
-    // Custom validation function to ensure the rating value is between 0 and 5
-    custom() {
-      if (this.value < 0 || this.value > 5) {
-        return 'Rating must be between 0 and 5';
-      }
-      return undefined;
-    },
-  },
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 const AddRecipe = () => {
+  const [ingredientFields, setIngredientFields] = useState([{ name: '', quantity: '', price: 0.0 }]);
+
+  const addIngredientField = () => {
+    setIngredientFields([...ingredientFields, { name: '', quantity: '', price: 0.0 }]);
+  };
+
+  const removeIngredientField = index => {
+    const updatedIngredients = [...ingredientFields];
+    updatedIngredients.splice(index, 1);
+    setIngredientFields(updatedIngredients);
+  };
+
   const submit = async (data, formRef) => {
-    const { name, description, ingredients, instructions, rating, picture } = data;
+    const { name, description, instructions, picture } = data;
     const email = Meteor.user().emails[0].address;
     const recipeId = generateRecipeId();
+    const defaultRating = 0;
 
     try {
-      // No need to upload the picture since it's already a URL
       await Recipes.collection.insert({
         email,
         recipeId,
         name,
         description,
-        ingredients,
+        ingredients: ingredientFields.map(({ ingredientName, quantity, price }) => ({ ingredientName, quantity, price })),
         instructions,
         picture,
-        rating,
+        rating: defaultRating,
       });
 
       swal('Success', 'Recipe added successfully', 'success');
@@ -83,12 +81,17 @@ const AddRecipe = () => {
               <Card.Body>
                 <TextField name="name" />
                 <TextField name="description" />
-                <TextField name="ingredients.0.name" label="Ingredient Name" />
-                <TextField name="ingredients.0.quantity" label="Quantity" />
-                <NumField name="ingredients.0.price" label="Price" decimal />
+                {ingredientFields.map((ingredient, index) => (
+                  <div key={index}>
+                    <TextField name={`ingredients.${index}.name`} label={`Ingredient Name ${index + 1}`} />
+                    <TextField name={`ingredients.${index}.quantity`} label={`Quantity ${index + 1}`} />
+                    <NumField name={`ingredients.${index}.price`} label={`Price ${index + 1}`} decimal />
+                    <Button variant="danger" onClick={() => removeIngredientField(index)}>Remove</Button>
+                  </div>
+                ))}
+                <Button variant="secondary" onClick={addIngredientField}>Add Ingredient</Button>
                 <TextField name="instructions" />
                 <TextField name="picture" label="Picture (URL address)" />
-                <NumField name="rating" decimal />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>
