@@ -14,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="25499" />
+    <option name="totalTimeSeconds" value="26959" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,7 +39,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -95,7 +95,7 @@
       <workItem from="1713687811699" duration="1977000" />
       <workItem from="1715156822297" duration="115000" />
       <workItem from="1715157259856" duration="1202000" />
-      <workItem from="1715229372228" duration="11890000" />
+      <workItem from="1715229372228" duration="13522000" />
     </task>
     <servers />
   </component>

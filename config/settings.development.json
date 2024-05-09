@@ -33,7 +33,7 @@
       "projects": [
         "WRENCH"
       ],
-      "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Henri_Casanova1.jpg",
+      "picture": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/Henri_Casanova1.jpg",
       "email": "henric@hawaii.edu"
     },
     {
@@ -77,7 +77,7 @@
       "projects": [
         "Cyber Canoe"
       ],
-      "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Jason_Leigh-2014.jpg",
+      "picture": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/Jason_Leigh-2014.jpg",
       "email": "leighj@hawaii.edu"
     },
     {
@@ -126,7 +126,7 @@
     },
     {
       "name": "Cyber Canoe",
-      "homepage": "http://lava.manoa.hawaii.edu/blog/2014/07/11/cyber-canoe-cyber-infrastructure-enabled-collaborative-analysis-navigation-and-observation-environment/",
+      "homepage": "https://lava.manoa.hawaii.edu/blog/2014/07/11/cyber-canoe-cyber-infrastructure-enabled-collaborative-analysis-navigation-and-observation-environment/",
       "description": "Software for Unity projects involving stereoscopic resolution driven by 9 PCs with a GeForce 980 graphics card.",
       "interests": [
         "Unity",
@@ -607,6 +607,158 @@
       ],
       "instructions": "1. In a medium saucepan, stirring constantly, cook rice with 1½ cups milk on stove at medium-high temperature (avoid boiling).\n2. Cook for 20 minutes until rice is extremely soft and creamy.\n3. Pour the rest of the milk on top of the mixture and pour the beaten egg on top of the cold milk.\n4. Stir immediately.\n5. Add sugar and stir until it dissolves.\n6. Stir in butter and vanilla.\n7. Place in serving bowls and lightly dust tops with cinnamon or nutmeg.\n8. Eat immediately.",
       "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/warm_rice_pudding.jpg",
+      "rating": 4.5
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "mango_bread_anytime",
+      "name": "Mango Bread Anytime",
+      "description": "Delicious and moist mango bread with a hint of cinnamon and crunch from macadamia nuts.",
+      "ingredients": [
+        { "name": "Flour", "quantity": "2 cups", "price": 1.0 },
+        { "name": "Baking soda", "quantity": "1 1/2 teaspoons", "price": 0.2 },
+        { "name": "Cinnamon", "quantity": "2 teaspoons", "price": 0.2 },
+        { "name": "Salt", "quantity": "1/2 teaspoon", "price": 0.1 },
+        { "name": "Eggs, well beaten", "quantity": "3", "price": 0.5 },
+        { "name": "Sugar", "quantity": "1 1/2 cups", "price": 0.7 },
+        { "name": "Salad oil", "quantity": "3/4 cups", "price": 0.8 },
+        { "name": "Vanilla", "quantity": "1 teaspoon", "price": 0.3 },
+        { "name": "Mangoes, chopped (Drain excess liquid if using defrosted mangoes.)", "quantity": "2 cups", "price": 1.5 },
+        { "name": "Macadamia nuts, chopped in quarters", "quantity": "1 cup", "price": 2.0 }
+      ],
+      "instructions": "1. In a large bowl, combine flour, baking soda, cinnamon, and salt.\n2. Mix beaten eggs with sugar, salad oil, and vanilla.\n3. Pour dry ingredients into wet and mix until incorporated.\n4. Add mangoes and nuts.\n5. Pour into 2 loaf pans sprayed with non-stick baking spray.\n6. Bake at 350°F for 45 to 55 minutes.\n7. Let cool before slicing.\n8. Enjoy!",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/mango_bread_anytime.jpg",
+      "rating": 4.2,
+      "loadAssetsFile": false
+    },
+    {
+      "email": "example@example.com",
+      "recipeId": "island_style_chicken_salad",
+      "name": "Island Style Chicken Salad",
+      "description": "A delightful chicken salad with the sweetness of apples, the crunch of walnuts, and a hint of papaya seed dressing.",
+      "ingredients": [
+        { "name": "Cooked or canned chicken breast, chopped", "quantity": "1 1/2 cups", "price": 0 },
+        { "name": "Apples, diced", "quantity": "1/4 cup", "price": 0 },
+        { "name": "Walnuts, chopped", "quantity": "1/4 cup", "price": 0 },
+        { "name": "Celery, chopped (optional)", "quantity": "1/4 cup", "price": 0 },
+        { "name": "Raisins, finely chopped", "quantity": "1/4 cup", "price": 0 },
+        { "name": "Mayonnaise", "quantity": "1/4 cup", "price": 0 },
+        { "name": "Papaya seed salad dressing", "quantity": "1 teaspoon", "price": 0 }
+      ],
+      "instructions": "1. Combine chicken, apples, walnuts, celery, and raisins in a blender. Pulse ingredients until the preferred consistency is reached.\n2. Transfer the mixture to a mixing bowl.\n3. Stir in mayonnaise and papaya seed salad dressing.\n4. Serve on a bed of local greens such as Manoa lettuce or on desired bread.\n5. Enjoy!",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/island_style_chicken_salad.jpg",
+      "rating": 4.2,
+      "loadAssetsFile": false
+    },
+    {
+      "email": "noreply@recipes.com",
+      "recipeId": "strawberry-gelatin-pretzel-dessert",
+      "name": "Strawberry Gelatin Pretzel Dessert",
+      "description": "A delightful dessert featuring a crunchy pretzel crust, creamy filling, and fruity strawberry gelatin topping.",
+      "ingredients": [
+        { "name": "Salted pretzels", "quantity": "2 cups, crushed", "price": 1.5 },
+        { "name": "Butter", "quantity": "1 cup, melted", "price": 2.0 },
+        { "name": "Sugar", "quantity": "1/2 cup", "price": 0.5 },
+        { "name": "Cream cheese", "quantity": "1 (8-oz) block, softened", "price": 2.5 },
+        { "name": "Whipped topping", "quantity": "1 (8-oz) container", "price": 2.0 },
+        { "name": "Strawberry gelatin", "quantity": "1 (6-ounce) box", "price": 1.0 },
+        { "name": "Fresh strawberries", "quantity": "2 1/2 cups, sliced", "price": 3.0 }
+      ],
+      "instructions":
+        "Crust: Preheat oven to 325°F. Mix crust ingredients together and press into a 9x13 pan. Bake for 6 minutes. Let the crust cool. Filling: Using a hand or stand mixer, mix filling ingredients together until fluffy. Spread over the cooled crust. Let it stand for 30 minutes in the refrigerator. Topping: Dissolve strawberry gelatin in boiling water, then stir in the fruit. When the mixture is at room temperature, pour it on top of the cream cheese layer. Let it stand in the refrigerator overnight.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/strawberry_pretzels_dessert.jpg",
+      "rating": 4.5
+    },
+    {
+      "email": "noreply@recipes.com",
+      "recipeId": "curried-tuna-rolls",
+      "name": "Curried Tuna Rolls",
+      "description": "Delicious tuna rolls with a hint of curry flavor, perfect for a quick and satisfying meal.",
+      "ingredients": [
+        { "name": "Tuna fish", "quantity": "10 oz., canned in water", "price": 3.0 },
+        { "name": "Celery", "quantity": "2 stalks, finely chopped", "price": 1.0 },
+        { "name": "Red onion", "quantity": "2 tablespoons, finely chopped", "price": 0.5 },
+        { "name": "Mayonnaise", "quantity": "1/2 cup", "price": 1.5 },
+        { "name": "Curry powder", "quantity": "2 teaspoons", "price": 1.0 },
+        { "name": "Salt", "quantity": "To taste", "price": 0.5 },
+        { "name": "Pepper", "quantity": "To taste", "price": 0.5 },
+        { "name": "Dried cranberries", "quantity": "2 tablespoons, optional", "price": 1.0 },
+        { "name": "Romaine lettuce", "quantity": "4 leaves", "price": 1.0 },
+        { "name": "Rice paper wrappers", "quantity": "4", "price": 2.0 }
+      ],
+      "instructions":
+        "Drain tuna, removing as much moisture as possible. In a medium bowl, combine tuna, celery, onion, mayonnaise, curry powder, salt, pepper, and cranberries (if using); mix well. Working with one wrapper at a time, soak in water until pliable but not limp, about 30 seconds. Transfer wrapper to a clean work surface. Line a quarter of the filling across the center of the wrapper; top with a lettuce leaf. Fold the bottom of the wrapper over the filling; fold in sides of wrapper, then roll tuna and wrapper upwards to form a tight cylinder. Seal edges with water. Makes 4 rolls.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/curried_tuna_rolls.jpg",
+      "rating": 4.2
+    },
+    {
+      "email": "noreply@recipes.com",
+      "recipeId": "not-just-oatmeal-cookies",
+      "name": "Not Just Oatmeal Cookies",
+      "description": "These cookies are a delightful blend of oats, crispy rice cereal, craisins, macadamia nuts, and chocolate chips, perfect for a treat any time of day.",
+      "ingredients": [
+        { "name": "Butter", "quantity": "1 cup (2 sticks), softened", "price": 2.0 },
+        { "name": "Brown sugar", "quantity": "1 cup, firmly packed", "price": 1.5 },
+        { "name": "Granulated sugar", "quantity": "1/2 cup", "price": 1.0 },
+        { "name": "Eggs", "quantity": "2", "price": 1.0 },
+        { "name": "Vanilla", "quantity": "1 teaspoon", "price": 1.0 },
+        { "name": "Flour", "quantity": "1 1/2 cups", "price": 1.5 },
+        { "name": "Baking soda", "quantity": "3/4 teaspoon", "price": 0.5 },
+        { "name": "Cinnamon", "quantity": "1 1/4 teaspoons", "price": 0.5 },
+        { "name": "Salt", "quantity": "1/2 teaspoon", "price": 0.5 },
+        { "name": "Oats", "quantity": "2 cups, uncooked", "price": 2.0 },
+        { "name": "Crispy rice cereal", "quantity": "1 1/4 cups", "price": 1.5 },
+        { "name": "Craisins", "quantity": "1/4 cup, finely chopped", "price": 1.0 },
+        { "name": "Macadamia nuts", "quantity": "1 cup, coarsely chopped", "price": 3.0 },
+        { "name": "Chocolate chips", "quantity": "3/4 cup", "price": 2.5 }
+      ],
+      "instructions":
+        "Heat oven to 350°F. Beat together butter and sugars until creamy. Add eggs and vanilla, beat well. Add flour, baking soda, cinnamon, and salt. Mix well. Stir in oats until incorporated. Gently blend in crispy rice cereal. Add craisins, nuts, and chocolate chips. Place parchment paper on cookie sheets. Drop dough by rounded tablespoons on parchment paper. Bake 9-12 minutes, or until golden brown. Move to wire rack to cool completely. To freeze for future use, place inside a plastic freezer bag. Freeze up to 6 months. Makes 4 dozen.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/not_just_oatmeal_cookies.jpg",
+      "rating": 4.5
+    },
+    {
+      "email": "noreply@recipes.com",
+      "recipeId": "cool-grape-salad",
+      "name": "Cool Grape Salad",
+      "description": "This refreshing grape salad combines red and green seedless grapes with a creamy sour cream and cream cheese dressing, topped with a sweet brown sugar and pecan topping.",
+      "ingredients": [
+        { "name": "Red seedless grapes", "quantity": "2 pounds", "price": 3.0 },
+        { "name": "Green seedless grapes", "quantity": "2 pounds", "price": 3.0 },
+        { "name": "Sour cream", "quantity": "8 ounces", "price": 1.5 },
+        { "name": "Cream cheese", "quantity": "8 ounces, softened", "price": 2.0 },
+        { "name": "Granulated sugar", "quantity": "1/2 cup", "price": 1.0 },
+        { "name": "Vanilla extract", "quantity": "2 teaspoons", "price": 1.0 },
+        { "name": "Brown sugar", "quantity": "1/2 cup, packed", "price": 1.0 },
+        { "name": "Crushed pecans", "quantity": "1/2 cup", "price": 2.0 }
+      ],
+      "instructions":
+        "Wash and remove stems from grapes. Pat dry with a paper towel. Set aside. Mix sour cream, cream cheese, sugar, and vanilla until blended. Add grapes, toss to coat. Transfer to a large serving bowl. Refrigerate for at least 8 hours. Sprinkle with brown sugar and pecans just before serving. Makes 16 servings.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/cool_grape_salad.jpg",
+      "rating": 4.2
+    },
+    {
+      "email": "noreply@recipes.com",
+      "recipeId": "simple-parmesan-meatballs",
+      "name": "Simple Parmesan Meatballs",
+      "description": "These delicious meatballs combine ground beef and pork with a savory blend of spices, panko breadcrumbs, and Parmesan cheese, baked to perfection.",
+      "ingredients": [
+        { "name": "Ground beef", "quantity": "1 pound", "price": 5.0 },
+        { "name": "Ground pork", "quantity": "1 pound", "price": 6.0 },
+        { "name": "Eggs", "quantity": "2", "price": 1.0 },
+        { "name": "Water", "quantity": "1/4 cup", "price": 0.25 },
+        { "name": "Small onion, diced", "quantity": "1", "price": 0.5 },
+        { "name": "Panko breadcrumbs", "quantity": "1 1/3 cups", "price": 2.0 },
+        { "name": "Grated Parmesan cheese", "quantity": "1 cup, divided", "price": 2.5 },
+        { "name": "Garlic cloves, minced", "quantity": "2", "price": 0.5 },
+        { "name": "Italian seasoning", "quantity": "2 teaspoons", "price": 1.0 },
+        { "name": "Garlic salt", "quantity": "1 1/2 teaspoons", "price": 1.0 },
+        { "name": "Pepper", "quantity": "1/4 teaspoon", "price": 0.5 },
+        { "name": "Spinach, finely chopped", "quantity": "1/8 cup", "price": 0.75 }
+      ],
+      "instructions":
+        "Heat oven to 375°F. Line a baking sheet with parchment paper; set aside. In a large bowl, combine 2/3 cup Parmesan cheese and all other ingredients; mix well. Shape into 1 1/2-inch balls. Roll meatballs in remaining Parmesan cheese. Bake uncovered for 15-18 minutes or until no longer pink. Makes 30 meatballs.",
+      "picture": "https://www.hawaiianelectric.com/images/recipes/the_electric_kitchen/simple_parmesan_meatballs.jpg",
       "rating": 4.5
     }
   ]
