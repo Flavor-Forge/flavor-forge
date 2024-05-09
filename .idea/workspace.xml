@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="FINAL DRAFT">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Profiles.jsx" afterDir="false" />
+    <list default="true" id="76c7df70-6215-4454-bb9a-067f0d61aeea" name="Changes" comment="Badge added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/Footer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jra22/OneDrive/Documents/GitHub/flavor-forge",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,11 +66,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jra22\OneDrive\Documents\GitHub\flavor-forge" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\imports\ui\pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\tests" />
       <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="C:\Users\ccyan\Documents\flavor-forge\app\public\images" />
-      <recent name="C:\Users\18084\Documents\GitHub\flavor-forge\app\public\images" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -127,6 +128,7 @@
     <MESSAGE value="Test Run of possible solution to errors on insert" />
     <MESSAGE value="FINAL DRAFT" />
     <MESSAGE value="Change to cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change to cards" />
+    <MESSAGE value="Badge added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Badge added" />
   </component>
 </project>

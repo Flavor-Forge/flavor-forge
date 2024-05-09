@@ -17,8 +17,8 @@ const Footer = () => (
         <a
           style={{ color: 'blue', textDecoration: 'none' }}
           href="https://flavor-forge.github.io/"
-          onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
-          onMouseLeave={(e) => e.target.style.textDecoration = 'none'}
+          onMouseEnter={(e) => { e.target.style.textDecoration = 'underline'; }}
+          onMouseLeave={(e) => { e.target.style.textDecoration = 'none'; }}
         >
           https://flavor-forge.github.io/
         </a>
